@@ -11,6 +11,8 @@ abstract class AppStrings {
   static const englishCountry = 'US';
   static const englishName = 'English';
 
+  static const logoHeroTag = "logoHeroTag";
+
   /// To be translated
   static const canNotOpenUrl = "CAN_NOT_OPEN_URL";
   static const canNotCall = "CAN_NOT_CALL";
@@ -25,6 +27,7 @@ abstract class AppStrings {
   static const confirm = "CONFIRM";
   static const invalidEmail = "invalidEmail";
   static const goBack = "goBack";
+
 
 }
 

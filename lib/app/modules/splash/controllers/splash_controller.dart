@@ -1,23 +1,20 @@
+import 'package:easy_hotel/app/core/utils/user_manager.dart';
+import 'package:easy_hotel/app/routes/app_pages.dart';
 import 'package:get/get.dart';
 
 class SplashController extends GetxController {
-  //TODO: Implement SplashController
-
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
-  }
+  final showLogo = false.obs;
 
   @override
-  void onReady() {
+  void onReady() async{
     super.onReady();
+    await Future.delayed(const Duration(seconds: 1));
+    showLogo(true);
+    await Future.delayed(const Duration(seconds: 2));
+    if(UserManager().isLoggedIn){
+      Get.offNamed(Routes.HOME);
+    } else {
+      Get.offNamed(Routes.LOGIN);
+    }
   }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }
