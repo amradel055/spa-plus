@@ -21,6 +21,27 @@ dependencies:
   url_launcher: ^6.1.7
   dio: ^4.0.6
   internet_connection_checker: ^1.0.0+1
+  carousel_slider: ^4.0.0
+  http:
+  provider:
+  shared_preferences: ^2.0.13
+  firebase_messaging:
+  firebase_core:
+  flutter_local_notifications:
+  firebase_database:
+  flutter_rating_bar: ^4.0.1
+  cloud_firestore:
+  dotted_border: ^2.0.0+3
+  readmore: ^2.1.0
+  table_calendar: ^3.0.6
+  flutter_staggered_grid_view: ^0.6.2
+  google_maps_flutter:
+  geolocator:
+  flutter_barcode_scanner: ^2.0.0
+  barcode_widget: ^2.0.2
+  badges: ^2.0.2
+  flutter_time_picker_spinner: ^2.0.0
+  dropdown_search:
 
 dev_dependencies: 
   flutter_lints: ^2.0.0
@@ -30,3 +51,19 @@ dev_dependencies:
 flutter: 
   uses-material-design: true
 
+  assets:
+    - assets/images/
+
+  fonts:
+    - family: karlaBold
+      fonts:
+        - asset: assets/fonts/Karla-SemiBold.ttf
+          weight: 600
+    - family: CairoBold
+      fonts:
+        - asset: assets/fonts/Cairo-Bold.ttf
+          weight: 600
+    - family: Cairo
+      fonts:
+        - asset: assets/fonts/Cairo-Light.ttf
+          weight: 500

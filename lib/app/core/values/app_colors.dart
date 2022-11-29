@@ -13,6 +13,16 @@ abstract class AppColors {
   static const white = Color(0xfff8f9fa);
   static const black = Color(0xff6c757d);
   static const grey = Color(0xffababab);
+  static const restaurantSecondColor = Color(0xfff7f7f7) ;
+  static const restaurantThirdColor = Color(0xffd5ae0b) ;
+  static const appBlue = Color(0xff0077a2);
+  static const appGreyLight = Color(0xFFededed);
+  static const appGreyDark = Color(0xFFdedede);
+  static const appHallsRedLight = Color(0xFFF4DFDC);
+  static const appHallsRed = Color(0xFFDD8378);
+  static const appHallsRedDark = Color(0xFFC84C40);
+  static const colorBar = Color(0xFFB02c5c);
+  static const appRedLight = Color(0x7ff1e0e0);
 
   static Color get fieldBorderColor => grey;
   static Color get backgroundColor => white;
@@ -33,16 +43,6 @@ abstract class AppColors {
       800:Color.fromRGBO(color.red,color.green,color.blue, .9),
       900:Color.fromRGBO(color.red,color.green,color.blue, 1),
     };
-  }
-
-  static RadialGradient get radialGradient{
-    return const RadialGradient(
-      colors: [
-        Colors.white,
-        whiteBlue
-      ],
-      // radius: 0.5
-    );
   }
 
 }
