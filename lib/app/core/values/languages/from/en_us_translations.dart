@@ -14,5 +14,20 @@ final Map<String, String> enUs = {
   AppStrings.notFound: 'not fount',
   AppStrings.forbidden: 'forbidden',
   AppStrings.unauthenticated: 'the session is expired',
+  AppStrings.Welcome: 'WELCOME',
+  AppStrings.phone: 'PHONE',
+  AppStrings.email: 'EMAIL',
+  AppStrings.password: 'PASSWORD',
+  AppStrings.firstName: 'FIRSTNAME',
+  AppStrings.lastName: 'LASTNAME',
+  AppStrings.register: 'REGISTER',
+  AppStrings.haveAccount: 'Do you have an account',
+  AppStrings.login: 'LOGIN',
+  AppStrings.hello: 'Hello name',
+  AppStrings.logout: 'Log out',
+
+
+
+
 
 };

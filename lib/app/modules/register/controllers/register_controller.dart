@@ -1,23 +1,22 @@
+import 'package:easy_hotel/app/routes/app_pages.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 class RegisterController extends GetxController {
-  //TODO: Implement RegisterController
+  var firstNameameController = TextEditingController();
+  var lastNameController = TextEditingController();
+  var phoneController = TextEditingController();
+  var emailController = TextEditingController();
+  var passwordController = TextEditingController();
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  final form = GlobalKey<FormState>();
+
+
+  register(){
+    if(form.currentState!.validate()){
+
+    }
   }
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
 
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }

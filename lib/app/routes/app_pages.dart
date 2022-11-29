@@ -1,3 +1,5 @@
+import 'package:easy_hotel/app/modules/allServices/bindings/all_services_binding.dart';
+import 'package:easy_hotel/app/modules/allServices/views/all_services_view.dart';
 import 'package:get/get.dart';
 
 import '../modules/home/bindings/home_binding.dart';
@@ -45,6 +47,11 @@ class AppPages {
       name: _Paths.REGISTER,
       page: () => const RegisterView(),
       binding: RegisterBinding(),
+    ),
+    GetPage(
+      name: _Paths.ALLSERVICES,
+      page: () => const AllServicesView(),
+      binding: AllServicesBinding(),
     ),
   ];
 }

@@ -1,23 +1,15 @@
+import 'package:easy_hotel/app/routes/app_pages.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 class LoginController extends GetxController {
-  //TODO: Implement LoginController
+  var phoneController = TextEditingController();
+  var passwordController = TextEditingController();
+  final form = GlobalKey<FormState>();
+  login(){
+    if(form.currentState!.validate()){
+      Get.toNamed(Routes.ALLSERVICES);
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+    }
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }

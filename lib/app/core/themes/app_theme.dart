@@ -11,7 +11,7 @@ class AppTheme {
   static ThemeData dark = darkTheme;
 
   static get appFontFamily => "Cairo";
-  static get isDark => Get.isDarkMode;
+  static bool get isDark => Get.isDarkMode;
 
   ThemeMode getThemeMode() {
     return isSavedDarkMode() ? ThemeMode.dark : ThemeMode.light;
@@ -76,7 +76,6 @@ final ThemeData lightTheme = ThemeData(
   primaryColor: AppColors.primary,
   brightness: Brightness.light,
   scaffoldBackgroundColor: Colors.white,
-  backgroundColor: Colors.white,
   shadowColor: Colors.black.withOpacity(.05),
   cardTheme: CardTheme(
     shape: RoundedRectangleBorder(
@@ -105,6 +104,5 @@ final ThemeData lightTheme = ThemeData(
     systemOverlayStyle: SystemUiOverlayStyle.dark
   ),
   focusColor: AppColors.primary,
-  textSelectionTheme: TextSelectionThemeData(cursorColor: AppColors.primary),
-  colorScheme: const ColorScheme.light().copyWith(primary: AppColors.primary)
+  textSelectionTheme: TextSelectionThemeData(cursorColor: AppColors.primary), colorScheme: const ColorScheme.light().copyWith(primary: AppColors.primary).copyWith(background: Colors.white)
 );

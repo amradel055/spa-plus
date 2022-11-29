@@ -1,9 +1,4 @@
-import 'package:easy_hotel/app/data/model/auth/login/dto/response/login_response.dart';
-import 'package:easy_hotel/app/data/model/auth/login/dto/response/verify_login_response.dart';
-import 'package:easy_hotel/app/data/model/auth/register/dto/response/register_response.dart';
 import 'package:easy_hotel/app/data/provider/api_provider.dart';
-import '../../user/dto/response/refresh_token_response_dto.dart';
-import '../../user/dto/response/update_user_put_response.dart';
 
 class GenericResponse<T> {
 

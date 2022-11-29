@@ -5,7 +5,7 @@ import 'package:get_storage/get_storage.dart';
 
 import '../../utils/app_storage.dart';
 import '../app_strings.dart';
-import 'from/ar_sy_translations.dart';
+import 'from/ar_eg_translations.dart';
 import 'from/en_us_translations.dart';
 
 class AppTranslation extends Translations {
@@ -36,7 +36,7 @@ class AppTranslation extends Translations {
 
   @override
   Map<String, Map<String, String>> get keys => {
-        AppStrings.arabic: arSY,
+        AppStrings.arabic: arEG,
         AppStrings.english: enUs,
       };
 }

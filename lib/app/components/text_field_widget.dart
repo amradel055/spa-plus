@@ -39,7 +39,8 @@ class TextFieldWidget extends StatelessWidget {
     this.hideErrorText = false,
     this.suffixIconSize ,
     this.textAlign ,
-    this.suffixIconColor
+    this.suffixIconColor,
+
   }) : super(key: key);
 
   final String? upLabel;
@@ -126,7 +127,7 @@ class TextFieldWidget extends StatelessWidget {
                   textAlignVertical: TextAlignVertical.top,
                   textAlign: textAlign ?? TextAlign.start,
                   decoration: InputDecoration(
-                    hintText: hint?.tr,
+                    labelText: hint?.tr,
                     counterText: "",
                     fillColor: AppColors.white,
                     filled: true,
@@ -136,11 +137,11 @@ class TextFieldWidget extends StatelessWidget {
                     hintStyle: TextStyle(color: AppColors.textFieldHintColor, height: 1.5, leadingDistribution: TextLeadingDistribution.even,),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(AppConstants.radius),
-                        borderSide: const BorderSide(color: Colors.transparent)
+                        borderSide: const BorderSide(color: AppColors.appBlue,width: 2)
                     ),
                     enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(AppConstants.radius),
-                        borderSide: const BorderSide(color: Colors.transparent)
+                        borderSide: const BorderSide(color: AppColors.appBlue, width: 2)
                     ),
                     isDense: true,
                     prefix: prefix,
