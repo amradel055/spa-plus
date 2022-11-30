@@ -15,14 +15,5 @@ abstract class AppAssets {
   static const spa = '$_images/spa.jpeg';
   static const housekeeping = '$_images/housekeeping.jpeg';
 
-
-
-
-  static const lambImg = '$_images/lamb.jpeg';
-  static const placeHolderImg = '$_images/placeHolder.jpeg';
-  static const sliderImg = '$_images/slider.jpg';
-  static const logoImg = '$_images/logo.png';
-
-
 }
 
