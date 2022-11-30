@@ -38,6 +38,11 @@ abstract class AppStrings {
   static const login = "LOGIN";
   static const hello = "Hello name";
   static const logout = "Log out";
+  static const search = "search";
+  static const searchlabel = "search for services and reseve it..";
+  static const offers = "offers";
+
+
 
 
 

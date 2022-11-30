@@ -25,6 +25,11 @@ final Map<String, String> enUs = {
   AppStrings.login: 'LOGIN',
   AppStrings.hello: 'Hello name',
   AppStrings.logout: 'Log out',
+  AppStrings.search: 'search',
+  AppStrings.searchlabel: 'search for service..',
+  AppStrings.offers: 'Offers',
+
+
 
 
 
