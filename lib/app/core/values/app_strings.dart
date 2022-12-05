@@ -41,6 +41,18 @@ abstract class AppStrings {
   static const search = "search";
   static const searchlabel = "search for services and reseve it..";
   static const offers = "offers";
+  static const towns = "Towns";
+  static const hotels = "Hotels";
+  static const spas = "Spa";
+  static const address = "Address";
+  static const directions = "Directions";
+  static const workhours = "Work Hours";
+  static const readmore = "Read More";
+  static const readless = "Read Less";
+
+
+
+
 
 
 

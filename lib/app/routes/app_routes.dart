@@ -15,6 +15,16 @@ abstract class Routes {
   static const HOUSE_KEEPING = _Paths.HOUSE_KEEPING;
   static const ROOMS = _Paths.ROOMS;
   static const POLMAN = _Paths.POLMAN;
+  static const SPASEARCHPAGE = _Paths.SPA_SEARCH_PAGE;
+  static const SPACITY = _Paths.SPA_CITY;
+  static const SPAHOTEL = _Paths.SPA_HOTEL;
+  static const SPADETAILS = _Paths.SPA_DETAILS;
+  static const HOUSEKEEPING_SERVICES = _Paths.HOUSEKEEPING_SERVICES;
+
+
+
+
+
 }
 
 abstract class _Paths {
@@ -31,4 +41,12 @@ abstract class _Paths {
   static const HOUSE_KEEPING = '/house-keeping';
   static const ROOMS = '/rooms';
   static const POLMAN = '/polman';
+  static const SPA_SEARCH_PAGE = '/spa-search-page';
+  static const SPA_CITY = '/spa-city';
+  static const SPA_HOTEL = '/spa-hotel';
+  static const SPA_DETAILS = '/spa-details';
+  static const HOUSEKEEPING_SERVICES = '/housekeeping-services';
+
+
+
 }

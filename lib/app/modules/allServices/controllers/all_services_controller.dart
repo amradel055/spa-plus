@@ -13,8 +13,5 @@ List<ServiceModel> allServices=[
   ServiceModel(name: 'Rooms Service', image: AppAssets.rooms, pageRoute: Routes.ROOMS),
   ServiceModel(name: 'Polman Service', image: AppAssets.polman, pageRoute: Routes.POLMAN),
   ServiceModel(name: 'Cars Service', image: AppAssets.cars  , pageRoute: Routes.CARS)
-
-
-
 ];
 }

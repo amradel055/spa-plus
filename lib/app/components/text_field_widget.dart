@@ -33,6 +33,7 @@ class TextFieldWidget extends StatelessWidget {
     this.controller,
     this.ltr,
     this.maxLines,
+    this.onTap,
     this.contentPadding,
     this.multiLines = false,
     this.onSubmitted,
@@ -63,6 +64,7 @@ class TextFieldWidget extends StatelessWidget {
   final FocusNode? nextFocusNode;
   final Function(String)? onChange;
   final Function(String)? onSubmitted;
+  final Function()? onTap;
   final String? Function(String?)? validator;
   final Function()? onSuffixClicked;
   final bool obscure;
@@ -112,6 +114,7 @@ class TextFieldWidget extends StatelessWidget {
                   initialValue: initialValue,
                   onChanged: onChange,
                   onFieldSubmitted: onSubmitted,
+                  onTap: onTap,
                   focusNode: focusNode,
                   enabled: enabled,
                   maxLines: multiLines? null : (maxLines??1),
