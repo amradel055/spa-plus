@@ -1,20 +1,23 @@
-
-import 'package:easy_hotel/app/modules/halls/halls_homepage/bindings/halls_binding.dart';
-import 'package:easy_hotel/app/modules/halls/halls_homepage/views/halls_view.dart';
-import 'package:easy_hotel/app/modules/house_keeping/housekeeping_home_page/bindings/house_keeping_binding.dart';
-import 'package:easy_hotel/app/modules/house_keeping/housekeeping_home_page/views/house_keeping_view.dart';
-import 'package:easy_hotel/app/modules/house_keeping/housekeeping_reservation/bindings/house_keeping_reservation_binding.dart';
-import 'package:easy_hotel/app/modules/house_keeping/housekeeping_reservation/views/house_keeping_reservation_view.dart';
-import 'package:easy_hotel/app/modules/house_keeping/housekeeping_services/bindings/house_keeping_services_binding.dart';
-import 'package:easy_hotel/app/modules/house_keeping/housekeeping_services/views/house_keeping_services_view.dart';
-import 'package:easy_hotel/app/modules/spa/spa_home/views/spa_view.dart';
 import 'package:get/get.dart';
+
 import '../modules/allServices/bindings/all_services_binding.dart';
 import '../modules/allServices/views/all_services_view.dart';
 import '../modules/cars/bindings/cars_binding.dart';
 import '../modules/cars/views/cars_view.dart';
+import '../modules/food_item/bindings/food_item_binding.dart';
+import '../modules/food_item/views/food_item_view.dart';
+import '../modules/food_section/bindings/food_section_binding.dart';
+import '../modules/food_section/views/food_section_view.dart';
+import '../modules/halls/halls_homepage/bindings/halls_binding.dart';
+import '../modules/halls/halls_homepage/views/halls_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/house_keeping/housekeeping_home_page/bindings/house_keeping_binding.dart';
+import '../modules/house_keeping/housekeeping_home_page/views/house_keeping_view.dart';
+import '../modules/house_keeping/housekeeping_reservation/bindings/house_keeping_reservation_binding.dart';
+import '../modules/house_keeping/housekeeping_reservation/views/house_keeping_reservation_view.dart';
+import '../modules/house_keeping/housekeeping_services/bindings/house_keeping_services_binding.dart';
+import '../modules/house_keeping/housekeeping_services/views/house_keeping_services_view.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
 import '../modules/polman/bindings/polman_binding.dart';
@@ -28,6 +31,7 @@ import '../modules/rooms/views/rooms_view.dart';
 import '../modules/spa/spa_detail/bindings/spa_details_binding.dart';
 import '../modules/spa/spa_detail/views/spa_detail_view.dart';
 import '../modules/spa/spa_home/bindings/spa_binding.dart';
+import '../modules/spa/spa_home/views/spa_view.dart';
 import '../modules/spa/spa_home/views/spa_view.dart';
 import '../modules/spa/spa_hotel/bindings/spa_hotel_binding.dart';
 import '../modules/spa/spa_hotel/views/spa_hotel_view.dart';
@@ -43,7 +47,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.SPLASH;
+  static const INITIAL = Routes.RESTURANT;
 
   static final routes = [
     GetPage(
@@ -142,6 +146,16 @@ class AppPages {
       name: _Paths.HOUSEKEEPING_RESERVATION,
       page: () => const HouseKeepingReservationView(),
       binding: HouseKeepingReservationBinding(),
+    ),
+    GetPage(
+      name: _Paths.FOOD_SECTION,
+      page: () => const FoodSectionView(),
+      binding: FoodSectionBinding(),
+    ),
+    GetPage(
+      name: _Paths.FOOD_ITEM,
+      page: () => const FoodItemView(),
+      binding: FoodItemBinding(),
     ),
   ];
 }

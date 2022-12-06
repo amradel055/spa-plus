@@ -51,6 +51,11 @@ abstract class AppStrings {
   static const readless = "Read Less";
   static const orderpolman = "Order your Polman";
   static const foodService = "foodService";
+  static const todayOffers = "todayOffers";
+  static const sale = "sale";
+  static const minutes = "minutes";
+  static const sections = "sections";
+  static const LE = "LE";
 
 
 

@@ -24,12 +24,14 @@ class ImageWidget extends StatelessWidget {
     this.height,
     this.border,
     this.onPressed,
+    this.elevation = 0,
     this.isCircle = false,
     this.disablePreview = true,
     this.isProfile = false,
   }) :super(key: key);
 
   final String path;
+  final double elevation;
   final dynamic tag;
   final String? secondPath;
   final Color? color;
@@ -84,13 +86,17 @@ class ImageWidget extends StatelessWidget {
           shape: isCircle ? BoxShape.circle : BoxShape.rectangle,
           border: border,
           borderRadius: isCircle?null: BorderRadius.all(Radius.circular( radius ?? AppConstants.radius)),
-          color: Colors.transparent
+          color: Colors.transparent,
       ),
         decoration: BoxDecoration(
             shape: isCircle ? BoxShape.circle : BoxShape.rectangle,
             border: border,
             borderRadius: isCircle?null: BorderRadius.all(Radius.circular( radius ?? AppConstants.radius)),
-            color: backgroundColor
+            color: backgroundColor,
+            boxShadow: [
+            if(elevation > 0)
+          BoxShadow(color: Colors.black26,spreadRadius: elevation, blurRadius: elevation*3)
+        ]
         ),
         clipBehavior: Clip.antiAlias,
         child: child,

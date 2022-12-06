@@ -36,19 +36,14 @@ class AllServicesView extends GetView<AllServicesController> {
               itemBuilder: (context) => [
                 PopupMenuItem(
                   value: 1,
-                  child: DecoratedBox(
-                    decoration: BoxDecoration(
-                      color: Colors.white
-                    ),
-                    child: Row(
-                      children: [
-                        const Icon(Icons.logout,color: Colors.black,),
-                        SizedBox(
-                          width: 10.h,
-                        ),
-                        const Text(AppStrings.logout)
-                      ],
-                    ),
+                  child: Row(
+                    children: [
+                      const Icon(Icons.logout,color: Colors.black,),
+                      SizedBox(
+                        width: 10.h,
+                      ),
+                      const Text(AppStrings.logout)
+                    ],
                   ),
                 ),
                 // popupmenu item 2

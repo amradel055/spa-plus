@@ -101,7 +101,7 @@ final ThemeData lightTheme = ThemeData(
     elevation: 8,
     backgroundColor: Colors.black,
     shadowColor: Colors.black12,
-    systemOverlayStyle: SystemUiOverlayStyle.dark
+    systemOverlayStyle: SystemUiOverlayStyle.light
   ),
   focusColor: AppColors.primary,
   textSelectionTheme: TextSelectionThemeData(cursorColor: AppColors.primary), colorScheme: const ColorScheme.light().copyWith(primary: AppColors.primary).copyWith(background: Colors.white)
