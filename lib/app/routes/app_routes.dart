@@ -21,6 +21,12 @@ abstract class Routes {
   static const SPADETAILS = _Paths.SPA_DETAILS;
   static const HOUSEKEEPING_SERVICES = _Paths.HOUSEKEEPING_SERVICES;
   static const HOUSEKEEPING_RESERVATION = _Paths.HOUSEKEEPING_RESERVATION;
+  static const HALLS_SEARCH = _Paths.HALLS_SEARCH;
+  static const ALL_HALLS = _Paths.ALL_HALLS;
+  static const HALL_DETAILS = _Paths.HALL_DETAILS;
+
+
+
 
 
 
@@ -49,6 +55,12 @@ abstract class _Paths {
   static const SPA_DETAILS = '/spa-details';
   static const HOUSEKEEPING_SERVICES = '/housekeeping-services';
   static const HOUSEKEEPING_RESERVATION = '/housekeeping-reservation';
+  static const HALLS_SEARCH = '/halls-search';
+  static const ALL_HALLS = '/all-halls';
+  static const HALL_DETAILS = '/halls-details';
+
+
+
 
 
 

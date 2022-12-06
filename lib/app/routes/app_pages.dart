@@ -1,6 +1,12 @@
 
+import 'package:easy_hotel/app/modules/halls/all_halls/bindings/all_halls_page_binding.dart';
+import 'package:easy_hotel/app/modules/halls/all_halls/views/all_halls_page_view.dart';
+import 'package:easy_hotel/app/modules/halls/hall_detail/bindings/hall_details_binding.dart';
+import 'package:easy_hotel/app/modules/halls/hall_detail/views/hall_detail_view.dart';
 import 'package:easy_hotel/app/modules/halls/halls_homepage/bindings/halls_binding.dart';
 import 'package:easy_hotel/app/modules/halls/halls_homepage/views/halls_view.dart';
+import 'package:easy_hotel/app/modules/halls/halls_search/bindings/halls_search_page_binding.dart';
+import 'package:easy_hotel/app/modules/halls/halls_search/views/halls_search_page_view.dart';
 import 'package:easy_hotel/app/modules/house_keeping/housekeeping_home_page/bindings/house_keeping_binding.dart';
 import 'package:easy_hotel/app/modules/house_keeping/housekeeping_home_page/views/house_keeping_view.dart';
 import 'package:easy_hotel/app/modules/house_keeping/housekeeping_reservation/bindings/house_keeping_reservation_binding.dart';
@@ -142,6 +148,21 @@ class AppPages {
       name: _Paths.HOUSEKEEPING_RESERVATION,
       page: () => const HouseKeepingReservationView(),
       binding: HouseKeepingReservationBinding(),
+    ),
+    GetPage(
+      name: _Paths.HALLS_SEARCH,
+      page: () => const HallsSearchPageView(),
+      binding: HallsSearchPageBinding(),
+    ),
+    GetPage(
+      name: _Paths.ALL_HALLS,
+      page: () => const AllHallsPageView(),
+      binding: AllHallsPageBinding(),
+    ),
+    GetPage(
+      name: _Paths.HALL_DETAILS,
+      page: () => const HallDetailView(),
+      binding: HallDetailsBinding(),
     ),
   ];
 }

@@ -6,8 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Halls extends StatelessWidget {
-  const Halls({Key? key, required this.image}) : super(key: key);
+  const Halls({Key? key, required this.image, required this.name}) : super(key: key);
   final String image;
+  final String name;
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +37,7 @@ class Halls extends StatelessWidget {
                   image: DecorationImage(
                     fit: BoxFit.cover,
                     image: NetworkImage(
-                        'https://www.ana3rwsa.com/uploads/shops_albums/%D9%82%D8%A7%D8%B9%D8%A7%D8%AA%D8%A7%D9%81%D8%B1%D8%A7%D8%AD-AL-MasahHotel/cfee4df4c5edd3be36168411010f2975.jpg'),
+                      image),
                   )
               ),
 
@@ -45,7 +46,7 @@ class Halls extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "halls.name!",
+                    name,
 
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,

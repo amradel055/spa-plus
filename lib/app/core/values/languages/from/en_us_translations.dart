@@ -36,4 +36,5 @@ final Map<String, String> enUs = {
   AppStrings.readless: 'Read Less..',
   AppStrings.orderpolman: 'Order your Polman',
   AppStrings.foodService: 'Food service',
+
 };
