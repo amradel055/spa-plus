@@ -12,26 +12,23 @@ class HousekeepingServicesWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size =MediaQuery.of(context).size;
-    return Padding(
-      padding:  EdgeInsets.fromLTRB(size.width*.05, size.height*.06,size.width*.05, 0),
-      child: GestureDetector(onTap: (){
-        Get.toNamed(Routes.HOUSEKEEPING_SERVICES);
-      },
-        child: Container(
-          decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(20.00)),
-            border:  Border.all(color: AppColors.appGreyDark,width: 2),
-            color: Colors.blueAccent,
-          ),
-          child: Column(
-            children: [
-              ImageWidget(path: image,  height:  size.height * 0.17,
-                width: size.width * 0.45,fit: BoxFit.cover,),
-              Padding(
-              padding:  EdgeInsets.only(top:size.height*.01),
-              child: const TextWidget("house.name!", textAlign: TextAlign.center,weight:FontWeight.bold,size: 20,),
-            )
-            ],
-          ),
+    return GestureDetector(onTap: (){
+      Get.toNamed(Routes.HOUSEKEEPING_SERVICES);
+    },
+      child: Container(
+        decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(20.00)),
+          border:  Border.all(color: AppColors.appGreyDark,width: 2),
+          color: Colors.blueAccent,
+        ),
+        child: Column(
+          children: [
+            ImageWidget(path: image,  height:  size.height * 0.18,
+              width: size.width * 0.45,fit: BoxFit.cover,),
+            Padding(
+            padding:  EdgeInsets.only(top:size.height*.01),
+            child: const TextWidget("house.name!", textAlign: TextAlign.center,weight:FontWeight.bold,size: 20,),
+          )
+          ],
         ),
       ),
     );

@@ -49,6 +49,8 @@ abstract class AppStrings {
   static const workhours = "Work Hours";
   static const readmore = "Read More";
   static const readless = "Read Less";
+  static const orderpolman = "Order your Polman";
+
 
 
 

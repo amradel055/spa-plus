@@ -36,6 +36,8 @@ final Map<String, String> arEG = {
   AppStrings.address: 'العنوان',
   AppStrings.readmore: 'المزيد..',
   AppStrings.readless: 'عوده..',
+  AppStrings.orderpolman: 'اطلب حامل حقائب..',
+
 
 
 

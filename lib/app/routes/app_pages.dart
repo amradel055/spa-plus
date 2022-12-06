@@ -1,6 +1,8 @@
 
 import 'package:easy_hotel/app/modules/house_keeping/housekeeping_home_page/bindings/house_keeping_binding.dart';
 import 'package:easy_hotel/app/modules/house_keeping/housekeeping_home_page/views/house_keeping_view.dart';
+import 'package:easy_hotel/app/modules/house_keeping/housekeeping_reservation/bindings/house_keeping_reservation_binding.dart';
+import 'package:easy_hotel/app/modules/house_keeping/housekeeping_reservation/views/house_keeping_reservation_view.dart';
 import 'package:easy_hotel/app/modules/house_keeping/housekeeping_services/bindings/house_keeping_services_binding.dart';
 import 'package:easy_hotel/app/modules/house_keeping/housekeeping_services/views/house_keeping_services_view.dart';
 import 'package:get/get.dart';
@@ -135,6 +137,11 @@ class AppPages {
       name: _Paths.HOUSEKEEPING_SERVICES,
       page: () => const HouseKeepingServicesView(),
       binding: HouseKeepingServicesBinding(),
+    ),
+    GetPage(
+      name: _Paths.HOUSEKEEPING_RESERVATION,
+      page: () => const HouseKeepingReservationView(),
+      binding: HouseKeepingReservationBinding(),
     ),
   ];
 }

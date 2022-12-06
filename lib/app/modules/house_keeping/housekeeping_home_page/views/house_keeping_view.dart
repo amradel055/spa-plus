@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_hotel/app/components/text_field_widget.dart';
 import 'package:easy_hotel/app/components/text_widget.dart';
 import 'package:easy_hotel/app/core/values/app_assets.dart';
@@ -42,72 +43,63 @@ class HouseKeepingView extends GetView<HouseKeepingController> {
           ),
           centerTitle: true,
         ),
-        body: ListView(
-          padding: EdgeInsets.zero,
+        body: Column(
           children: [
             Container(
               height: 200.h,
               decoration: const BoxDecoration(
                   image: DecorationImage(
-                      image: NetworkImage("https://image.shutterstock.com/image-photo/group-friends-professional-cleaners-tiding-260nw-395889778.jpg"), fit: BoxFit.fitWidth)),
+                      image: CachedNetworkImageProvider("https://image.shutterstock.com/image-photo/group-friends-professional-cleaners-tiding-260nw-395889778.jpg"), fit: BoxFit.fitWidth)),
 
-              padding:  EdgeInsets.fromLTRB(50.h, 75.h,0, 0),
+              padding:  EdgeInsets.fromLTRB(0, 75.h,0, 0),
               child:  Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
+                  Center(child: TextWidget(AppStrings.searchlabel,textColor: Colors.white,size: 20.h,weight: FontWeight.bold,)),
                   Center(
-                      child: TextWidget(AppStrings.searchlabel,textColor: Colors.white,size: 20.h,weight: FontWeight.bold,)),
-                  Row(
-                    children: [
-                      Container(
-                          width: size.width*.8 ,
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(10)
-                          ),
-                          child:
-                          GestureDetector(
-                            onTap:(){Get.toNamed(Routes.SPASEARCHPAGE);},
-                            child: const  TextFieldWidget(
-                              hint: AppStrings.search,
-                              suffixIcon: Icons.search,
-                              ltr: true,
-
-                            ),
-                          )
-
-
-                      ),
-
-                    ],
-                  )],
-              ),
-
-
-            ),
-            Column(crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding:  EdgeInsets.fromLTRB(20.h, 0, 20.h, 10.h),
-                    child: TextWidget(AppStrings.searchlabel,textAlign: TextAlign.left,weight: FontWeight.bold,size: 20.h,),
-                  ),
-                  SizedBox(
-                      height: size.height*.7,
-                      child:
-                      GridView.builder(
-                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                          mainAxisSpacing: 0,
-                          crossAxisSpacing: 0,
+                    child: Container(
+                        width: size.width*.8 ,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10)
                         ),
-                        itemCount: 9,
-                        scrollDirection: Axis.vertical,
-                        itemBuilder: (context, index) {
-                          return const HousekeepingServicesWidget(image: "https://image.shutterstock.com/image-photo/group-friends-professional-cleaners-tiding-260nw-395889778.jpg",);
-                        },
-
-                      )
+                        child: TextFieldWidget(
+                          hint: AppStrings.search,
+                          suffixIcon: Icons.search,
+                          onChange: (value){},
+                          ltr: true,
+                        )
+                    ),
                   ),
-                ])
+                ],
+              ),
+            ),
+            Expanded(
+              child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding:  EdgeInsets.fromLTRB(20.h, 0, 20.h, 10.h),
+                      child: TextWidget(AppStrings.searchlabel,textAlign: TextAlign.left,weight: FontWeight.bold,size: 20.h,),
+                    ),
+                    Expanded(
+                        child:
+                        GridView.builder(
+                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2,
+                            mainAxisSpacing: 20.h,
+                            crossAxisSpacing: 20.w,
+                          ),
+                          padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 15),
+                          itemCount: 9,
+                          scrollDirection: Axis.vertical,
+                          itemBuilder: (context, index) {
+                            return const HousekeepingServicesWidget(image: "https://image.shutterstock.com/image-photo/group-friends-professional-cleaners-tiding-260nw-395889778.jpg",);
+                          },
+
+                        )
+                    ),
+                  ]),
+            )
           ],
         )
     );

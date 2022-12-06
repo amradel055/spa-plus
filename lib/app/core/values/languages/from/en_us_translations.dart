@@ -34,6 +34,8 @@ final Map<String, String> enUs = {
   AppStrings.directions: 'Directions',
   AppStrings.readmore: 'Read More..',
   AppStrings.readless: 'Read Less..',
+  AppStrings.orderpolman: 'Order your Polman',
+
 
 
 
