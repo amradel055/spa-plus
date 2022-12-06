@@ -25,29 +25,6 @@ class SpaSearchPageView extends GetView<SpaSearchPageController> {
 
     return Scaffold(
       extendBodyBehindAppBar: true,
-        floatingActionButtonLocation: ExpandableFab.location,
-        floatingActionButton: ExpandableFab(
-          backgroundColor: AppColors.appHallsRedDark,
-          child: const Icon(Icons.sort),
-
-          children: [
-          FloatingActionButton.small(
-            backgroundColor: AppColors.appHallsRedDark,
-            child: const Icon(Icons.filter),
-            onPressed: () {},
-          ),
-          FloatingActionButton.small(
-            backgroundColor: AppColors.appHallsRedDark,
-            child: const Icon(Icons.home),
-            onPressed: () {},
-          ),
-          FloatingActionButton.small(
-            backgroundColor: AppColors.appHallsRedDark,
-            child: const Icon(Icons.sort),
-            onPressed: () {},
-          ),
-        ],
-      ),
       appBar: AppBar(
         elevation: 0,
         backgroundColor: AppColors.appHallsRedDark,
@@ -57,8 +34,6 @@ class SpaSearchPageView extends GetView<SpaSearchPageController> {
           hint: AppStrings.search,
           suffixIcon: Icons.search,
           ltr: true,
-
-
         ),
         centerTitle: true,
       ),
@@ -95,7 +70,31 @@ class SpaSearchPageView extends GetView<SpaSearchPageController> {
 
 
         ],
-      )
+      ),
+      floatingActionButtonLocation: ExpandableFab.location,
+      floatingActionButton: ExpandableFab(
+        backgroundColor: AppColors.appHallsRedDark,
+        closeButtonHeroTag: UniqueKey(),
+        openButtonHeroTag: UniqueKey(),
+        child: const Icon(Icons.filter_list_rounded, color: Colors.white,),
+        children: [
+          FloatingActionButton.small(
+            backgroundColor: AppColors.appHallsRedDark,
+            child: const Icon(Icons.filter, color: Colors.white,),
+            onPressed: () {},
+          ),
+          FloatingActionButton.small(
+            backgroundColor: AppColors.appHallsRedDark,
+            child: const Icon(Icons.home, color: Colors.white,),
+            onPressed: () {},
+          ),
+          FloatingActionButton.small(
+            backgroundColor: AppColors.appHallsRedDark,
+            child: const Icon(Icons.sort, color: Colors.white,),
+            onPressed: () {},
+          ),
+        ],
+      ),
     );
   }
 }
