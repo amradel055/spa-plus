@@ -1,4 +1,6 @@
 
+import 'package:easy_hotel/app/modules/halls/halls_homepage/bindings/halls_binding.dart';
+import 'package:easy_hotel/app/modules/halls/halls_homepage/views/halls_view.dart';
 import 'package:easy_hotel/app/modules/house_keeping/housekeeping_home_page/bindings/house_keeping_binding.dart';
 import 'package:easy_hotel/app/modules/house_keeping/housekeeping_home_page/views/house_keeping_view.dart';
 import 'package:easy_hotel/app/modules/house_keeping/housekeeping_reservation/bindings/house_keeping_reservation_binding.dart';
@@ -6,13 +8,10 @@ import 'package:easy_hotel/app/modules/house_keeping/housekeeping_reservation/vi
 import 'package:easy_hotel/app/modules/house_keeping/housekeeping_services/bindings/house_keeping_services_binding.dart';
 import 'package:easy_hotel/app/modules/house_keeping/housekeeping_services/views/house_keeping_services_view.dart';
 import 'package:get/get.dart';
-
 import '../modules/allServices/bindings/all_services_binding.dart';
 import '../modules/allServices/views/all_services_view.dart';
 import '../modules/cars/bindings/cars_binding.dart';
 import '../modules/cars/views/cars_view.dart';
-import '../modules/halls/bindings/halls_binding.dart';
-import '../modules/halls/views/halls_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
