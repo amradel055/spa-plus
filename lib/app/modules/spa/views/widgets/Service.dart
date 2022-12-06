@@ -10,7 +10,6 @@ class SpaServicesWidget extends StatelessWidget {
     return SizedBox(
       width: size.width*.15,
       height: size.height*.1,
-
       child: Column(
         children: [
           Container(

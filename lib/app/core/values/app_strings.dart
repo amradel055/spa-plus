@@ -41,6 +41,7 @@ abstract class AppStrings {
   static const search = "search";
   static const searchlabel = "search for services and reseve it..";
   static const offers = "offers";
+  static const carsChoose = "اختر الخدمة التي تريد رؤيتها";
 
 
 

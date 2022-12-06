@@ -1,14 +1,17 @@
+
 import 'package:get/get.dart';
 
 import '../modules/allServices/bindings/all_services_binding.dart';
 import '../modules/allServices/views/all_services_view.dart';
-import '../modules/cars/bindings/cars_binding.dart';
-import '../modules/cars/views/cars_view.dart';
+import '../modules/cars/cars_category/bindings/cars_category_binding.dart';
+import '../modules/cars/cars_category/views/cars_category_view.dart';
+import '../modules/cars/cars_main/bindings/cars_main_binding.dart';
+import '../modules/cars/cars_main/views/cars_main_view.dart';
+import '../modules/cars/cars_order/bindings/cars_order_binding.dart';
+import '../modules/cars/cars_order/views/cars_order_view.dart';
 import '../modules/halls/bindings/halls_binding.dart';
 import '../modules/halls/views/halls_view.dart';
 import '../modules/home/bindings/home_binding.dart';
-import '../modules/home/bindings/home_binding.dart';
-import '../modules/home/views/home_view.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/house_keeping/bindings/house_keeping_binding.dart';
 import '../modules/house_keeping/views/house_keeping_view.dart';
@@ -84,8 +87,8 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.CARS,
-      page: () => const CarsView(),
-      binding: CarsBinding(),
+      page: () => const CarsMainView(),
+      binding: CarsMainBinding(),
     ),
     GetPage(
       name: _Paths.HOUSE_KEEPING,
@@ -101,6 +104,16 @@ class AppPages {
       name: _Paths.POLMAN,
       page: () => const PolmanView(),
       binding: PolmanBinding(),
+    ),
+    GetPage(
+      name: _Paths.carsCategory,
+      page: () => const CarsCategoryView(),
+      binding: CarsCategoryBinding(),
+    ),
+    GetPage(
+      name: _Paths.carsOrder,
+      page: () => const CarsOrderView(),
+      binding: CarsOrderBinding(),
     ),
   ];
 }

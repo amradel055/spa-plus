@@ -12,6 +12,8 @@ abstract class Routes {
   static const RESTURANT = _Paths.RESTURANT;
   static const HALLS = _Paths.HALLS;
   static const CARS = _Paths.CARS;
+  static const carsCategory = _Paths.carsCategory;
+  static const carsOrder = _Paths.carsOrder;
   static const HOUSE_KEEPING = _Paths.HOUSE_KEEPING;
   static const ROOMS = _Paths.ROOMS;
   static const POLMAN = _Paths.POLMAN;
@@ -28,6 +30,8 @@ abstract class _Paths {
   static const RESTURANT = '/resturant';
   static const HALLS = '/halls';
   static const CARS = '/cars';
+  static const carsCategory = '/carsCategory';
+  static const carsOrder = '/carsOrder';
   static const HOUSE_KEEPING = '/house-keeping';
   static const ROOMS = '/rooms';
   static const POLMAN = '/polman';
