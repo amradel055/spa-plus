@@ -1,5 +1,6 @@
 import 'package:easy_hotel/app/components/text_widget.dart';
 import 'package:easy_hotel/app/core/values/app_colors.dart';
+import 'package:easy_hotel/app/core/values/app_constants.dart';
 import 'package:easy_hotel/app/modules/cars/cars_order/views/widgets/cars_order_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -127,30 +128,33 @@ class CarsOrderView extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(
-                  width: size.width * 0.9,
-                  child: Row(
-                    mainAxisAlignment:  MainAxisAlignment.spaceEvenly,
-                    children: [
-                      SizedBox(
-                        width: size.width * 0.4 ,
-                        child: OutlinedButton(
-                            onPressed: (){
-                            },
-                            style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all(Colors.redAccent),
-                            ),
-                            child: const TextWidget("احجز الان"   , textColor:Colors.white,weight: FontWeight.bold, size: 15,)),
-                      ),
-                      SizedBox(
-                        child: OutlinedButton(
-                            onPressed: (){},
-                            style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all(Colors.white),
-                            ),
-                            child: const TextWidget("القائمة الرئيسيه"   , textColor: Colors.redAccent , weight: FontWeight.bold, size: 15,)),
-                      ),
-                    ],
+                Padding(
+                  padding: const EdgeInsets.all(AppConstants.padding),
+                  child: SizedBox(
+                    width: size.width * 0.9,
+                    child: Row(
+                      mainAxisAlignment:  MainAxisAlignment.spaceEvenly,
+                      children: [
+                        SizedBox(
+                          width: size.width * 0.4 ,
+                          child: OutlinedButton(
+                              onPressed: (){
+                              },
+                              style: ButtonStyle(
+                                backgroundColor: MaterialStateProperty.all(Colors.redAccent),
+                              ),
+                              child: const TextWidget("احجز الان"   , textColor:Colors.white,weight: FontWeight.bold, size: 20,)),
+                        ),
+                        SizedBox(
+                          child: OutlinedButton(
+                              onPressed: (){},
+                              style: ButtonStyle(
+                                backgroundColor: MaterialStateProperty.all(Colors.white),
+                              ),
+                              child: const TextWidget("القائمة الرئيسيه"   , textColor: Colors.redAccent , weight: FontWeight.bold, size: 20,)),
+                        ),
+                      ],
+                    ),
                   ),
                 )
               ],

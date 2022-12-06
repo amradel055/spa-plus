@@ -16,52 +16,55 @@ class CarsMainView extends GetView<CarsMainController> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar:CarsMainAppbar(size.height * 0.25 , "تمتع بالراحة" , "استمتع بخدمات اضافية مميزه لرحلتك" , false),
-      body: SizedBox(
-        height: size.height * 0.75,
-        width: size.width * 0.95,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SizedBox(
-              height: size.height * 0.06,
-              width: size.width * 0.95,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const TextWidget(
-                    AppStrings.carsChoose ,
-                    textColor:AppColors.appBlue ,
-                    size: 20,
-                    weight: FontWeight.bold,
-                  ),
-                  Container(
-                    color: Colors.grey[400],
-                    width: size.width * 0.3,
-                    height: size.height * 0.004,
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(AppConstants.padding),
-              child: SizedBox(
+      body: Directionality(
+        textDirection: TextDirection.ltr,
+        child: SizedBox(
+          height: size.height * 0.75,
+          width: size.width * 0.95,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(
+                height: size.height * 0.06,
                 width: size.width * 0.95,
-                height: size.height * 0.55,
-                child:  GridView.count(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: size.width * 0.1,
-                  mainAxisSpacing: size.height * 0.06,
-                  childAspectRatio: size.aspectRatio * 1.9,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    // for(GroupModel category in _categories)
-                    for(int i = 0 ; i < 2 ; i++)
-                      const CarsMainCategoryWidget()
+                    const TextWidget(
+                      AppStrings.carsChoose ,
+                      textColor:AppColors.appBlue ,
+                      size: 20,
+                      weight: FontWeight.bold,
+                    ),
+                    Container(
+                      color: Colors.grey[400],
+                      width: size.width * 0.3,
+                      height: size.height * 0.004,
+                    ),
                   ],
                 ),
               ),
-            ),
-          ],
+              Padding(
+                padding: const EdgeInsets.all(AppConstants.padding),
+                child: SizedBox(
+                  width: size.width * 0.95,
+                  height: size.height * 0.55,
+                  child:  GridView.count(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: size.width * 0.1,
+                    mainAxisSpacing: size.height * 0.06,
+                    childAspectRatio: size.aspectRatio * 1.9,
+                    children: [
+                      // for(GroupModel category in _categories)
+                      for(int i = 0 ; i < 2 ; i++)
+                        const CarsMainCategoryWidget()
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

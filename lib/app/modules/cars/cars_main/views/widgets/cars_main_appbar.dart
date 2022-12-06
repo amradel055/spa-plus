@@ -11,58 +11,61 @@ class CarsMainAppbar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size ;
-    return Container(
-      height: size.height,
-      width: size.width ,
-      color: Colors.black,
-      child: Padding(
-        padding:  EdgeInsets.fromLTRB(size.width * 0.01,0,size.width * 0.04,0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(0 ,0 ,0 ,0 ),
-              child: SizedBox(
-                width: size.width,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return Directionality(
+      textDirection: TextDirection.ltr,
+      child: Container(
+        height: size.height,
+        width: size.width ,
+        color: Colors.black,
+        child: Padding(
+          padding:  EdgeInsets.fromLTRB(size.width * 0.01,0,size.width * 0.04,0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0 ,0 ,0 ,0 ),
+                child: SizedBox(
+                  width: size.width,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      IconButton(
+                          onPressed: (){
+                            Navigator.pop(context);
+                          },
+                          icon: Icon(Icons.arrow_back_ios , color: Colors.white, size: size.width * 0.06,)),
+                      IconButton(
+                          onPressed: (){
+                          },
+                          icon: Icon(Icons.menu , color: Colors.white, size: size.width * 0.06,)),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: size.width * 0.9,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: centerTitle ? CrossAxisAlignment.center :  CrossAxisAlignment.end  ,
                   children: [
-                    IconButton(
-                        onPressed: (){
-                          Navigator.pop(context);
-                        },
-                        icon: Icon(Icons.arrow_back_ios , color: Colors.white, size: size.width * 0.06,)),
-                    IconButton(
-                        onPressed: (){
-                        },
-                        icon: Icon(Icons.menu , color: Colors.white, size: size.width * 0.06,)),
+                    TextWidget(
+                      title ,
+                      textColor: AppColors.white,
+                      size: 21,
+                      weight: FontWeight.bold,
+                      textAlign: TextAlign.center,),
+                    TextWidget(
+                      subTitle ,
+                      size: 20,
+                      textColor: AppColors.white,
+                      weight: FontWeight.bold,
+                    )
+
                   ],
                 ),
               ),
-            ),
-            SizedBox(
-              width: size.width * 0.9,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                crossAxisAlignment: centerTitle ? CrossAxisAlignment.center :  CrossAxisAlignment.end  ,
-                children: [
-                  TextWidget(
-                    title ,
-                    textColor: AppColors.white,
-                    size: 21,
-                    weight: FontWeight.bold,
-                    textAlign: TextAlign.center,),
-                  TextWidget(
-                    subTitle ,
-                    size: 20,
-                    textColor: AppColors.white,
-                    weight: FontWeight.bold,
-                  )
-
-                ],
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
