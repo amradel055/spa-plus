@@ -38,5 +38,10 @@ final Map<String, String> arEG = {
   AppStrings.readless: 'عوده..',
   AppStrings.orderpolman: 'اطلب حامل حقائب..',
   AppStrings.foodService: 'خدمة المطاعم',
+  AppStrings.todayOffers: 'عروض اليوم',
+  AppStrings.sale: 'خصم',
+  AppStrings.minutes: 'د',
+  AppStrings.sections: 'الأقسام',
+  AppStrings.LE: 'جنيه',
 
 };

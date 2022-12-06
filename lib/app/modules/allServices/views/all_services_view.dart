@@ -20,6 +20,7 @@ class AllServicesView extends GetView<AllServicesController> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
         appBar: AppBar(
+          backgroundColor: AppColors.backgroundColor,
           leading: Padding(
             padding: const EdgeInsets.fromLTRB(10.0, 3, 0, 0),
             child: TextWidget(
