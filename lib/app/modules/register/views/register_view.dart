@@ -41,7 +41,7 @@ class RegisterView extends GetView<RegisterController> {
                     children: [
                       TextFieldWidget(
                         controller:controller.firstNameameController,
-                        hint: AppStrings.firstName,
+                        label: AppStrings.firstName,
                         suffixIcon: Icons.pin,
                         textInputAction: TextInputAction.next,
                         ltr: true,
@@ -50,7 +50,7 @@ class RegisterView extends GetView<RegisterController> {
                       space,
                       TextFieldWidget(
                         controller:controller.emailController,
-                        hint: AppStrings.lastName,
+                        label: AppStrings.lastName,
                         suffixIcon: Icons.pin,
                         textInputAction: TextInputAction.next,
                         ltr: true,
@@ -59,7 +59,7 @@ class RegisterView extends GetView<RegisterController> {
                       space,
                       TextFieldWidget(
                         controller:controller.emailController,
-                        hint: AppStrings.email,
+                        label: AppStrings.email,
                         suffixIcon: Icons.email,
                         textInputAction: TextInputAction.next,
                         ltr: true,
@@ -68,7 +68,7 @@ class RegisterView extends GetView<RegisterController> {
                       space,
                       TextFieldWidget(
                         controller:controller.phoneController,
-                        hint: AppStrings.phone,
+                        label: AppStrings.phone,
                         suffixIcon: Icons.phone,
                         textInputAction: TextInputAction.next,
                         ltr: true,
@@ -77,7 +77,7 @@ class RegisterView extends GetView<RegisterController> {
                       space,
                       TextFieldWidget(
                         controller:controller.passwordController,
-                        hint: AppStrings.password,
+                        label: AppStrings.password,
                         suffixIcon: Icons.password,
                         ltr: true,
                         validator: AppValidator.forceValue,

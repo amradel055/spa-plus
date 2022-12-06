@@ -12,7 +12,7 @@ class TextFieldWidget extends StatelessWidget {
   const TextFieldWidget({Key? key,
     this.upLabel,
     this.initialValue,
-    this.hint,
+    this.label,
     this.prefix,
     this.prefixWidget,
     this.prefixIcon,
@@ -30,6 +30,7 @@ class TextFieldWidget extends StatelessWidget {
     this.justNumbers = false,
     this.enabled = true,
     this.textInputType,
+    this.hint,
     this.controller,
     this.ltr,
     this.maxLines,
@@ -50,6 +51,7 @@ class TextFieldWidget extends StatelessWidget {
   final double heightBetween;
   final double? suffixIconSize;
   final EdgeInsets? contentPadding;
+  final String? label;
   final String? hint;
   final int? maxLength;
   final Color? suffixIconColor;
@@ -130,7 +132,8 @@ class TextFieldWidget extends StatelessWidget {
                   textAlignVertical: TextAlignVertical.top,
                   textAlign: textAlign ?? TextAlign.start,
                   decoration: InputDecoration(
-                    labelText: hint?.tr,
+                    labelText: label?.tr,
+                    hintText: hint?.tr,
                     counterText: "",
                     fillColor: AppColors.white,
                     filled: true,

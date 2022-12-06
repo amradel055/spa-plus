@@ -50,6 +50,7 @@ abstract class AppStrings {
   static const readmore = "Read More";
   static const readless = "Read Less";
   static const orderpolman = "Order your Polman";
+  static const foodService = "foodService";
 
 
 

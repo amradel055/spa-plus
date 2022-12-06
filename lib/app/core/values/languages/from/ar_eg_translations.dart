@@ -37,20 +37,6 @@ final Map<String, String> arEG = {
   AppStrings.readmore: 'المزيد..',
   AppStrings.readless: 'عوده..',
   AppStrings.orderpolman: 'اطلب حامل حقائب..',
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  AppStrings.foodService: 'خدمة المطاعم',
 
 };

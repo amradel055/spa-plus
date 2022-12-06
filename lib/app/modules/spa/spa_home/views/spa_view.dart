@@ -67,7 +67,7 @@ class SpaView extends GetView<SpaController> {
                       onTap:(){Get.toNamed(Routes.SPASEARCHPAGE);},
                       child:   TextFieldWidget(
                           enabled: false,
-                          hint: AppStrings.search,
+                          label: AppStrings.search,
                           suffixIcon: Icons.search,
                           ltr: true,
                            onTap: (){Get.toNamed(Routes.SPASEARCHPAGE);},

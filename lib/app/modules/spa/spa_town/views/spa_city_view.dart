@@ -33,7 +33,7 @@ class SpaCityView extends GetView<SpaCityController> {
         foregroundColor: Colors.white,
         title:  const  TextFieldWidget(
           enabled: true,
-          hint: AppStrings.search,
+          label: AppStrings.search,
           suffixIcon: Icons.search,
           ltr: true,
           // onSubmitted: Get.toNamed(Routes.SPASEARCHPAGE()),

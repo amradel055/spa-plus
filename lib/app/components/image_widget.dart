@@ -47,7 +47,6 @@ class ImageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final heroTag = tag??UniqueKey();
     Widget? child;
     if(path.contains("http")) {
       child = CachedNetworkImage(imageUrl: path,fit: fit,height: height,width: width,color: color,
@@ -67,12 +66,15 @@ class ImageWidget extends StatelessWidget {
     } else {
       child = Image.asset(path, color: color,width: width,height: height,fit: fit,);
     }
+    if(tag != null){
+      child = Hero(tag: tag, child: child);
+    }
     return GestureDetector(
       onTap: (disablePreview && onPressed == null)?null:(){
         if(onPressed != null) {
           onPressed!();
         } else {
-          Get.to(() => ImagePreviewWidget(path: path,tag: heroTag));
+          Get.to(() => ImagePreviewWidget(path: path,tag: tag));
         }
       },
       child: Container(
@@ -91,7 +93,7 @@ class ImageWidget extends StatelessWidget {
             color: backgroundColor
         ),
         clipBehavior: Clip.antiAlias,
-        child: Hero(tag: heroTag,child: child),
+        child: child,
       ),
     );
   }

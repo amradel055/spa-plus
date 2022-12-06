@@ -64,7 +64,7 @@ class HouseKeepingView extends GetView<HouseKeepingController> {
                             borderRadius: BorderRadius.circular(10)
                         ),
                         child: TextFieldWidget(
-                          hint: AppStrings.search,
+                          label: AppStrings.search,
                           suffixIcon: Icons.search,
                           onChange: (value){},
                           ltr: true,

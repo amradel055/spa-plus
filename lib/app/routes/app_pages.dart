@@ -7,6 +7,7 @@ import 'package:easy_hotel/app/modules/house_keeping/housekeeping_reservation/bi
 import 'package:easy_hotel/app/modules/house_keeping/housekeeping_reservation/views/house_keeping_reservation_view.dart';
 import 'package:easy_hotel/app/modules/house_keeping/housekeeping_services/bindings/house_keeping_services_binding.dart';
 import 'package:easy_hotel/app/modules/house_keeping/housekeeping_services/views/house_keeping_services_view.dart';
+import 'package:easy_hotel/app/modules/spa/spa_home/views/spa_view.dart';
 import 'package:get/get.dart';
 import '../modules/allServices/bindings/all_services_binding.dart';
 import '../modules/allServices/views/all_services_view.dart';
