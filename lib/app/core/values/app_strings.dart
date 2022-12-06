@@ -63,6 +63,9 @@ abstract class AppStrings {
 
 
 
+  static const carsChoose = "اختر الخدمة التي تريد رؤيتها";
+
+
 
 
 

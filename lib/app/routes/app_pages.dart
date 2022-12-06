@@ -1,16 +1,25 @@
 import 'package:get/get.dart';
-
 import '../modules/allServices/bindings/all_services_binding.dart';
 import '../modules/allServices/views/all_services_view.dart';
-import '../modules/cars/bindings/cars_binding.dart';
-import '../modules/cars/views/cars_view.dart';
-import '../modules/food_item/bindings/food_item_binding.dart';
-import '../modules/food_item/views/food_item_view.dart';
+import '../modules/cars/cars_category/bindings/cars_category_binding.dart';
+import '../modules/cars/cars_category/views/cars_category_view.dart';
+import '../modules/cars/cars_main/bindings/cars_main_binding.dart';
+import '../modules/cars/cars_main/views/cars_main_view.dart';
+import '../modules/cars/cars_order/bindings/cars_order_binding.dart';
+import '../modules/cars/cars_order/views/cars_order_view.dart';
 import '../modules/food_section/bindings/food_section_binding.dart';
 import '../modules/food_section/views/food_section_view.dart';
+import '../modules/halls/all_halls/bindings/all_halls_page_binding.dart';
+import '../modules/halls/all_halls/views/all_halls_page_view.dart';
+import '../modules/halls/hall_detail/bindings/hall_details_binding.dart';
+import '../modules/halls/hall_detail/views/hall_detail_view.dart';
 import '../modules/halls/halls_homepage/bindings/halls_binding.dart';
 import '../modules/halls/halls_homepage/views/halls_view.dart';
+import '../modules/halls/halls_search/bindings/halls_search_page_binding.dart';
+import '../modules/halls/halls_search/views/halls_search_page_view.dart';
 import '../modules/home/bindings/home_binding.dart';
+import '../modules/home/bindings/home_binding.dart';
+import '../modules/home/views/home_view.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/house_keeping/housekeeping_home_page/bindings/house_keeping_binding.dart';
 import '../modules/house_keeping/housekeeping_home_page/views/house_keeping_view.dart';
@@ -32,7 +41,6 @@ import '../modules/spa/spa_detail/bindings/spa_details_binding.dart';
 import '../modules/spa/spa_detail/views/spa_detail_view.dart';
 import '../modules/spa/spa_home/bindings/spa_binding.dart';
 import '../modules/spa/spa_home/views/spa_view.dart';
-import '../modules/spa/spa_home/views/spa_view.dart';
 import '../modules/spa/spa_hotel/bindings/spa_hotel_binding.dart';
 import '../modules/spa/spa_hotel/views/spa_hotel_view.dart';
 import '../modules/spa/spa_search/bindings/spa_search_page_binding.dart';
@@ -47,7 +55,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.FOOD_ITEM;
+  static const INITIAL = Routes.SPLASH;
 
   static final routes = [
     GetPage(
@@ -99,8 +107,8 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.CARS,
-      page: () => const CarsView(),
-      binding: CarsBinding(),
+      page: () => const CarsMainView(),
+      binding: CarsMainBinding(),
     ),
     GetPage(
       name: _Paths.HOUSE_KEEPING,
@@ -148,14 +156,39 @@ class AppPages {
       binding: HouseKeepingReservationBinding(),
     ),
     GetPage(
+      name: _Paths.HALLS_SEARCH,
+      page: () => const HallsSearchPageView(),
+      binding: HallsSearchPageBinding(),
+    ),
+    GetPage(
+      name: _Paths.ALL_HALLS,
+      page: () => const AllHallsPageView(),
+      binding: AllHallsPageBinding(),
+    ),
+    GetPage(
+      name: _Paths.HALL_DETAILS,
+      page: () => const HallDetailView(),
+      binding: HallDetailsBinding(),
+    ),
+    GetPage(
       name: _Paths.FOOD_SECTION,
       page: () => const FoodSectionView(),
       binding: FoodSectionBinding(),
     ),
+    // GetPage(
+    //   name: _Paths.FOOD_ITEM,
+    //   page: () => const FoodItemView(),
+    //   binding: FoodItemBinding(),
+    // ),
     GetPage(
-      name: _Paths.FOOD_ITEM,
-      page: () => const FoodItemView(),
-      binding: FoodItemBinding(),
+      name: _Paths.carsCategory,
+      page: () => const CarsCategoryView(),
+      binding: CarsCategoryBinding(),
+    ),
+    GetPage(
+      name: _Paths.carsOrder,
+      page: () => const CarsOrderView(),
+      binding: CarsOrderBinding(),
     ),
   ];
 }
