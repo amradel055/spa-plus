@@ -41,4 +41,5 @@ final Map<String, String> enUs = {
   AppStrings.minutes: 'min',
   AppStrings.sections: 'sections',
   AppStrings.LE: 'LE',
+  AppStrings.description: 'Description',
 };

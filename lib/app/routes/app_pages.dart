@@ -47,7 +47,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.RESTURANT;
+  static const INITIAL = Routes.FOOD_ITEM;
 
   static final routes = [
     GetPage(

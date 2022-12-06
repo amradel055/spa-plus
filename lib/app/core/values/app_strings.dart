@@ -56,6 +56,7 @@ abstract class AppStrings {
   static const minutes = "minutes";
   static const sections = "sections";
   static const LE = "LE";
+  static const description = "description";
 
 
 

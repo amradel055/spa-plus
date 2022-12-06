@@ -10,7 +10,7 @@ class AppTheme {
   static ThemeData light = lightTheme;
   static ThemeData dark = darkTheme;
 
-  static get appFontFamily => "Cairo";
+  static const appFontFamily = "Cairo";
   static bool get isDark => Get.isDarkMode;
 
   ThemeMode getThemeMode() {
@@ -61,6 +61,7 @@ final ThemeData darkTheme = ThemeData(
   appBarTheme: const AppBarTheme(
     foregroundColor: Colors.white,
     elevation: 8,
+    titleTextStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white, fontFamily: AppTheme.appFontFamily),
     backgroundColor: Colors.black,
     shadowColor: Colors.black26,
   ),
@@ -96,12 +97,13 @@ final ThemeData lightTheme = ThemeData(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5))
     )
   ),
-  appBarTheme: const AppBarTheme(
-    foregroundColor: Colors.white,
+  appBarTheme: AppBarTheme(
+    foregroundColor: Colors.black,
     elevation: 8,
-    backgroundColor: Colors.black,
+    titleTextStyle: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black, fontFamily: AppTheme.appFontFamily),
+    backgroundColor: AppColors.backgroundColor,
     shadowColor: Colors.black12,
-    systemOverlayStyle: SystemUiOverlayStyle.light
+    systemOverlayStyle: SystemUiOverlayStyle.dark
   ),
   focusColor: AppColors.primary,
   textSelectionTheme: TextSelectionThemeData(cursorColor: AppColors.primary), colorScheme: const ColorScheme.light().copyWith(primary: AppColors.primary).copyWith(background: Colors.white)
