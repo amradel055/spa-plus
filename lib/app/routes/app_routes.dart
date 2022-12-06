@@ -17,6 +17,26 @@ abstract class Routes {
   static const HOUSE_KEEPING = _Paths.HOUSE_KEEPING;
   static const ROOMS = _Paths.ROOMS;
   static const POLMAN = _Paths.POLMAN;
+  static const SPASEARCHPAGE = _Paths.SPA_SEARCH_PAGE;
+  static const SPACITY = _Paths.SPA_CITY;
+  static const SPAHOTEL = _Paths.SPA_HOTEL;
+  static const SPADETAILS = _Paths.SPA_DETAILS;
+  static const HOUSEKEEPING_SERVICES = _Paths.HOUSEKEEPING_SERVICES;
+  static const HOUSEKEEPING_RESERVATION = _Paths.HOUSEKEEPING_RESERVATION;
+  static const HALLS_SEARCH = _Paths.HALLS_SEARCH;
+  static const ALL_HALLS = _Paths.ALL_HALLS;
+  static const HALL_DETAILS = _Paths.HALL_DETAILS;
+
+
+
+
+
+
+
+
+
+  static const FOOD_SECTION = _Paths.FOOD_SECTION;
+  static const FOOD_ITEM = _Paths.FOOD_ITEM;
 }
 
 abstract class _Paths {
@@ -35,4 +55,22 @@ abstract class _Paths {
   static const HOUSE_KEEPING = '/house-keeping';
   static const ROOMS = '/rooms';
   static const POLMAN = '/polman';
+  static const SPA_SEARCH_PAGE = '/spa-search-page';
+  static const SPA_CITY = '/spa-city';
+  static const SPA_HOTEL = '/spa-hotel';
+  static const SPA_DETAILS = '/spa-details';
+  static const HOUSEKEEPING_SERVICES = '/housekeeping-services';
+  static const HOUSEKEEPING_RESERVATION = '/housekeeping-reservation';
+  static const FOOD_SECTION = '/food-section';
+  static const FOOD_ITEM = '/food-item';
+  static const HALLS_SEARCH = '/halls-search';
+  static const ALL_HALLS = '/all-halls';
+  static const HALL_DETAILS = '/halls-details';
+
+
+
+
+
+
+
 }

@@ -24,12 +24,14 @@ class ImageWidget extends StatelessWidget {
     this.height,
     this.border,
     this.onPressed,
+    this.elevation = 0,
     this.isCircle = false,
     this.disablePreview = true,
     this.isProfile = false,
   }) :super(key: key);
 
   final String path;
+  final double elevation;
   final dynamic tag;
   final String? secondPath;
   final Color? color;
@@ -47,7 +49,6 @@ class ImageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final heroTag = tag??UniqueKey();
     Widget? child;
     if(path.contains("http")) {
       child = CachedNetworkImage(imageUrl: path,fit: fit,height: height,width: width,color: color,
@@ -67,12 +68,15 @@ class ImageWidget extends StatelessWidget {
     } else {
       child = Image.asset(path, color: color,width: width,height: height,fit: fit,);
     }
+    if(tag != null){
+      child = Hero(tag: tag, child: child);
+    }
     return GestureDetector(
       onTap: (disablePreview && onPressed == null)?null:(){
         if(onPressed != null) {
           onPressed!();
         } else {
-          Get.to(() => ImagePreviewWidget(path: path,tag: heroTag));
+          Get.to(() => ImagePreviewWidget(path: path,tag: tag));
         }
       },
       child: Container(
@@ -82,16 +86,20 @@ class ImageWidget extends StatelessWidget {
           shape: isCircle ? BoxShape.circle : BoxShape.rectangle,
           border: border,
           borderRadius: isCircle?null: BorderRadius.all(Radius.circular( radius ?? AppConstants.radius)),
-          color: Colors.transparent
+          color: Colors.transparent,
       ),
         decoration: BoxDecoration(
             shape: isCircle ? BoxShape.circle : BoxShape.rectangle,
             border: border,
             borderRadius: isCircle?null: BorderRadius.all(Radius.circular( radius ?? AppConstants.radius)),
-            color: backgroundColor
+            color: backgroundColor,
+            boxShadow: [
+            if(elevation > 0)
+          BoxShadow(color: Colors.black26,spreadRadius: elevation, blurRadius: elevation*3)
+        ]
         ),
         clipBehavior: Clip.antiAlias,
-        child: Hero(tag: heroTag,child: child),
+        child: child,
       ),
     );
   }

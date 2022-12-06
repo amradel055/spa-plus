@@ -2,14 +2,14 @@ import 'package:easy_hotel/app/components/text_field_widget.dart';
 import 'package:easy_hotel/app/components/text_widget.dart';
 import 'package:easy_hotel/app/core/values/app_assets.dart';
 import 'package:easy_hotel/app/core/values/app_strings.dart';
-import 'package:easy_hotel/app/modules/spa/views/widgets/Service.dart';
-import 'package:easy_hotel/app/modules/spa/views/widgets/offer.dart';
+import 'package:easy_hotel/app/modules/spa/spa_home/controllers/spa_controller.dart';
+import 'package:easy_hotel/app/modules/spa/spa_home/views/widgets/Service.dart';
+import 'package:easy_hotel/app/modules/spa/spa_home/views/widgets/offer.dart';
+import 'package:easy_hotel/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
-
-import '../controllers/spa_controller.dart';
 
 class SpaView extends GetView<SpaController> {
   const SpaView({Key? key}) : super(key: key);
@@ -63,12 +63,17 @@ class SpaView extends GetView<SpaController> {
                           borderRadius: BorderRadius.circular(10)
                       ),
                       child:
-                    const  TextFieldWidget(
-                        enabled: true,
-                        hint: AppStrings.search,
-                        suffixIcon: Icons.search,
-                        ltr: true,
-                      )
+                    GestureDetector(
+                      onTap:(){Get.toNamed(Routes.SPASEARCHPAGE);},
+                      child:   TextFieldWidget(
+                          enabled: false,
+                          label: AppStrings.search,
+                          suffixIcon: Icons.search,
+                          ltr: true,
+                           onTap: (){Get.toNamed(Routes.SPASEARCHPAGE);},
+
+                        ),
+                    )
 
 
                       ),
@@ -82,7 +87,7 @@ class SpaView extends GetView<SpaController> {
           Column(crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding:  EdgeInsets.fromLTRB(20.h, 0, 20.h, 20.h),
+                  padding:  EdgeInsets.fromLTRB(20.h, 0, 20.h, 10.h),
                   child: TextWidget(AppStrings.searchlabel,textAlign: TextAlign.left,weight: FontWeight.bold,size: 20.h,),
                 ),
                 SizedBox(
@@ -116,7 +121,9 @@ class SpaView extends GetView<SpaController> {
                         return const SpaOffersWidgets();
                       },
 
-                    )                  )
+                    )
+                ),
+
 
               ])
         ],

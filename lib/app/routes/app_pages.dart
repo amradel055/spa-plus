@@ -1,17 +1,14 @@
-
 import 'package:get/get.dart';
 
 import '../modules/allServices/bindings/all_services_binding.dart';
 import '../modules/allServices/views/all_services_view.dart';
-import '../modules/cars/cars_category/bindings/cars_category_binding.dart';
-import '../modules/cars/cars_category/views/cars_category_view.dart';
-import '../modules/cars/cars_main/bindings/cars_main_binding.dart';
-import '../modules/cars/cars_main/views/cars_main_view.dart';
-import '../modules/cars/cars_order/bindings/cars_order_binding.dart';
-import '../modules/cars/cars_order/views/cars_order_view.dart';
+import '../modules/cars/bindings/cars_binding.dart';
+import '../modules/cars/views/cars_view.dart';
 import '../modules/halls/bindings/halls_binding.dart';
 import '../modules/halls/views/halls_view.dart';
 import '../modules/home/bindings/home_binding.dart';
+import '../modules/home/bindings/home_binding.dart';
+import '../modules/home/views/home_view.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/house_keeping/bindings/house_keeping_binding.dart';
 import '../modules/house_keeping/views/house_keeping_view.dart';
@@ -25,8 +22,16 @@ import '../modules/resturant/bindings/resturant_binding.dart';
 import '../modules/resturant/views/resturant_view.dart';
 import '../modules/rooms/bindings/rooms_binding.dart';
 import '../modules/rooms/views/rooms_view.dart';
-import '../modules/spa/bindings/spa_binding.dart';
-import '../modules/spa/views/spa_view.dart';
+import '../modules/spa/spa_detail/bindings/spa_details_binding.dart';
+import '../modules/spa/spa_detail/views/spa_detail_view.dart';
+import '../modules/spa/spa_home/bindings/spa_binding.dart';
+import '../modules/spa/spa_home/views/spa_view.dart';
+import '../modules/spa/spa_hotel/bindings/spa_hotel_binding.dart';
+import '../modules/spa/spa_hotel/views/spa_hotel_view.dart';
+import '../modules/spa/spa_search/bindings/spa_search_page_binding.dart';
+import '../modules/spa/spa_search/views/spa_search_page_view.dart';
+import '../modules/spa/spa_town/bindings/spa_city_binding.dart';
+import '../modules/spa/spa_town/views/spa_city_view.dart';
 import '../modules/splash/bindings/splash_binding.dart';
 import '../modules/splash/views/splash_view.dart';
 
@@ -104,6 +109,61 @@ class AppPages {
       name: _Paths.POLMAN,
       page: () => const PolmanView(),
       binding: PolmanBinding(),
+    ),
+    GetPage(
+      name: _Paths.SPA_SEARCH_PAGE,
+      page: () => const SpaSearchPageView(),
+      binding: SpaSearchPageBinding(),
+    ),
+    GetPage(
+      name: _Paths.SPA_CITY,
+      page: () => const SpaCityView(),
+      binding: SpaCityBinding(),
+    ),
+    GetPage(
+      name: _Paths.SPA_HOTEL,
+      page: () => const SpaHotelView(),
+      binding: SpaHotelBinding(),
+    ),
+    GetPage(
+      name: _Paths.SPA_DETAILS,
+      page: () => const SpaDetailView(),
+      binding: SpaDetailsBinding(),
+    ),
+    GetPage(
+      name: _Paths.HOUSEKEEPING_SERVICES,
+      page: () => const HouseKeepingServicesView(),
+      binding: HouseKeepingServicesBinding(),
+    ),
+    GetPage(
+      name: _Paths.HOUSEKEEPING_RESERVATION,
+      page: () => const HouseKeepingReservationView(),
+      binding: HouseKeepingReservationBinding(),
+    ),
+    GetPage(
+      name: _Paths.HALLS_SEARCH,
+      page: () => const HallsSearchPageView(),
+      binding: HallsSearchPageBinding(),
+    ),
+    GetPage(
+      name: _Paths.ALL_HALLS,
+      page: () => const AllHallsPageView(),
+      binding: AllHallsPageBinding(),
+    ),
+    GetPage(
+      name: _Paths.HALL_DETAILS,
+      page: () => const HallDetailView(),
+      binding: HallDetailsBinding(),
+    ),
+    GetPage(
+      name: _Paths.FOOD_SECTION,
+      page: () => const FoodSectionView(),
+      binding: FoodSectionBinding(),
+    ),
+    GetPage(
+      name: _Paths.FOOD_ITEM,
+      page: () => const FoodItemView(),
+      binding: FoodItemBinding(),
     ),
     GetPage(
       name: _Paths.carsCategory,

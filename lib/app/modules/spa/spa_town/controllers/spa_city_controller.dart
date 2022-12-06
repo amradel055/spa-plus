@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
-class HouseKeepingController extends GetxController {
-  //TODO: Implement HouseKeepingController
+class SpaCityController extends GetxController {
+  //TODO: Implement SpaController
 
   final count = 0.obs;
   @override

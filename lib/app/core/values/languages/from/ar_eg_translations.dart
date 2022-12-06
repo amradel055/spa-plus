@@ -28,14 +28,20 @@ final Map<String, String> arEG = {
   AppStrings.search: 'ابحث عن الخدمه التي تريدها',
   AppStrings.searchlabel: 'إبحــث عـــن الخدمـــات وإحجزهــــا؟',
   AppStrings.offers: 'العروض',
-
-
-
-
-
-
-
-
-
+  AppStrings.towns: 'المدن',
+  AppStrings.hotels: 'الفنادق',
+  AppStrings.spas: 'الصالونات',
+  AppStrings.workhours: 'ساعات العمل',
+  AppStrings.directions: 'الاتجاهات',
+  AppStrings.address: 'العنوان',
+  AppStrings.readmore: 'المزيد..',
+  AppStrings.readless: 'عوده..',
+  AppStrings.orderpolman: 'اطلب حامل حقائب..',
+  AppStrings.foodService: 'خدمة المطاعم',
+  AppStrings.todayOffers: 'عروض اليوم',
+  AppStrings.sale: 'خصم',
+  AppStrings.minutes: 'د',
+  AppStrings.sections: 'الأقسام',
+  AppStrings.LE: 'جنيه',
 
 };

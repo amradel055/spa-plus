@@ -20,11 +20,12 @@ class AllServicesView extends GetView<AllServicesController> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
         appBar: AppBar(
+          backgroundColor: AppColors.backgroundColor,
           leading: Padding(
-            padding: const EdgeInsets.fromLTRB(10.0, 5, 0, 0),
+            padding: const EdgeInsets.fromLTRB(10.0, 3, 0, 0),
             child: TextWidget(
               AppStrings.hello,
-              size: 20.h,
+              size: 25.h,
               textColor: AppColors.appBlue,
               weight: FontWeight.bold,
             ),
@@ -37,7 +38,7 @@ class AllServicesView extends GetView<AllServicesController> {
                   value: 1,
                   child: Row(
                     children: [
-                      const Icon(Icons.logout),
+                      const Icon(Icons.logout,color: Colors.black,),
                       SizedBox(
                         width: 10.h,
                       ),
@@ -48,7 +49,7 @@ class AllServicesView extends GetView<AllServicesController> {
                 // popupmenu item 2
               ],
               offset: const Offset(0, 50),
-              color: AppColors.appGreyDark,
+              color: AppColors.black,
               elevation: 2,
             ),
           ],

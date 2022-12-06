@@ -51,7 +51,7 @@ class LoginView extends GetView<LoginController> {
 
                     TextFieldWidget(
                       controller:controller.phoneController,
-                      hint: AppStrings.phone,
+                      label: AppStrings.phone,
                       suffixIcon: Icons.phone,
                       ltr: true,
                       validator: AppValidator.forceValue,
@@ -60,7 +60,7 @@ class LoginView extends GetView<LoginController> {
                     space,
                     TextFieldWidget(
                       controller:controller.passwordController,
-                      hint: AppStrings.password,
+                      label: AppStrings.password,
                       suffixIcon: Icons.password,
                       ltr: true,
                       validator: AppValidator.forceValue,

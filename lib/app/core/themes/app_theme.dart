@@ -97,11 +97,11 @@ final ThemeData lightTheme = ThemeData(
     )
   ),
   appBarTheme: const AppBarTheme(
-    foregroundColor: Colors.black,
+    foregroundColor: Colors.white,
     elevation: 8,
-    backgroundColor: Colors.white,
+    backgroundColor: Colors.black,
     shadowColor: Colors.black12,
-    systemOverlayStyle: SystemUiOverlayStyle.dark
+    systemOverlayStyle: SystemUiOverlayStyle.light
   ),
   focusColor: AppColors.primary,
   textSelectionTheme: TextSelectionThemeData(cursorColor: AppColors.primary), colorScheme: const ColorScheme.light().copyWith(primary: AppColors.primary).copyWith(background: Colors.white)

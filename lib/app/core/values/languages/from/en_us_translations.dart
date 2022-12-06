@@ -28,11 +28,17 @@ final Map<String, String> enUs = {
   AppStrings.search: 'search',
   AppStrings.searchlabel: 'search for service..',
   AppStrings.offers: 'Offers',
-
-
-
-
-
-
-
+  AppStrings.towns: 'Towns',
+  AppStrings.workhours: 'Work Hours',
+  AppStrings.address: 'Address',
+  AppStrings.directions: 'Directions',
+  AppStrings.readmore: 'Read More..',
+  AppStrings.readless: 'Read Less..',
+  AppStrings.orderpolman: 'Order your Polman',
+  AppStrings.foodService: 'Food service',
+  AppStrings.todayOffers: 'Today offers',
+  AppStrings.sale: 'Sale',
+  AppStrings.minutes: 'min',
+  AppStrings.sections: 'sections',
+  AppStrings.LE: 'LE',
 };

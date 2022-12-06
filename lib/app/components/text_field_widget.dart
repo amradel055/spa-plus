@@ -12,7 +12,7 @@ class TextFieldWidget extends StatelessWidget {
   const TextFieldWidget({Key? key,
     this.upLabel,
     this.initialValue,
-    this.hint,
+    this.label,
     this.prefix,
     this.prefixWidget,
     this.prefixIcon,
@@ -30,9 +30,11 @@ class TextFieldWidget extends StatelessWidget {
     this.justNumbers = false,
     this.enabled = true,
     this.textInputType,
+    this.hint,
     this.controller,
     this.ltr,
     this.maxLines,
+    this.onTap,
     this.contentPadding,
     this.multiLines = false,
     this.onSubmitted,
@@ -49,6 +51,7 @@ class TextFieldWidget extends StatelessWidget {
   final double heightBetween;
   final double? suffixIconSize;
   final EdgeInsets? contentPadding;
+  final String? label;
   final String? hint;
   final int? maxLength;
   final Color? suffixIconColor;
@@ -63,6 +66,7 @@ class TextFieldWidget extends StatelessWidget {
   final FocusNode? nextFocusNode;
   final Function(String)? onChange;
   final Function(String)? onSubmitted;
+  final Function()? onTap;
   final String? Function(String?)? validator;
   final Function()? onSuffixClicked;
   final bool obscure;
@@ -112,6 +116,7 @@ class TextFieldWidget extends StatelessWidget {
                   initialValue: initialValue,
                   onChanged: onChange,
                   onFieldSubmitted: onSubmitted,
+                  onTap: onTap,
                   focusNode: focusNode,
                   enabled: enabled,
                   maxLines: multiLines? null : (maxLines??1),
@@ -127,7 +132,8 @@ class TextFieldWidget extends StatelessWidget {
                   textAlignVertical: TextAlignVertical.top,
                   textAlign: textAlign ?? TextAlign.start,
                   decoration: InputDecoration(
-                    labelText: hint?.tr,
+                    labelText: label?.tr,
+                    hintText: hint?.tr,
                     counterText: "",
                     fillColor: AppColors.white,
                     filled: true,

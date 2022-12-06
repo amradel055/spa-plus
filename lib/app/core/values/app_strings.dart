@@ -41,6 +41,27 @@ abstract class AppStrings {
   static const search = "search";
   static const searchlabel = "search for services and reseve it..";
   static const offers = "offers";
+  static const towns = "Towns";
+  static const hotels = "Hotels";
+  static const spas = "Spa";
+  static const address = "Address";
+  static const directions = "Directions";
+  static const workhours = "Work Hours";
+  static const readmore = "Read More";
+  static const readless = "Read Less";
+  static const orderpolman = "Order your Polman";
+  static const foodService = "foodService";
+  static const todayOffers = "todayOffers";
+  static const sale = "sale";
+  static const minutes = "minutes";
+  static const sections = "sections";
+  static const LE = "LE";
+
+
+
+
+
+
   static const carsChoose = "اختر الخدمة التي تريد رؤيتها";
 
 

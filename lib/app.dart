@@ -20,6 +20,7 @@ class App extends StatelessWidget {
           getPages: AppPages.routes,
           theme: AppTheme.light,
           darkTheme: AppTheme.dark,
+          locale: AppTranslation.getLocale(),
           themeMode: AppTheme().isSavedDarkMode()?ThemeMode.dark:ThemeMode.light,
           translations: AppTranslation(),
           translationsKeys: AppTranslation().keys,
