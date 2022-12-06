@@ -1,3 +1,6 @@
+import 'package:easy_hotel/app/modules/food_item/bindings/food_item_binding.dart';
+import 'package:easy_hotel/app/modules/food_item/controllers/food_item_controller.dart';
+import 'package:easy_hotel/app/modules/food_item/views/food_item_view.dart';
 import 'package:get/get.dart';
 import '../modules/allServices/bindings/all_services_binding.dart';
 import '../modules/allServices/views/all_services_view.dart';
@@ -189,6 +192,11 @@ class AppPages {
       name: _Paths.carsOrder,
       page: () => const CarsOrderView(),
       binding: CarsOrderBinding(),
+    ),
+    GetPage(
+      name: _Paths.FOOD_ITEM,
+      page: () => const FoodItemView(),
+      binding: FoodItemBinding(),
     ),
   ];
 }
