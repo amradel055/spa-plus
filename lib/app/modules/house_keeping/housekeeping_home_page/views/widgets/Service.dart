@@ -22,12 +22,9 @@ class HousekeepingServicesWidget extends StatelessWidget {
         ),
         child: Column(
           children: [
-            ImageWidget(path: image,  height:  size.height * 0.18,
-              width: size.width * 0.45,fit: BoxFit.cover,),
-            Padding(
-            padding:  EdgeInsets.only(top:size.height*.01),
-            child: const TextWidget("house.name!", textAlign: TextAlign.center,weight:FontWeight.bold,size: 20,),
-          )
+            ImageWidget(path: image
+            ,fit: BoxFit.cover,),
+            const TextWidget("house.name!", textAlign: TextAlign.center,weight:FontWeight.bold,size: 20,)
           ],
         ),
       ),
