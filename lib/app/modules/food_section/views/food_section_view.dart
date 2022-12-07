@@ -1,3 +1,4 @@
+import 'package:easy_hotel/app/components/filter_dialog.dart';
 import 'package:easy_hotel/app/components/text_widget.dart';
 import 'package:easy_hotel/app/core/values/app_constants.dart';
 import 'package:easy_hotel/app/core/values/app_strings.dart';
@@ -63,6 +64,11 @@ class FoodSectionView extends GetView<FoodSectionController> {
             ),
           )
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => Get.dialog(FilterDialog()),
+        backgroundColor: Theme.of(context).primaryColor,
+        child: Icon(Icons.filter_list_rounded, color: Colors.white),
       ),
     );
   }

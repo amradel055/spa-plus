@@ -86,7 +86,7 @@ class OfferCard extends StatelessWidget {
                               size: w * .05,
                               textColor: Colors.white,
                               weight: FontWeight.bold,
-                              children: const [TextWidget(AppStrings.minutes)],
+                              children: const [TextWidget(AppStrings.min)],
                             ),
                           ),
                         ),

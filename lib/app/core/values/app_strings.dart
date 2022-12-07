@@ -53,7 +53,12 @@ abstract class AppStrings {
   static const foodService = "foodService";
   static const todayOffers = "todayOffers";
   static const sale = "sale";
+  static const min = "min";
   static const minutes = "minutes";
+  static const hour = "hour";
+  static const enterTime = "enterTime";
+  static const ok = "ok";
+  static const cancel = "cancel";
   static const sections = "sections";
   static const LE = "LE";
   static const description = "description";
@@ -61,6 +66,11 @@ abstract class AppStrings {
   static const moreInformation = "moreInformation";
   static const relatedItems = "relatedItems";
   static const reviews = "reviews";
+  static const additions = "additions";
+  static const close = "close";
+  static const deliveryTime = "deliveryTime";
+  static const sap = "sap";
+  static const apply = "apply";
 
 
 

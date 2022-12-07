@@ -10,9 +10,9 @@ class ReviewWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      contentPadding: EdgeInsets.symmetric(vertical: 10),
-      leading: Align(alignment: AlignmentDirectional.topStart,child: ImageWidget(path: AppAssets.cars,fit: BoxFit.cover,isCircle: true,isProfile: true,width: 50,height: 50)),
-      title: TextWidget("اسم المستخدم", weight: FontWeight.bold,height: 1),
+      contentPadding: const EdgeInsets.symmetric(vertical: 10),
+      leading: ImageWidget(path: AppAssets.cars, fit: BoxFit.cover, isCircle: true, isProfile: true, width: 50, height: 50),
+      title: const TextWidget("اسم المستخدم", weight: FontWeight.bold, height: 1),
       subtitle: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -20,15 +20,16 @@ class ReviewWidget extends StatelessWidget {
           SizedBox(
             child: RatingBar.builder(
               itemBuilder: (BuildContext context, int index) {
-                return Icon(Icons.star_rate_rounded);
+                return Icon(Icons.star_rate_rounded,color: Colors.yellow);
               },
               itemSize: 15,
               onRatingUpdate: (double value) {  },
               itemCount: 5,
+              ignoreGestures: true,
             ),
           ),
           const SizedBox(height: 2),
-          const TextWidget("هنا يتم كتابة التعليق المرافق للتقييم يتم كتابة التعليق المرافق للتقييم يتم كتابة التعليق المرافق للتقييم يتم كتابة التعليق المرافق للتقييم ",height: 1.3),
+          const TextWidget("هنا يتم كتابة التعليق المرافق للتقييم",height: 1.3),
         ],
       ),
     );
