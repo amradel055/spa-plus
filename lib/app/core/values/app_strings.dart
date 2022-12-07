@@ -57,13 +57,10 @@ abstract class AppStrings {
   static const sections = "sections";
   static const LE = "LE";
   static const description = "description";
-
-
-
-
-
-
   static const carsChoose = "اختر الخدمة التي تريد رؤيتها";
+  static const moreInformation = "moreInformation";
+  static const relatedItems = "relatedItems";
+  static const reviews = "reviews";
 
 
 

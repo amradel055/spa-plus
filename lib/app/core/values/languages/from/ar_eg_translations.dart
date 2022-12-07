@@ -44,5 +44,8 @@ final Map<String, String> arEG = {
   AppStrings.sections: 'الأقسام',
   AppStrings.LE: 'جنيه',
   AppStrings.description: 'الوصف',
+  AppStrings.moreInformation: 'معلومات إضافية',
+  AppStrings.relatedItems: 'العناصر المشابهة',
+  AppStrings.reviews: 'المراجعات',
 
 };

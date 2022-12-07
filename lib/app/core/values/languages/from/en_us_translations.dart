@@ -42,4 +42,7 @@ final Map<String, String> enUs = {
   AppStrings.sections: 'sections',
   AppStrings.LE: 'LE',
   AppStrings.description: 'Description',
+  AppStrings.moreInformation: 'More information',
+  AppStrings.relatedItems: 'Related items',
+  AppStrings.reviews: 'Reviews',
 };

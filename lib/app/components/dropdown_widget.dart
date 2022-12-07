@@ -36,7 +36,7 @@ class DropDownWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final border = OutlineInputBorder(
-      borderRadius: BorderRadius.circular(AppConstants.radius),
+      borderRadius: BorderRadius.circular(AppConstants.radius/2),
       borderSide: BorderSide(color: AppColors.fieldBorderColor),
     );
     final decoration = InputDecoration(
@@ -47,7 +47,7 @@ class DropDownWidget extends StatelessWidget {
       enabledBorder: border,
       fillColor: Colors.white,
       focusedBorder: border,
-      contentPadding: const EdgeInsets.all(10),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 5,vertical: 5),
       floatingLabelBehavior: FloatingLabelBehavior.auto,
     );
     return Padding(
@@ -56,7 +56,7 @@ class DropDownWidget extends StatelessWidget {
         value: value,
         validator: validator,
         decoration: decoration,
-        // isDense: isDense,
+        isDense: true,
         hint: TextWidget(hint??""),
         icon: Icon(
           Icons.keyboard_arrow_down_outlined,
