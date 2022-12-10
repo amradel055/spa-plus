@@ -9,7 +9,7 @@ class RegisterResponse {
   final String message;
   final String token;
 
-  factory RegisterResponse.fromJson(json) => RegisterResponse(
+  factory RegisterResponse.fromJson(dynamic json) => RegisterResponse(
     success: json["success"],
     message: json["message"],
     token: json["token"],
