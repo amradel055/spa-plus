@@ -1,7 +1,7 @@
 import 'package:easy_hotel/app/core/values/app_constants.dart';
 import 'package:flutter/material.dart';
 
-class CustomCard extends StatelessWidget {
+class BoxWidget extends StatelessWidget {
 
   final Widget child;
   final Color? shadowColor;
@@ -15,7 +15,7 @@ class CustomCard extends StatelessWidget {
   final double? width;
   final EdgeInsetsGeometry? margin;
 
-  const CustomCard({
+  const BoxWidget({
     Key? key,
     required this.child,
     this.shadowColor,

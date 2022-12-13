@@ -17,7 +17,7 @@ class RegisterResponse {
   final String msg;
   final dynamic pagination;
 
-  factory RegisterResponse.fromJson(json) => RegisterResponse(
+  factory RegisterResponse.fromJson(dynamic json) => RegisterResponse(
     success: json["success"],
     data: json["data"],
     msg: json["msg"],

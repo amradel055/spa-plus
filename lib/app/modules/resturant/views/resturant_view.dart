@@ -1,8 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:easy_hotel/app/components/icon_button_widget.dart';
 import 'package:easy_hotel/app/components/image_widget.dart';
 import 'package:easy_hotel/app/components/text_widget.dart';
 import 'package:easy_hotel/app/core/values/app_constants.dart';
 import 'package:easy_hotel/app/core/values/app_strings.dart';
+import 'package:easy_hotel/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -19,6 +21,22 @@ class ResturantView extends GetView<ResturantController> {
       appBar: AppBar(
         title: const TextWidget(AppStrings.foodService),
         centerTitle: true,
+        actions: [
+          Center(
+            child: Badge(
+              label: const TextWidget("2", height: 1.5),
+              alignment: AlignmentDirectional.topEnd,
+              // largeSize: 20,
+              smallSize: 20,
+              child: UnconstrainedBox(
+                child: IconButtonWidget(
+                    onPressed: () => Get.toNamed(Routes.FOOD_CART),
+                    icon: Icons.shopping_cart_outlined
+                ),
+              ),
+            ),
+          )
+        ],
       ),
       body: ListView(
         padding: AppConstants.pagePadding,

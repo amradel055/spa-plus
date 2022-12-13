@@ -61,7 +61,12 @@ abstract class AppStrings {
   static const housekeepingService = "housekeepingService";
   static const todayOffers = "todayOffers";
   static const sale = "sale";
+  static const min = "min";
   static const minutes = "minutes";
+  static const hour = "hour";
+  static const enterTime = "enterTime";
+  static const ok = "ok";
+  static const cancel = "cancel";
   static const sections = "sections";
   static const LE = "LE";
   static const open = "Open";
@@ -92,6 +97,20 @@ abstract class AppStrings {
 
 
 
+  static const description = "description";
+  static const carsChoose = "اختر الخدمة التي تريد رؤيتها";
+  static const moreInformation = "moreInformation";
+  static const relatedItems = "relatedItems";
+  static const reviews = "reviews";
+  static const additions = "additions";
+  static const close = "close";
+  static const deliveryTime = "deliveryTime";
+  static const sap = "sap";
+  static const apply = "apply";
+  static const foodCart = "foodCart";
+  static const preparing = "preparing";
+  static const delivering = "delivering";
+  static const delivered = "delivered";
 
 
 

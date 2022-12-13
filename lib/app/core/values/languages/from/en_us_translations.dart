@@ -48,6 +48,7 @@ final Map<String, String> enUs = {
   AppStrings.spasHotel: 'Spa Hotel',
   AppStrings.spasCity: 'Spa City',
   AppStrings.minutes: 'min',
+  AppStrings.min: 'min',
   AppStrings.sections: 'sections',
   AppStrings.LE: 'LE',
   AppStrings.open: 'Open',
@@ -74,4 +75,22 @@ final Map<String, String> enUs = {
 
 
 
+  AppStrings.description: 'Description',
+  AppStrings.moreInformation: 'More information',
+  AppStrings.relatedItems: 'Related items',
+  AppStrings.reviews: 'Reviews',
+  AppStrings.additions: 'Additions',
+  AppStrings.sap: 'SAP',
+  AppStrings.close: 'Close',
+  AppStrings.deliveryTime: 'Delivery time',
+  AppStrings.minutes: 'Minute',
+  AppStrings.hour: 'Hour',
+  AppStrings.enterTime: 'Enter time',
+  AppStrings.ok: 'Ok',
+  AppStrings.cancel: 'Cancel',
+  AppStrings.apply: 'Apply',
+  AppStrings.foodCart: 'Food cart',
+  AppStrings.preparing: 'Preparing',
+  AppStrings.delivering: 'Delivering',
+  AppStrings.delivered: 'Delivered',
 };

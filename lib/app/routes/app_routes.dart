@@ -12,6 +12,8 @@ abstract class Routes {
   static const RESTURANT = _Paths.RESTURANT;
   static const HALLS = _Paths.HALLS;
   static const CARS = _Paths.CARS;
+  static const carsCategory = _Paths.carsCategory;
+  static const carsOrder = _Paths.carsOrder;
   static const HOUSE_KEEPING = _Paths.HOUSE_KEEPING;
   static const ROOMS = _Paths.ROOMS;
   static const POLMAN = _Paths.POLMAN;
@@ -24,6 +26,7 @@ abstract class Routes {
   static const HALLS_SEARCH = _Paths.HALLS_SEARCH;
   static const ALL_HALLS = _Paths.ALL_HALLS;
   static const HALL_DETAILS = _Paths.HALL_DETAILS;
+
   static const HALL_RESERVATION = _Paths.HALL_RESERVATION;
   static const HALL_CALENDER = _Paths.HALL_CALENDER;
   static const ROOM_SEARCH = _Paths.ROOM_SEARCH;
@@ -32,6 +35,7 @@ abstract class Routes {
   static const ROOM_DETAIL = _Paths.ROOM_DETAIL;
   static const FOOD_SECTION = _Paths.FOOD_SECTION;
   static const FOOD_ITEM = _Paths.FOOD_ITEM;
+  static const FOOD_CART = _Paths.FOOD_CART;
 }
 
 abstract class _Paths {
@@ -45,6 +49,8 @@ abstract class _Paths {
   static const RESTURANT = '/resturant';
   static const HALLS = '/halls';
   static const CARS = '/cars';
+  static const carsCategory = '/carsCategory';
+  static const carsOrder = '/carsOrder';
   static const HOUSE_KEEPING = '/house-keeping';
   static const ROOMS = '/rooms';
   static const POLMAN = '/polman';
@@ -59,6 +65,7 @@ abstract class _Paths {
   static const HALLS_SEARCH = '/halls-search';
   static const ALL_HALLS = '/all-halls';
   static const HALL_DETAILS = '/halls-details';
+  static const FOOD_CART = '/food-cart';
   static const HALL_RESERVATION = '/hall-reservation';
   static const HALL_CALENDER = '/hall-calender';
   static const ROOM_SEARCH = '/room-search';

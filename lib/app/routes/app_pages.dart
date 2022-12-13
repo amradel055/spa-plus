@@ -33,12 +33,40 @@ import 'package:easy_hotel/app/modules/spa/spa_city/bindings/spa_city_binding.da
 import 'package:easy_hotel/app/modules/spa/spa_city/views/spa_city_view.dart';
 import 'package:easy_hotel/app/modules/spa/spa_home/views/spa_view.dart';
 import 'package:get/get.dart';
+
 import '../modules/allServices/bindings/all_services_binding.dart';
 import '../modules/allServices/views/all_services_view.dart';
-import '../modules/cars/bindings/cars_binding.dart';
-import '../modules/cars/views/cars_view.dart';
+import '../modules/cars/cars_category/bindings/cars_category_binding.dart';
+import '../modules/cars/cars_category/views/cars_category_view.dart';
+import '../modules/cars/cars_main/bindings/cars_main_binding.dart';
+import '../modules/cars/cars_main/views/cars_main_view.dart';
+import '../modules/cars/cars_order/bindings/cars_order_binding.dart';
+import '../modules/cars/cars_order/views/cars_order_view.dart';
+import '../modules/food_cart/bindings/food_cart_binding.dart';
+import '../modules/food_cart/views/food_cart_view.dart';
+import '../modules/food_item/bindings/food_item_binding.dart';
+import '../modules/food_item/controllers/food_item_controller.dart';
+import '../modules/food_item/views/food_item_view.dart';
+import '../modules/food_section/bindings/food_section_binding.dart';
+import '../modules/food_section/views/food_section_view.dart';
+import '../modules/halls/all_halls/bindings/all_halls_page_binding.dart';
+import '../modules/halls/all_halls/views/all_halls_page_view.dart';
+import '../modules/halls/hall_detail/bindings/hall_details_binding.dart';
+import '../modules/halls/hall_detail/views/hall_detail_view.dart';
+import '../modules/halls/halls_homepage/bindings/halls_binding.dart';
+import '../modules/halls/halls_homepage/views/halls_view.dart';
+import '../modules/halls/halls_search/bindings/halls_search_page_binding.dart';
+import '../modules/halls/halls_search/views/halls_search_page_view.dart';
+import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/home/views/home_view.dart';
+import '../modules/house_keeping/housekeeping_home_page/bindings/house_keeping_binding.dart';
+import '../modules/house_keeping/housekeeping_home_page/views/house_keeping_view.dart';
+import '../modules/house_keeping/housekeeping_reservation/bindings/house_keeping_reservation_binding.dart';
+import '../modules/house_keeping/housekeeping_reservation/views/house_keeping_reservation_view.dart';
+import '../modules/house_keeping/housekeeping_services/bindings/house_keeping_services_binding.dart';
+import '../modules/house_keeping/housekeeping_services/views/house_keeping_services_view.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
 import '../modules/polman/bindings/polman_binding.dart';
@@ -116,8 +144,8 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.CARS,
-      page: () => const CarsView(),
-      binding: CarsBinding(),
+      page: () => const CarsMainView(),
+      binding: CarsMainBinding(),
     ),
     GetPage(
       name: _Paths.HOUSE_KEEPING,
@@ -190,6 +218,21 @@ class AppPages {
     //   binding: FoodItemBinding(),
     // ),
     GetPage(
+      name: _Paths.carsCategory,
+      page: () => const CarsCategoryView(),
+      binding: CarsCategoryBinding(),
+    ),
+    GetPage(
+      name: _Paths.carsOrder,
+      page: () => const CarsOrderView(),
+      binding: CarsOrderBinding(),
+    ),
+    // GetPage(
+    //   name: _Paths.FOOD_ITEM,
+    //   page: () => const FoodItemView(),
+    //   binding: FoodItemBinding(),
+    // ),
+    GetPage(
       name: _Paths.HALL_RESERVATION,
       page: () => const HallReservationPageView(),
       binding: HallReservationPageBinding(),
@@ -214,6 +257,11 @@ class AppPages {
       name: _Paths.ROOM_DETAIL,
       page: () => const RoomDetailView(),
       binding: RoomDetailBinding(),
+    ),
+    GetPage(
+      name: _Paths.FOOD_CART,
+      page: () => const FoodCartView(),
+      binding: FoodCartBinding(),
     ),
   ];
 }

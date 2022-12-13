@@ -36,7 +36,7 @@ class IconButtonWidget extends StatelessWidget {
     if(svg != null){
       child = SvgPicture.asset(svg!,color: iconColor ?? Theme.of(context).appBarTheme.foregroundColor,width: iconSize,height: iconSize,fit: BoxFit.contain,);
     } else if(icon != null){
-      child = Icon(icon,color: iconColor ?? ((color??Theme.of(context).backgroundColor).computeLuminance()>0.5?AppColors.black:AppColors.white),size: iconSize,key: Key(icon!.codePoint.toString()),textDirection: textDirection,);
+      child = Icon(icon,color: iconColor ?? ((color??Theme.of(context).colorScheme.background).computeLuminance()>0.5?Colors.black:Colors.white),size: iconSize,key: Key(icon!.codePoint.toString()),textDirection: textDirection,);
     }
     return Padding(
       padding: margin,

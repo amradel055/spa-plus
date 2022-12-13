@@ -42,7 +42,7 @@ final Map<String, String> arEG = {
   AppStrings.foodService: 'خدمة المطاعم',
   AppStrings.todayOffers: 'عروض اليوم',
   AppStrings.sale: 'خصم',
-  AppStrings.minutes: 'د',
+  AppStrings.min: 'د',
   AppStrings.sections: 'الأقسام',
   AppStrings.LE: 'جنيه',
   AppStrings.open: 'مفتوح',
@@ -70,5 +70,23 @@ final Map<String, String> arEG = {
 
 
 
+  AppStrings.description: 'الوصف',
+  AppStrings.moreInformation: 'معلومات إضافية',
+  AppStrings.relatedItems: 'العناصر المشابهة',
+  AppStrings.reviews: 'المراجعات',
+  AppStrings.additions: 'الإضافات',
+  AppStrings.close: 'إغلاق',
+  AppStrings.deliveryTime: 'وقت التسليم',
+  AppStrings.sap: 'أقرب وقت',
+  AppStrings.minutes: 'دقيقة',
+  AppStrings.hour: 'ساعة',
+  AppStrings.enterTime: 'أدخل وقت',
+  AppStrings.ok: 'حسناً',
+  AppStrings.cancel: 'إلغاء',
+  AppStrings.apply: 'تطبيق',
+  AppStrings.foodCart: 'سلة الطعام',
+  AppStrings.preparing: 'قيد التحضير',
+  AppStrings.delivering: 'قيد التوصيل',
+  AppStrings.delivered: 'تم التسليم',
 
 };

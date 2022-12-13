@@ -4,12 +4,7 @@ import 'package:easy_hotel/app/core/themes/app_theme.dart';
 import 'package:flutter/material.dart';
 
 abstract class AppColors {
-  static get primary => navy;
-  static const navy = Color(0xff17a2b8);
-  static const blue = Color(0xff007bff);
-  static const greenNavy = Color(0xff00bf96);
-  static const whitePrimary = Color(0xffd3f1eb);
-  static const whiteBlue = Color(0xffc3e6ec);
+  static get primary => appHallsRedDark;
   static const white = Color(0xfff8f9fa);
   static const black = Color(0xff6c757d);
   static const grey = Color(0xffababab);
