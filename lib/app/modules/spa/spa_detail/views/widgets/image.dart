@@ -17,8 +17,8 @@ class SpaImage extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size =MediaQuery.of(context).size;
     return Padding(
-      padding: const EdgeInsets.all(2.0),
-      child: ImageWidget(path:image ,  height: size.height * .2, width: size.width * .3,fit: BoxFit.fill,),
+      padding: const EdgeInsets.all(1.0),
+      child: ImageWidget(path:image ,  height: size.height * .2, width: size.width * .3,fit: BoxFit.fill,radius: 0,),
     );
 
   }

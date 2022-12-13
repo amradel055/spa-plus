@@ -1,6 +1,8 @@
 import 'package:easy_hotel/app/components/image_widget.dart';
 import 'package:easy_hotel/app/components/text_widget.dart';
 import 'package:easy_hotel/app/core/values/app_colors.dart';
+import 'package:easy_hotel/app/core/values/app_constants.dart';
+import 'package:easy_hotel/app/core/values/app_strings.dart';
 import 'package:easy_hotel/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -21,32 +23,26 @@ class HallsCardWidget extends StatelessWidget {
     Size size =MediaQuery.of(context).size;
     return GestureDetector(
       onTap: onTap,
-      child: Center(
-        child: SizedBox(
-          width: size.width*.9,
-          height: size.height*.35,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text("halls.hallName!",
-              ),
-              Text(
-                '5star',
-                style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                    backgroundColor: Colors.black12),
-              ),
-              Padding(
-                padding: EdgeInsets.fromLTRB(
-                    0, size.height * 0.01, 0, size.height * 0.01),
-                child: Row(children: [
+      child: Padding(
+        padding: const EdgeInsets.all(5.0),
+        child: Center(
+          child: Container(
+            width: size.width*.9,
+          height: size.height*.26,
+          decoration: const BoxDecoration(
+          borderRadius: BorderRadius.all(
+          Radius.circular(10)),
+          color: AppColors.appGreyDark),
+
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Stack(children: [
                   Container(
                     height: size.height * 0.2,
-                    width: size.width * 0.35,
+                    width: size.width * 0.9,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(
+                        borderRadius:const BorderRadius.all(
                           Radius.circular(10),
                         ),
                         image: DecorationImage(
@@ -55,58 +51,81 @@ class HallsCardWidget extends StatelessWidget {
                             image),
                         )
                     ),),
-                  Padding(
-                    padding: EdgeInsets.fromLTRB(
-                        size.width * 0.02, 0, size.width * 0.02, 0),
-                    child: SizedBox(
-                      width: size.width * 0.5,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                  PositionedDirectional(
+                    top: 0,
+                    end: 0,
+                    child: Container(
+                      decoration:
+                      BoxDecoration(borderRadius: const BorderRadiusDirectional.only(bottomStart: Radius.circular(AppConstants.radius)), color: Colors.red.withOpacity(.8)),
+                      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 2),
+                      child: const TextWidget(
+                        AppStrings.sale,
+                        textDirection: TextDirection.rtl,
+                        textColor: Colors.white,
+                        weight: FontWeight.bold,
+                        children: [TextWidget(" 15 "), TextWidget("%"), TextWidget(" - "), TextWidget(" 2000 "), TextWidget("LE")],
+                      ),
+                    ),
+                  ),
+                  Positioned.fill(
+                    child: Container(
+                      decoration: const BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [Colors.black, Colors.transparent, Colors.transparent],
+                            begin: Alignment.bottomCenter,
+                            end: Alignment.topCenter,
+                          )),
+                      alignment: Alignment.bottomCenter,
+                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 2),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
-                          SizedBox(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Container(
-                                  color: AppColors.appHallsRedDark,
-                                  child: Padding(
-                                    padding: EdgeInsets.fromLTRB(
-                                        size.width * 0.02,
-                                        0,
-                                        size.width * 0.02,
-                                        0),
-                                    child: Text(
-                                      "5/5",
-                                    ),
-                                  ),
-                                ),
-                                Text(
-                                  "مراجعات: 1560",
-                                  textAlign: TextAlign.center,
-                                ),
-                              ],
+                          const Expanded(
+                              flex: 2,
+                              child: TextWidget(
+                                "قاعه الملكه",
+                                maxLines: 1,
+                                textColor: Colors.white,
+                                weight: FontWeight.bold,
+                              )),
+                          Expanded(
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  TextWidget("4.5",textColor: Colors.white,),
+                                  Icon(Icons.star_rounded,color: Colors.white,)
+                                ],
+                              )),
+                          const Expanded(
+                            child: Align(
+                              alignment: AlignmentDirectional.bottomEnd,
+                              child: TextWidget(
+                                "40 فرد ",
+                                size: 11,
+                                textColor: Colors.white,
+                                weight: FontWeight.bold,
+                                children: [TextWidget(AppStrings.minutes)],
+                              ),
                             ),
                           ),
-                          Text(
-                            "halls.hallName!",
-                            overflow: TextOverflow.ellipsis,
-                            maxLines: 1,
-                          ),
-                          Text(
-                            "السعة :50شخص",
-                            overflow: TextOverflow.ellipsis,
-                            maxLines: 1,
-                          ),
-                          Text(
-                            "واي فاي مجاني",
-                            overflow: TextOverflow.ellipsis,
-                            maxLines: 1,
-                          ),
-                          Text(
-                            "تقديم المشروبات والطعام",
+                        ],
+                      ),
+                    ),
+                  )
 
-                            overflow: TextOverflow.ellipsis,
-                            maxLines: 1,
+
+
+                ])     ,
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(5,0,5,0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const TextWidget("halls.hallName!",weight: FontWeight.bold,size: 15,
                           ),
                           SizedBox(
                             child: Row(
@@ -124,32 +143,28 @@ class HallsCardWidget extends StatelessWidget {
                                           0,
                                           size.width * 0.02,
                                           0),
-                                      child: Text(
+                                      child:const TextWidget(
                                         "اجندة الحجوزات",
+                                        weight: FontWeight.bold,
+                                        textColor: Colors.white,
 
                                       ),
                                     ),
                                   ),
                                 ),
-                                GestureDetector(onTap: (){
-                                },
-                                  child: Text(
-                                    "المزيد...",
-
-                                  ),
-                                ),
                               ],
                             ),
                           ),
-                        ],
-                      ),
-                    ),
+                        ],),
+
+                    ],
                   ),
-                ]),
-              )     ,  Container(color: AppColors.appGreyDark,width: size.width,height: size.height*.002,),
-            ],
-          )
-          ,
+                ),
+
+              ],
+            )
+            ,
+          ),
         ),
       ),
     );

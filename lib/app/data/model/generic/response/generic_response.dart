@@ -1,10 +1,11 @@
+import 'package:easy_hotel/app/core/transitions/size_transitions.dart';
 import 'package:easy_hotel/app/data/provider/api_provider.dart';
 
 class GenericResponse<T> {
 
   bool? success;
   String? msg;
-  int? code;
+  String? code;
   T data;
   Pagination? pagination;
 

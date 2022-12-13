@@ -11,5 +11,10 @@ abstract class AppConstants {
   static const Duration ANIMATION_DURATION = Duration(milliseconds: 400);
   static const String GOOGLE_PLAY = "https://play.google.com/store/apps/details?id=";
   static const PRIVACY_URL = "";
+  static const companyId = 159;
+  static const createdBy = 354;
+
+
+
 
 }

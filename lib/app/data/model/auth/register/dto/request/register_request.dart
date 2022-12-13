@@ -1,41 +1,27 @@
-class RegisterRequestDto {
+import 'package:easy_hotel/app/data/model/base_request.dart';
+
+class RegisterRequestDto extends BaseRequest {
   RegisterRequestDto({
-    this.isMale,
     this.mobile,
-    this.birthdate,
-    this.educationLevel,
-    this.emailAddress,
+    this.email,
     this.password  = "",
-    this.passwordConfirmation = "",
-    this.firstName,
-    this.familyname,
-    this.fatherName,
-    this.city,
+    this.name,
+    this.userName,
+
   });
 
   String? mobile;
-  DateTime? birthdate;
-  int? isMale;
-  String? firstName;
-  String? familyname;
-  String? emailAddress;
-  String? fatherName;
-  String? city;
+  String? name;
+  String? userName;
+  String? email;
   String? password;
-  String? passwordConfirmation;
-  String? educationLevel;
 
+  @override
   Map<String, dynamic> toJson() => {
-    "firstname": firstName,
-    "familyname": familyname,
-    "fathername": fatherName,
-    "city": city,
-    "is_male": isMale,
+    "name": name,
+    "userName": userName,
     "mobile": mobile,
-    "email_address": emailAddress,
-    "birthday": birthdate?.toIso8601String(),
-    "education_level": educationLevel,
+    "email": email,
     "password": password,
-    "password_confirmation": passwordConfirmation,
   };
 }

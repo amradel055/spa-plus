@@ -40,19 +40,23 @@ class RegisterView extends GetView<RegisterController> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       TextFieldWidget(
-                        controller:controller.firstNameameController,
-                        label: AppStrings.firstName,
+                        controller:controller.userNameController,
+                        label: AppStrings.userName,
                         suffixIcon: Icons.pin,
                         textInputAction: TextInputAction.next,
+                        onChange: (value) => controller.requestDto.userName = value,
+
                         ltr: true,
                         validator: AppValidator.forceValue,
                       ),
                       space,
                       TextFieldWidget(
-                        controller:controller.emailController,
-                        label: AppStrings.lastName,
+                        controller:controller.nameController,
+                        label: AppStrings.name,
                         suffixIcon: Icons.pin,
                         textInputAction: TextInputAction.next,
+                        onChange: (value) => controller.requestDto.name = value,
+
                         ltr: true,
                         validator: AppValidator.forceValue,
                       ),
@@ -62,6 +66,7 @@ class RegisterView extends GetView<RegisterController> {
                         label: AppStrings.email,
                         suffixIcon: Icons.email,
                         textInputAction: TextInputAction.next,
+                        onChange: (value) => controller.requestDto.email = value,
                         ltr: true,
                         validator: AppValidator.forceValue,
                       ),
@@ -71,6 +76,8 @@ class RegisterView extends GetView<RegisterController> {
                         label: AppStrings.phone,
                         suffixIcon: Icons.phone,
                         textInputAction: TextInputAction.next,
+                        onChange: (value) => controller.requestDto.mobile = value,
+
                         ltr: true,
                         validator: AppValidator.forceValue,
                       ),
@@ -79,6 +86,7 @@ class RegisterView extends GetView<RegisterController> {
                         controller:controller.passwordController,
                         label: AppStrings.password,
                         suffixIcon: Icons.password,
+                        onChange: (value) => controller.requestDto.password = value,
                         ltr: true,
                         validator: AppValidator.forceValue,
                       ),

@@ -1,5 +1,6 @@
 import 'package:easy_hotel/app/components/text_field_widget.dart';
 import 'package:easy_hotel/app/components/text_widget.dart';
+import 'package:easy_hotel/app/core/utils/common.dart';
 import 'package:easy_hotel/app/core/values/app_assets.dart';
 import 'package:easy_hotel/app/core/values/app_strings.dart';
 import 'package:easy_hotel/app/modules/spa/spa_home/controllers/spa_controller.dart';
@@ -13,121 +14,166 @@ import 'package:get/get.dart';
 
 class SpaView extends GetView<SpaController> {
   const SpaView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    Size size =MediaQuery.of(context).size;
+    Size size = MediaQuery
+        .of(context)
+        .size;
     return Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-        foregroundColor: Colors.white,
-        title:  TextWidget('HOME',size: 30.h,),
-        flexibleSpace: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-                colors: [
-                  Colors.black87,
-                  Colors.black87,
-                  Colors.black.withOpacity(.7),
-                  Colors.black.withOpacity(.6),
-                  Colors.transparent
-                ],
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter
-            )
+        extendBodyBehindAppBar: true,
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: Colors.transparent,
+          foregroundColor: Colors.white,
+          title: TextWidget('HOME', size: 30.h,),
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+                gradient: LinearGradient(
+                    colors: [
+                      Colors.black87,
+                      Colors.black87,
+                      Colors.black.withOpacity(.7),
+                      Colors.black.withOpacity(.6),
+                      Colors.transparent
+                    ],
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter
+                )
+            ),
           ),
+          centerTitle: true,
         ),
-        centerTitle: true,
-      ),
-      body: ListView(
-        padding: EdgeInsets.zero,
-        children: [
-          Container(
-            height: 300.h,
-            decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage(AppAssets.salon), fit: BoxFit.cover)),
+        body: Obx(() {
+          if(controller.isLoading.value){
+            return Center(
+              child: Common.getSpin(),
+            );
+          }
+          return ListView(
+            padding: EdgeInsets.zero,
+            children: [
+              Container(
+                height: 300.h,
+                decoration: const BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage(AppAssets.salon), fit: BoxFit.cover)),
 
-              padding:  EdgeInsets.fromLTRB(50.h, 175.h,0, 0),
-            child:  Column(
-              children: [
-                Center(
-                    child: TextWidget(AppStrings.searchlabel,textColor: Colors.white,size: 20.h,weight: FontWeight.bold,)),
-                Row(
+                padding: EdgeInsets.fromLTRB(
+                    size.width * .1, 175.h, size.width * .1, 0),
+                child: Column(
                   children: [
-                    Container(
-                      width: size.width*.8 ,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10)
-                      ),
-                      child:
-                    GestureDetector(
-                      onTap:(){Get.toNamed(Routes.SPASEARCHPAGE);},
-                      child:   TextFieldWidget(
-                          enabled: false,
-                          label: AppStrings.search,
-                          suffixIcon: Icons.search,
-                          ltr: true,
-                           onTap: (){Get.toNamed(Routes.SPASEARCHPAGE);},
+                    Center(
+                        child: TextWidget(
+                          AppStrings.searchlabel, textColor: Colors.white,
+                          size: 20.h,
+                          weight: FontWeight.bold,)),
+                    Row(
+                      children: [
+                        SizedBox(
+                            width: size.width * .8,
+
+                            child:
+                            GestureDetector(
+                              onTap: () {
+                                Get.toNamed(Routes.SPASEARCHPAGE);
+                              },
+                              child: TextFieldWidget(
+                                enabled: false,
+                                hint: AppStrings.search,
+                                suffixIcon: Icons.search,
+                                ltr: true,
+                                onTap: () {
+                                  Get.toNamed(Routes.SPASEARCHPAGE);
+                                },
+
+                              ),
+                            )
+
 
                         ),
+
+                      ],
                     )
-
-
-                      ),
-
                   ],
-                )],
-            ),
-
-
-          ),
-          Column(crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding:  EdgeInsets.fromLTRB(20.h, 0, 20.h, 10.h),
-                  child: TextWidget(AppStrings.searchlabel,textAlign: TextAlign.left,weight: FontWeight.bold,size: 20.h,),
                 ),
-                SizedBox(
-                    height: size.height*.34,
-                    child:
-                    GridView.builder(
-                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        mainAxisSpacing: 0,
-                        crossAxisSpacing: 0,
-                      ),
-                      itemCount: 9,
-                      scrollDirection: Axis.horizontal,
-                      itemBuilder: (context, index) {
-                        return const SpaServicesWidget();
-                      },
 
+
+              ),
+              Column(crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(20.h, 0, 20.h, 10.h),
+                      child: TextWidget(
+                        AppStrings.searchlabel, textAlign: TextAlign.left,
+                        weight: FontWeight.bold,
+                        size: 20.h,),
+                    ),
+                    Obx(() {
+                      return SizedBox(
+                          height: size.height * .17,
+                          child:
+                          GridView.builder(
+                            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 1,
+                              mainAxisSpacing: 0,
+                              crossAxisSpacing: 0,
+                            ),
+                            itemCount: controller.spaGroup.length,
+                            scrollDirection: Axis.horizontal,
+                            itemBuilder: (context, index) {
+                              return SpaServicesWidget(name: controller
+                                  .spaGroup[index].name!, city: controller
+                                  .spaGroup[index].cityName!,
+                                   onTap: (){}, id: controller
+                                    .spaGroup[index].id!,
+                              );
+                            },
+
+                          )
+                      );
+                    }),
+                   controller.spaOffer == []?const SizedBox(): Column(
+                     crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(20.h, 0, 20.h, 0),
+                          child: TextWidget(
+                            AppStrings.offers, textAlign: TextAlign.left,
+                            weight: FontWeight.bold,
+                            size: 20.h,),
+                        ),
+                        Obx(() {
+                          return SizedBox(
+                              height: size.height * .34,
+                              child:
+                              ListView.builder(
+                                itemCount: controller.spaOffer.length,
+                                scrollDirection: Axis.horizontal,
+                                itemBuilder: (context, index) {
+                                  return SpaOffersWidgets(
+                                    image: 'https://www.wearegurgaon.com/wp-content/uploads/2022/04/Affinity-Salon-Gurgaon.jpg',
+                                    name: controller.spaOffer[index].name,
+                                    city: controller.spaOffer[index].cityName,
+                                    hotel: controller.spaOffer[index].hotelName,
+                                    onTap: (){
+                                    },
+                                    id:controller.spaOffer[index].id ,
+                                  );
+                                },
+
+                              )
+                          );
+                        }),
+                      ],
                     )
-                ),
-                Padding(
-                  padding:  EdgeInsets.fromLTRB(20.h, 0, 20.h, 0),
-                  child: TextWidget(AppStrings.offers,textAlign: TextAlign.left,weight: FontWeight.bold,size: 20.h,),
-                ),
-                SizedBox(
-                    height: size.height*.34,
-                    child:
-                    ListView.builder(
-                      itemCount: 4,
-                      scrollDirection: Axis.horizontal,
-                      itemBuilder: (context, index) {
-                        return const SpaOffersWidgets();
-                      },
-
-                    )
-                ),
 
 
-              ])
-        ],
-      )
+
+                  ])
+            ],
+          );
+        })
     );
   }
 }

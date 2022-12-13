@@ -1,25 +1,29 @@
 import 'package:easy_hotel/app/components/image_widget.dart';
 import 'package:easy_hotel/app/components/text_widget.dart';
 import 'package:easy_hotel/app/core/values/app_colors.dart';
+import 'package:easy_hotel/app/core/values/app_strings.dart';
 import 'package:easy_hotel/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Halls extends StatelessWidget {
-  const Halls({Key? key, required this.image, required this.name}) : super(key: key);
+  const Halls({Key? key, required this.image, required this.name, this.onTap}) : super(key: key);
   final String image;
   final String name;
+  final Function()? onTap;
+
+
 
   @override
   Widget build(BuildContext context) {
     Size size =MediaQuery.of(context).size;
     return GestureDetector(onTap: (){
-      Get.toNamed(Routes.HOUSEKEEPING_SERVICES);
+      onTap;
     },
       child: Container(
         width: size.width * .45,
         height: size.height * .2,
-        decoration: BoxDecoration(
+        decoration:const BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(
               10.0)),
 
@@ -31,7 +35,7 @@ class Halls extends StatelessWidget {
               height: size.height * 0.13,
               width: size.width * 0.4,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(
+                  borderRadius: const BorderRadius.all(
                     Radius.circular(10),
                   ),
                   image: DecorationImage(
@@ -41,21 +45,18 @@ class Halls extends StatelessWidget {
                   )
               ),
 
-            ), Container(width: size.width*.4,
+            ), SizedBox(width: size.width*.4,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  TextWidget(
                     name,
-
                     maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
+                    weight: FontWeight.bold,
                   ),
-                  Text(
-                    "رؤية المزيد",
-
+                  const TextWidget(
+                    AppStrings.readmore,
                     maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
                   )
                 ],),
             )

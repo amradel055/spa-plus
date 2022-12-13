@@ -50,9 +50,10 @@ class LoginView extends GetView<LoginController> {
                   children: [
 
                     TextFieldWidget(
-                      controller:controller.phoneController,
-                      label: AppStrings.phone,
+                      controller:controller.userNameController,
+                      label: AppStrings.userName,
                       suffixIcon: Icons.phone,
+                      onChange: (value) => controller.requestDto.userName = value,
                       ltr: true,
                       validator: AppValidator.forceValue,
                       textInputAction: TextInputAction.next,
@@ -62,6 +63,7 @@ class LoginView extends GetView<LoginController> {
                       controller:controller.passwordController,
                       label: AppStrings.password,
                       suffixIcon: Icons.password,
+                      onChange: (value) => controller.requestDto.password = value,
                       ltr: true,
                       validator: AppValidator.forceValue,
 

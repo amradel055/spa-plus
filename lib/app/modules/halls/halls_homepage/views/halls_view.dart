@@ -14,6 +14,7 @@ import '../controllers/halls_controller.dart';
 
 class HallsView extends GetView<HallsController> {
   const HallsView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     Size size =MediaQuery.of(context).size;
@@ -57,13 +58,8 @@ class HallsView extends GetView<HallsController> {
                   Center(
                     child: Container(
                         width: size.width*.8 ,
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(10)
-                        ),
                         child: TextFieldWidget(
-                          // enabled: false,
-                          label: AppStrings.search,
+                          enabled: false,
                           suffixIcon: Icons.search,
                           ltr: true,
                           hint: AppStrings.search,
@@ -81,7 +77,7 @@ class HallsView extends GetView<HallsController> {
                     children: [
                       Padding(
                         padding:  EdgeInsets.fromLTRB(20.h, 0, 20.h, 20.h),
-                        child: TextWidget("Hotel Halls",textAlign: TextAlign.left,weight: FontWeight.bold,size: 20.h,),
+                        child: TextWidget(AppStrings.hotelHalls,textAlign: TextAlign.left,weight: FontWeight.bold,size: 20.h,),
                       ),
                       SizedBox(
                           height: size.height*.23,
@@ -90,7 +86,7 @@ class HallsView extends GetView<HallsController> {
                             itemCount: 4,
                             scrollDirection: Axis.horizontal,
                             itemBuilder: (context, index) {
-                              return const Halls(image: "https://www.arabiaweddings.com/sites/default/files/articles/2020/02/wedding_venues_in_amman.png",name: "test",);
+                              return const Halls(image: "https://www.arabiaweddings.com/sites/default/files/articles/2020/02/wedding_venues_in_amman.png",name: "test test test test",onTap: null,);
                             },
 
                           )
@@ -106,7 +102,7 @@ class HallsView extends GetView<HallsController> {
                             itemCount: 4,
                             scrollDirection: Axis.horizontal,
                             itemBuilder: (context, index) {
-                              return const Halls(image: "https://www.arabiaweddings.com/sites/default/files/articles/2020/02/wedding_venues_in_amman.png",name: "test",);
+                              return const Halls(image: "https://www.arabiaweddings.com/sites/default/files/articles/2020/02/wedding_venues_in_amman.png",name: "test test test test",onTap: null,);
                             },
 
                           )

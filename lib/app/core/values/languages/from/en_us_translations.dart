@@ -18,12 +18,12 @@ final Map<String, String> enUs = {
   AppStrings.phone: 'PHONE',
   AppStrings.email: 'EMAIL',
   AppStrings.password: 'PASSWORD',
-  AppStrings.firstName: 'FIRSTNAME',
-  AppStrings.lastName: 'LASTNAME',
+  AppStrings.userName: 'FIRSTNAME',
+  AppStrings.name: 'LASTNAME',
   AppStrings.register: 'REGISTER',
   AppStrings.haveAccount: 'Do you have an account',
   AppStrings.login: 'LOGIN',
-  AppStrings.hello: 'Hello name',
+  AppStrings.hello: 'Hello ',
   AppStrings.logout: 'Log out',
   AppStrings.search: 'search',
   AppStrings.searchlabel: 'search for service..',
@@ -36,9 +36,42 @@ final Map<String, String> enUs = {
   AppStrings.readless: 'Read Less..',
   AppStrings.orderpolman: 'Order your Polman',
   AppStrings.foodService: 'Food service',
+  AppStrings.polmanService: 'Polman service',
+  AppStrings.spaService: 'Spa service',
+  AppStrings.housekeepingService: 'Housekeeping service',
+  AppStrings.hallsService: 'Halls service',
+  AppStrings.carsServices: 'Cars service',
+  AppStrings.roomsService: 'Rooms service',
+
   AppStrings.todayOffers: 'Today offers',
   AppStrings.sale: 'Sale',
+  AppStrings.spasHotel: 'Spa Hotel',
+  AppStrings.spasCity: 'Spa City',
   AppStrings.minutes: 'min',
   AppStrings.sections: 'sections',
   AppStrings.LE: 'LE',
+  AppStrings.open: 'Open',
+  AppStrings.reserve: 'RESERVE',
+  AppStrings.information: 'Information',
+  AppStrings.services: 'Services',
+  AppStrings.photos: 'Photos',
+  AppStrings.reviews: 'Reviews',
+  AppStrings.prices: 'Prices',
+  AppStrings.packages: 'Packages',
+  AppStrings.show: 'Show',
+  AppStrings.time: 'Time',
+  AppStrings.hotelHalls: 'hotelHalls',
+  AppStrings.halls: 'Halls',
+  AppStrings.number: 'Number',
+  AppStrings.design: 'Design',
+  AppStrings.servicesHall: 'services Hall',
+
+
+
+
+
+
+
+
+
 };

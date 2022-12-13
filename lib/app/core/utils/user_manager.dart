@@ -14,17 +14,17 @@ class UserManager{
   bool get isLoggedIn => AppStorage.read(AppStorage.IS_LOGGED_IN) ?? false;
   String get token => AppStorage.read(AppStorage.TOKEN_KEY) ?? '';
   String get rToken => AppStorage.read(AppStorage.REFRESH_TOKEN_KEY) ?? '';
-  bool get isMale => user?.isMale == 1;
+  // bool get isMale => user?.isMale == 1;
   // bool get isTokenExpired => DateTime.tryParse(AppStorage.read(AppStorage.TOKEN_EXPIRE_TIME_KEY)??'')?.isBefore(DateTime.now()) ?? false;
 
-  User? get user => AppStorage.read(AppStorage.USER) == null ? null : User.fromJson(AppStorage.read(AppStorage.USER));
+  LoginResponse? get user => AppStorage.read(AppStorage.USER) == null ? null : LoginResponse.fromJson(AppStorage.read(AppStorage.USER));
 
 
   login(LoginResponse data) {
     AppStorage.write(AppStorage.IS_LOGGED_IN, true);
-    AppStorage.write(AppStorage.USER, data.user.toJson());
-    AppStorage.write(AppStorage.TOKEN_KEY, data.accessToken);
-    AppStorage.write(AppStorage.TOKEN_EXPIRE_TIME_KEY, data.expiresIn);
+    AppStorage.write(AppStorage.USER, data.toJson());
+    // AppStorage.write(AppStorage.TOKEN_KEY, data.accessToken);
+    // AppStorage.write(AppStorage.TOKEN_EXPIRE_TIME_KEY, data.expiresIn);
   }
 
   logout(){

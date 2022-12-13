@@ -1,14 +1,17 @@
-class LoginRequestDto {
+import 'package:easy_hotel/app/data/model/base_request.dart';
+
+class LoginRequestDto extends BaseRequest {
   LoginRequestDto({
-    this.phone,
+    this.userName,
     this.password,
   });
 
-  String? phone;
+  String? userName;
   String? password;
 
+  @override
   Map<String, dynamic> toJson() => {
-    "phone": phone,
+    "userName": userName,
     "password": password,
   };
 }

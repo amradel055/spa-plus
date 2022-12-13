@@ -1,6 +1,7 @@
 import 'package:easy_hotel/app/components/text_widget.dart';
 import 'package:easy_hotel/app/core/values/app_assets.dart';
 import 'package:easy_hotel/app/core/values/app_colors.dart';
+import 'package:easy_hotel/app/core/values/app_strings.dart';
 import 'package:easy_hotel/app/modules/spa/spa_detail/controllers/spa_details_controller.dart';
 import 'package:easy_hotel/app/modules/spa/spa_detail/views/widgets/spa_images_Widget.dart';
 import 'package:easy_hotel/app/modules/spa/spa_detail/views/widgets/spa_info_widget.dart';
@@ -33,16 +34,16 @@ class SpaServices extends GetView<SpaDetailsController> {
             ),
             child:  Row(
               children: [
-                 BarWidgets( title:  'prices',index:0,),
-                 BarWidgets( title: 'services',index: 1,),
-                 BarWidgets( title: 'packeges',index: 2,),
+                 BarWidgets( title: AppStrings.prices,index:0,),
+                 BarWidgets( title: AppStrings.services,index: 1,),
+                 BarWidgets( title: AppStrings.packages,index: 2,),
               ],),
           ),
         ),
 
         Obx((){
           return [
-           const SpaReservationPriceWidget(),const SpaReservationServicesWidget(),const SpaReservationPackageWidget(),
+            SpaReservationPriceWidget(),const SpaReservationServicesWidget(),const SpaReservationPackageWidget(),
           ][controller.serviceIndex.value];
         })
       ],

@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_hotel/app/components/icon_button_widget.dart';
 import 'package:easy_hotel/app/components/text_widget.dart';
 import 'package:easy_hotel/app/core/values/app_colors.dart';
+import 'package:easy_hotel/app/core/values/app_strings.dart';
 import 'package:easy_hotel/app/modules/house_keeping/housekeeping_services/views/widgets/price_services.dart';
 import 'package:easy_hotel/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
@@ -43,10 +44,10 @@ class HouseKeepingServicesView extends GetView<HouseKeepingServicesController> {
                       ),
                     ),
                     const Spacer(),
-                    const TextWidget(
-                      'خدمه تنظيف الغرف',
+                     TextWidget(
+                      "controller.housekeepingDetail[0].name!",
                       weight: FontWeight.bold,
-                      size: 15,
+                      size: 20,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -62,10 +63,14 @@ class HouseKeepingServicesView extends GetView<HouseKeepingServicesController> {
                                 child: TextWidget(
                                   '4.4',
                                   size: 15,
+                                  weight: FontWeight.bold,
+
                                 ))),
                         const TextWidget(
                           'مراجعات',
                           size: 20,
+                          weight: FontWeight.bold,
+
                         ),
                       ],
                     ),
@@ -78,54 +83,52 @@ class HouseKeepingServicesView extends GetView<HouseKeepingServicesController> {
                 decoration:const BoxDecoration(borderRadius: BorderRadius.only(topLeft:Radius.circular(30.00),topRight:Radius.circular(30.00)),
                   color: Colors.white,
                 ),
-                child: Directionality(textDirection: TextDirection.rtl,
-                  child: Padding(
-                    padding: EdgeInsets.fromLTRB(size.width*.05, 0,25, 0),
-                    child: Column(crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const TextWidget('يرجي اختيار الخدمه',weight: FontWeight.bold,textColor: AppColors.appBlue,size: 20,),
-                        SizedBox(
-                          height: size.height * 0.55,
-                          child: SingleChildScrollView(
-                            physics: const AlwaysScrollableScrollPhysics(),
-                            child: Column(
-                              children: [
-                                SizedBox(
-                                  height: size.height * 0.54,
-                                  child: SingleChildScrollView(
-                                    physics: const AlwaysScrollableScrollPhysics(),
-                                    child: Column(
-                                      children: [
-                                        for(int i = 0 ; i < 11 ; i++)
-                                        const HousekeepingServicesPriceWidget(image: 'dddd',)
-                                      ],
-                                    ),
+                child: Padding(
+                  padding: EdgeInsets.fromLTRB(size.width*.05, 0,25, 0),
+                  child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const TextWidget('يرجي اختيار الخدمه',weight: FontWeight.bold,textColor: AppColors.appBlue,size: 20,),
+                      SizedBox(
+                        height: size.height * 0.55,
+                        child: SingleChildScrollView(
+                          physics: const AlwaysScrollableScrollPhysics(),
+                          child: Column(
+                            children: [
+                              SizedBox(
+                                height: size.height * 0.54,
+                                child: SingleChildScrollView(
+                                  physics: const AlwaysScrollableScrollPhysics(),
+                                  child: Column(
+                                    children: [
+                                      for(int i = 0 ; i < controller.housekeepingDetail.length ; i++)
+                                       HousekeepingServicesPriceWidget(controller.housekeepingDetail[i].name!, controller.housekeepingDetail[i].price!.toString(),i.obs,controller.housekeepingDetail[i].id!,controller.housekeepingDetail[i].branchId,)
+                                    ],
                                   ),
                                 ),
-
-
-                              ],
-                            ),
-                          ),
-                        ),
-                        Center(
-                          child: GestureDetector(
-                            onTap: (){
-                              Get.toNamed(Routes.HOUSEKEEPING_RESERVATION);
-                            },
-                            child: Container(
-                              height:size.height * 0.05 ,
-                              width: size.width * 0.7,
-                              decoration: BoxDecoration(
-                                color: AppColors.appHallsRedDark,
-                                borderRadius: BorderRadius.all( Radius.circular(size.width * 0.05)),
                               ),
-                              child:const TextWidget("استمرار" , textAlign: TextAlign.center,weight: FontWeight.bold,textColor: Colors.white,),
-                            ),
+
+
+                            ],
                           ),
                         ),
-                      ],),
-                  ),
+                      ),
+                      Center(
+                        child: GestureDetector(
+                          onTap: (){
+                            Get.toNamed(Routes.HOUSEKEEPING_RESERVATION,arguments: controller.id);
+                          },
+                          child: Container(
+                            height:size.height * 0.05 ,
+                            width: size.width * 0.7,
+                            decoration: BoxDecoration(
+                              color: AppColors.appHallsRedDark,
+                              borderRadius: BorderRadius.all( Radius.circular(size.width * 0.05)),
+                            ),
+                            child:const TextWidget("استمرار" , textAlign: TextAlign.center,weight: FontWeight.bold,textColor: Colors.white,),
+                          ),
+                        ),
+                      ),
+                    ],),
                 ),
               ),
             ),

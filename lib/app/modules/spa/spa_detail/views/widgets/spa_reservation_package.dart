@@ -2,12 +2,18 @@
 import 'package:easy_hotel/app/components/image_widget.dart';
 import 'package:easy_hotel/app/components/text_widget.dart';
 import 'package:easy_hotel/app/core/values/app_colors.dart';
+import 'package:easy_hotel/app/core/values/app_strings.dart';
+import 'package:easy_hotel/app/modules/spa/spa_detail/controllers/spa_details_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 
-class SpaReservationPackage extends StatelessWidget {
-  const SpaReservationPackage({Key? key}) : super(key: key);
 
+
+class SpaReservationPackage extends GetView<SpaDetailsController> {
+  const SpaReservationPackage(this.name, this.title, {Key? key}) : super(key: key);
+  final String name;
+  final String title;
   @override
   Widget build(BuildContext context) {
     Size size =MediaQuery.of(context).size;
@@ -31,8 +37,8 @@ class SpaReservationPackage extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const TextWidget("_spa!.groupName!",weight: FontWeight.bold),
-                      const TextWidget("_spa!.name!",weight: FontWeight.bold),
+                      TextWidget(name,weight: FontWeight.bold),
+                      TextWidget(title,weight: FontWeight.bold),
 
                     ],
                   ),
@@ -41,14 +47,20 @@ class SpaReservationPackage extends StatelessWidget {
                   padding: const EdgeInsets.only(left:5, right:10),
                   child: Column(
                     children: [
-                      Container(
-                        height:size.height * 0.055 ,
-                        width: size.width * 0.2,
-                        decoration: BoxDecoration(
-                          color:Colors.white ,
-                          borderRadius: BorderRadius.all( Radius.circular(size.width * 0.05)),
+                      GestureDetector(
+                        onTap: (){
+                          controller.serviceIndex.value=0;
+
+                        },
+                        child: Container(
+                          height:size.height * 0.055 ,
+                          width: size.width * 0.2,
+                          decoration: BoxDecoration(
+                            color:Colors.white ,
+                            borderRadius: BorderRadius.all( Radius.circular(size.width * 0.05)),
+                          ),
+                          child:const Center(child:  TextWidget(AppStrings.reserve , textAlign: TextAlign.center,weight: FontWeight.bold,)),
                         ),
-                        child:const Center(child:  TextWidget("إحجز الأن" , textAlign: TextAlign.center,weight: FontWeight.bold,)),
                       ),
                       const TextWidget('250 LE',weight: FontWeight.bold)
 
@@ -63,6 +75,6 @@ class SpaReservationPackage extends StatelessWidget {
       ),
     )
     ;
-
   }
+
 }

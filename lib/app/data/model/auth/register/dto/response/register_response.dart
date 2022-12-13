@@ -1,23 +1,35 @@
+import 'package:easy_hotel/app/core/transitions/size_transitions.dart';
+
 class RegisterResponse {
   RegisterResponse({
+
     required this.success,
-    required this.message,
-    required this.token,
+    required this.data,
+    required this.msg,
+    required this.code,
+    required this.pagination,
+
   });
 
-  final String success;
-  final String message;
-  final String token;
+  final bool success;
+  final dynamic data;
+  final String code;
+  final String msg;
+  final dynamic pagination;
 
   factory RegisterResponse.fromJson(json) => RegisterResponse(
     success: json["success"],
-    message: json["message"],
-    token: json["token"],
+    data: json["data"],
+    msg: json["msg"],
+    code: json["code"],
+    pagination: json["pagination"],
   );
 
   Map<String, dynamic> toJson() => {
     "success": success,
-    "message": message,
-    "token": token,
+    "data": data,
+    "msg": msg,
+    "code": code,
+    "pagination": pagination,
   };
 }

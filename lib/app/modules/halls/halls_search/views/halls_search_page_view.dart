@@ -45,9 +45,9 @@ class HallsSearchPageView extends GetView<HallsSearchPageController> {
         children: [
             Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              CategoriesWidgets( title:  'Towns',image: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/screen-shot-2021-03-02-at-10-26-31-am-1614702485.png?crop=0.668xw:1.00xh;0.293xw,0&resize=640:*",onTap: (){controller.changeListType(0);}, index: controller.selectedType.value,),
-              CategoriesWidgets( title: 'Hotels',image: "https://images.unsplash.com/photo-1615460549969-36fa19521a4f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzl8fGhvdGVsfGVufDB8fDB8fA%3D%3D&w=1000&q=80",onTap: (){controller.changeListType(1);},index: controller.selectedType.value,),
-              CategoriesWidgets( title: 'Halls',image: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/spa-treatment-room-1584039817.jpg",onTap: (){controller.changeListType(2);},index: controller.selectedType.value,),
+              CategoriesWidgets( title:  AppStrings.towns,image: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/screen-shot-2021-03-02-at-10-26-31-am-1614702485.png?crop=0.668xw:1.00xh;0.293xw,0&resize=640:*",onTap: (){controller.changeListType(0);}, index: controller.selectedType.value,),
+              CategoriesWidgets( title: AppStrings.hotels,image: "https://images.unsplash.com/photo-1615460549969-36fa19521a4f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzl8fGhvdGVsfGVufDB8fDB8fA%3D%3D&w=1000&q=80",onTap: (){controller.changeListType(1);},index: controller.selectedType.value,),
+              CategoriesWidgets( title:AppStrings.halls,image: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/spa-treatment-room-1584039817.jpg",onTap: (){controller.changeListType(2);},index: controller.selectedType.value,),
           ],),
           row,
          Column(
@@ -87,7 +87,7 @@ class HallsSearchPageView extends GetView<HallsSearchPageController> {
             child: const Icon(Icons.filter, color: Colors.white,),
             onPressed: () {
               Widget okButton = TextButton(
-                child: Center(child: Text("بحث")),
+                child:const Center(child: TextWidget("بحث",textColor: Colors.white,size: 15,weight: FontWeight.bold,)),
                 onPressed: () {
                 },
               );
@@ -97,89 +97,86 @@ class HallsSearchPageView extends GetView<HallsSearchPageController> {
                   return StatefulBuilder(
                       builder: (context , setState){
                         return AlertDialog(
-                          title: Center(child: Text("filter")),
-                          content: Directionality(textDirection: TextDirection.rtl,
+                          title: const Center(child: TextWidget("filter")),
+                          content: SizedBox(
+                            height: size.height*.4,
+                            width: size.width,
 
-                            child: Container(
-                              height: size.height*.8,
-                              width: size.width,
-
-                              child: Column(
-                                children: [
-                                  for(String add in hobbyList)
-                                    Column(
+                            child: Column(
+                              children: [
+                                for(String add in hobbyList)
+                                  Column(
+                                    children: [
+                                      const TextWidget("add.name!",),
+                                    ],
+                                  ),
+                                Padding(
+                                  padding: const EdgeInsets.fromLTRB(0, 15, 0, 0),
+                                  child: Container(width: size.width*.82,height: size.height*.2,
+                                    decoration:const  BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(10)),color: Colors.white),
+                                    child: Row(
                                       children: [
-                                        Text("add.name!",),
+                                        SizedBox(width: size.width*.3,
+                                          height: size.height*.2,
+                                          child: Center(
+                                            child: GestureDetector(onTap: (){
+                                            },
+                                              child: Column(mainAxisAlignment: MainAxisAlignment.center,
+                                                children: [
+                                                  const TextWidget('من سعر'),
+                                                  Text(_currentRangeValues.start.round().toString()),
+                                                  const TextWidget(AppStrings.LE),
+
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                        )
+                                        ,Container(
+                                          width: size.width*.005,
+                                          height: size.height*.18,
+                                          color: Colors.black,
+
+                                        ),
+                                        SizedBox(width: size.width*.3,
+                                          height: size.height*2,
+                                          child: Center(
+                                            child: GestureDetector(onTap: (){
+                                            },
+                                              child: Column(mainAxisAlignment: MainAxisAlignment.center,
+                                                children: [
+                                                 const TextWidget('الي سعر',),
+                                                  Text(_currentRangeValues.end.round().toString(),),
+                                                  const TextWidget(AppStrings.LE,),
+
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                        )
                                       ],
                                     ),
-                                  Padding(
-                                    padding: const EdgeInsets.fromLTRB(0, 15, 0, 0),
-                                    child: Container(width: size.width*.82,height: size.height*.2,
-                                      decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(10)),color: Colors.white),
-                                      child: Row(
-                                        children: [
-                                          Container(width: size.width*.3,
-                                            height: size.height*.2,
-                                            child: Center(
-                                              child: GestureDetector(onTap: (){
-                                              },
-                                                child: Column(mainAxisAlignment: MainAxisAlignment.center,
-                                                  children: [
-                                                    Text('من سعر'),
-                                                    Text(_currentRangeValues.start.round().toString()),
-                                                    Text('جنيها'),
-
-                                                  ],
-                                                ),
-                                              ),
-                                            ),
-                                          )
-                                          ,Container(
-                                            width: size.width*.005,
-                                            height: size.height*.18,
-                                            color: Colors.black,
-
-                                          ),
-                                          Container(width: size.width*.3,
-                                            height: size.height*2,
-                                            child: Center(
-                                              child: GestureDetector(onTap: (){
-                                              },
-                                                child: Column(mainAxisAlignment: MainAxisAlignment.center,
-                                                  children: [
-                                                    Text('الي سعر',),
-                                                    Text(_currentRangeValues.end.round().toString(),),
-                                                    Text('جنيها',),
-
-                                                  ],
-                                                ),
-                                              ),
-                                            ),
-                                          )
-                                        ],
-                                      ),
-                                    ),
                                   ),
-                                  RangeSlider(
-                                    values: _currentRangeValues,
-                                    max: 100,
-                                    divisions: 100,
-                                    labels: RangeLabels(
-                                      _currentRangeValues.start.round().toString(),
-                                      _currentRangeValues.end.round().toString(),
-                                    ),
-                                    onChanged: (RangeValues values) {
-                                      setState(() {
-                                        _currentRangeValues = values;
-                                      });
-                                    },
+                                ),
+                                RangeSlider(
+                                  values: _currentRangeValues,
+                                  max: 100,
+                                  divisions: 100,
+                                  labels: RangeLabels(
+                                    _currentRangeValues.start.round().toString(),
+                                    _currentRangeValues.end.round().toString(),
                                   ),
+                                  onChanged: (RangeValues values) {
+                                    setState(() {
+                                      _currentRangeValues = values;
+                                    });
+                                  },
+                                ),
 
 
 
 
-                                ],
-                              ),
+                              ],
                             ),
                           ),
                           actions: [
@@ -187,7 +184,7 @@ class HallsSearchPageView extends GetView<HallsSearchPageController> {
                               child: Container(
                                   height: size.height*.06,
                                   width: size.width*.4,
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     borderRadius: BorderRadius.all(
                                         Radius.circular(6.00)),
                                     color: Colors.blueAccent,

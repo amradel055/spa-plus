@@ -118,7 +118,7 @@ class TextFieldWidget extends StatelessWidget {
                   onFieldSubmitted: onSubmitted,
                   onTap: onTap,
                   focusNode: focusNode,
-                  enabled: enabled,
+                  readOnly: !enabled,
                   maxLines: multiLines? null : (maxLines??1),
                   onEditingComplete: nextFocusNode == null ? null : () => nextFocusNode!.requestFocus(),
                   textInputAction: textInputAction,

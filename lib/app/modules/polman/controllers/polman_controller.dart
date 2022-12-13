@@ -1,23 +1,28 @@
+import 'package:easy_hotel/app/core/utils/show_popup_text.dart';
+import 'package:easy_hotel/app/core/utils/user_manager.dart';
+import 'package:easy_hotel/app/core/values/app_constants.dart';
+import 'package:easy_hotel/app/data/model/polman/dto/request/polman_save_request.dart';
+import 'package:easy_hotel/app/data/repository/polman/polman_repository.dart';
 import 'package:get/get.dart';
 
 class PolmanController extends GetxController {
-  //TODO: Implement PolmanController
+  final isLoading = false.obs;
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  getpolmanSave() async {
+    isLoading(true);
+    final request = PolmanSaveRequest(
+      serviceTypeId:22 ,
+      branchId: 23,
+      createdBy:AppConstants.createdBy,
+      companyId: AppConstants.companyId,
+      customerId: UserManager().user!.id,
+    );
+    PolmanRepository().getPolmanSave(request,
+        onSuccess: (data) {
+          showPopupText( "تم الحفظ بنجاح");
+        },
+        onError: (e) => showPopupText( e.toString()),
+        onComplete: () => isLoading(false)
+    );
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }

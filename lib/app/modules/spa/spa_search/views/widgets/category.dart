@@ -1,3 +1,4 @@
+import 'package:easy_hotel/app/components/text_widget.dart';
 import 'package:easy_hotel/app/core/values/app_colors.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -26,9 +27,9 @@ class CategoriesWidgets extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text(
+                  child: TextWidget(
                     title,
-                    style: TextStyle(fontSize: size.width * 0.04 , fontWeight: FontWeight.bold, color:Colors.black , fontFamily: "Cairo" ,),
+                    weight: FontWeight.bold,
                   ),
                 ),
               ],

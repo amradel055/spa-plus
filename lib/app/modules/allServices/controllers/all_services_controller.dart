@@ -7,12 +7,12 @@ import 'package:get/get.dart';
 class AllServicesController extends GetxController {
 
 List<ServiceModel> allServices=[
-  ServiceModel(name: 'SPA Service', image: AppAssets.spa, pageRoute: Routes.SPA),
+  ServiceModel(name: AppStrings.spaService, image: AppAssets.spa, pageRoute: Routes.SPA),
   ServiceModel(name: AppStrings.foodService, image: AppAssets.restraunt, pageRoute: Routes.RESTURANT),
-  ServiceModel(name: 'Halls Service', image: AppAssets.halls, pageRoute: Routes.HALLS),
-  ServiceModel(name: 'HouseKeeping Service', image: AppAssets.housekeeping, pageRoute: Routes.HOUSE_KEEPING),
-  ServiceModel(name: 'Rooms Service', image: AppAssets.rooms, pageRoute: Routes.ROOMS),
-  ServiceModel(name: 'Polman Service', image: AppAssets.polman, pageRoute: Routes.POLMAN),
-  ServiceModel(name: 'Cars Service', image: AppAssets.cars  , pageRoute: Routes.CARS)
+  ServiceModel(name: AppStrings.hallsService, image: AppAssets.halls, pageRoute: Routes.HALLS),
+  ServiceModel(name: AppStrings.housekeepingService, image: AppAssets.housekeeping, pageRoute: Routes.HOUSE_KEEPING),
+  ServiceModel(name: AppStrings.roomsService, image: AppAssets .rooms, pageRoute: Routes.ROOMS),
+  ServiceModel(name: AppStrings.polmanService, image: AppAssets.polman, pageRoute: Routes.POLMAN),
+  ServiceModel(name: AppStrings.carsServices, image: AppAssets.cars  , pageRoute: Routes.CARS)
 ];
 }

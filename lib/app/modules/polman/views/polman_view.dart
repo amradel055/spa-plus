@@ -47,11 +47,11 @@ class PolmanView extends GetView<PolmanController> {
               decoration: const BoxDecoration(
                   image: DecorationImage(image: AssetImage(AppAssets.polman), fit: BoxFit.cover)),
 
-              padding:  EdgeInsets.fromLTRB(40.h, 300.h,0, 0),
+              padding:  EdgeInsets.fromLTRB(40.h, 300.h,40.h, 0),
               child:  Column(
                 children: [
                   Center(
-                      child: TextWidget(AppStrings.orderpolman,textColor: Colors.white,size: 40.h,weight: FontWeight.bold,)),
+                      child: TextWidget(AppStrings.orderpolman,textColor: Colors.white,size: 30.h,weight: FontWeight.bold,)),
                  ],
               ),
 
@@ -70,7 +70,7 @@ class PolmanView extends GetView<PolmanController> {
                           SizedBox(height: size.height*.1,width: size.width*.9,
                             child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                const TextWidget('Time',weight: FontWeight.bold,size: 20,),
+                                const TextWidget(AppStrings.time,weight: FontWeight.bold,size: 20,),
                                 Container(width: size.width*.7,height: size.height*.2,
                                     decoration: BoxDecoration(borderRadius:const BorderRadius.all((Radius.circular(15))),color: Colors.grey[300],),
                                     child:
@@ -84,7 +84,7 @@ class PolmanView extends GetView<PolmanController> {
                             child: Center(
                               child: GestureDetector(
                                 onTap: (){
-
+                                  controller.getpolmanSave();
                                 },
                                 child: Container(
                                   height:size.height * 0.05 ,

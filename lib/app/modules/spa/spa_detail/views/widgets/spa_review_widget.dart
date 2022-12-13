@@ -1,13 +1,14 @@
 
 import 'package:easy_hotel/app/components/text_widget.dart';
+import 'package:easy_hotel/app/modules/spa/spa_detail/controllers/spa_details_controller.dart';
 import 'package:easy_hotel/app/modules/spa/spa_detail/views/widgets/spa_review.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:get/get_state_manager/src/simple/get_view.dart';
 
-class SpaReviewsWidget extends StatelessWidget {
-  const SpaReviewsWidget({Key? key, required this.image}) : super(key: key);
-  final String image;
 
+class SpaReviewsWidget extends GetView<SpaDetailsController> {
+  const SpaReviewsWidget({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     Size size =MediaQuery.of(context).size;
@@ -30,7 +31,16 @@ class SpaReviewsWidget extends StatelessWidget {
           onRatingUpdate: (rating) {
           },
         ),
-        const TextWidget('تم المراجعه بواسطه ٤ اشخاص',weight: FontWeight.bold),
+        Row(
+          children: [
+            const TextWidget('تم المراجعه بواسطه ',weight: FontWeight.bold),
+             TextWidget(controller.spa!.reviewDtoList!.length.toString(),weight: FontWeight.bold),
+            const TextWidget('اشخاص',weight: FontWeight.bold),
+
+
+          ],
+        )
+
 
       ],),
       SizedBox(height: size.height*.5,
@@ -38,8 +48,8 @@ class SpaReviewsWidget extends StatelessWidget {
           physics: const AlwaysScrollableScrollPhysics(),
           child: Column(
             children: [
-              for(int i = 0 ; i <= 8 ; i++)
-                const SpaReviewWidget(image: 'https://www.wearegurgaon.com/wp-content/uploads/2022/04/Affinity-Salon-Gurgaon.jpg', name: 'wwwww', route: "",)
+              for(int i = 0 ; i < controller.spa!.reviewDtoList!.length ; i++)
+                 SpaReviewWidget(image: 'https://www.wearegurgaon.com/wp-content/uploads/2022/04/Affinity-Salon-Gurgaon.jpg', name: controller.spa!.reviewDtoList![i].customerName!, route: "",date: controller.spa!.reviewDtoList![i].reviewDate!.toString(),)
 
 
 
@@ -48,9 +58,6 @@ class SpaReviewsWidget extends StatelessWidget {
         ),
       ),
 
-    ],)
+    ],);  }
 
-    ;
-
-  }
 }

@@ -30,13 +30,13 @@ abstract class AppStrings {
   static const Welcome = "WELCOME";
   static const phone = "Phone";
   static const password = "PASSWORD";
-  static const firstName = "FIRSTNAME";
-  static const lastName = "LASTNAME";
+  static const userName = "userName";
+  static const name = "Name";
   static const email = "EMAIL";
   static const register = "REGISTER";
   static const haveAccount = "Do You Have An Account..";
   static const login = "LOGIN";
-  static const hello = "Hello name";
+  static const hello = "Hello ";
   static const logout = "Log out";
   static const search = "search";
   static const searchlabel = "search for services and reseve it..";
@@ -44,6 +44,8 @@ abstract class AppStrings {
   static const towns = "Towns";
   static const hotels = "Hotels";
   static const spas = "Spa";
+  static const spasHotel = "Hotel Spa";
+  static const spasCity = "City Spa";
   static const address = "Address";
   static const directions = "Directions";
   static const workhours = "Work Hours";
@@ -51,11 +53,40 @@ abstract class AppStrings {
   static const readless = "Read Less";
   static const orderpolman = "Order your Polman";
   static const foodService = "foodService";
+  static const carsServices = "carService";
+  static const hallsService = "hallsService";
+  static const spaService = "spaService";
+  static const roomsService = "roomsService";
+  static const polmanService = "polmanService";
+  static const housekeepingService = "housekeepingService";
   static const todayOffers = "todayOffers";
   static const sale = "sale";
   static const minutes = "minutes";
   static const sections = "sections";
   static const LE = "LE";
+  static const open = "Open";
+  static const reserve = "RESERVE";
+  static const services = "Services";
+  static const information = "Information";
+  static const reviews = "Reviews";
+  static const photos = "Photos";
+  static const prices = "Prices";
+  static const packages = "Packages";
+  static const show = "Show";
+  static const time = "Time";
+  static const hotelHalls = "hotelHalls";
+  static const halls = "Halls";
+  static const number = "Number";
+  static const design = "Design";
+  static const servicesHall = "services Hall";
+
+
+
+
+
+
+
+
 
 
 

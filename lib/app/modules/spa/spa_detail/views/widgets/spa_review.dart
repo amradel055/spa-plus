@@ -7,10 +7,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class SpaReviewWidget extends StatelessWidget {
-  const SpaReviewWidget({Key? key, required this.image, required this.name, required this.route}) : super(key: key);
+  const SpaReviewWidget({Key? key, required this.image, required this.name, required this.route, required this.date}) : super(key: key);
   final String image;
   final String name ;
   final String route;
+  final String date;
 
 
   @override
@@ -64,7 +65,7 @@ class SpaReviewWidget extends StatelessWidget {
               ),
             ), Padding(
               padding:  EdgeInsets.fromLTRB(0, 0, size.width*0,0),
-              child:const TextWidget('20-3-2022',weight: FontWeight.bold),
+              child: TextWidget(date,weight: FontWeight.bold),
             ),
 
           ],

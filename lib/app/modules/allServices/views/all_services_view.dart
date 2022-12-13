@@ -1,10 +1,12 @@
 import 'package:easy_hotel/app/components/image_widget.dart';
 import 'package:easy_hotel/app/components/text_widget.dart';
+import 'package:easy_hotel/app/core/utils/user_manager.dart';
 import 'package:easy_hotel/app/core/values/app_assets.dart';
 import 'package:easy_hotel/app/core/values/app_colors.dart';
 import 'package:easy_hotel/app/core/values/app_constants.dart';
 import 'package:easy_hotel/app/core/values/app_strings.dart';
 import 'package:easy_hotel/app/modules/allServices/views/widgets/service_card.dart';
+import 'package:easy_hotel/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -17,18 +19,28 @@ class AllServicesView extends GetView<AllServicesController> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Scaffold(
         appBar: AppBar(
           backgroundColor: AppColors.backgroundColor,
           leading: Padding(
-            padding: const EdgeInsets.fromLTRB(10.0, 3, 0, 0),
-            child: TextWidget(
-              AppStrings.hello,
-              size: 25.h,
-              textColor: AppColors.appBlue,
-              weight: FontWeight.bold,
-            ),
+            padding: const EdgeInsets.fromLTRB(10.0, 3, 10, 0),
+            child:
+            Row(
+              children: [
+                TextWidget(
+                  AppStrings.hello,
+                  size: 25.h,
+                  textColor: AppColors.appBlue,
+                  weight: FontWeight.bold,
+                ),
+                TextWidget(
+                  UserManager().user!.name!,
+                  size: 25.h,
+                  textColor: AppColors.appBlue,
+                  weight: FontWeight.bold,
+                ),
+              ],
+            )
           ),
           leadingWidth: 300.h,
           actions: [
@@ -38,7 +50,12 @@ class AllServicesView extends GetView<AllServicesController> {
                   value: 1,
                   child: Row(
                     children: [
-                      const Icon(Icons.logout,color: Colors.black,),
+                      GestureDetector(
+                          onTap: (){
+                            UserManager().logout();
+                            Get.toNamed(Routes.LOGIN);
+                          },
+                          child: const Icon(Icons.logout,color: Colors.black,)),
                       SizedBox(
                         width: 10.h,
                       ),
