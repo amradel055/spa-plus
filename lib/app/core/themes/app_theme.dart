@@ -77,7 +77,7 @@ final ThemeData lightTheme = ThemeData(
   primaryColor: AppColors.primary,
   brightness: Brightness.light,
   scaffoldBackgroundColor: Colors.white,
-  shadowColor: Colors.black.withOpacity(.05),
+  shadowColor: Colors.black.withOpacity(.2),
   cardTheme: CardTheme(
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(8.0),
@@ -102,7 +102,7 @@ final ThemeData lightTheme = ThemeData(
     elevation: 8,
     titleTextStyle: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black, fontFamily: AppTheme.appFontFamily),
     backgroundColor: AppColors.backgroundColor,
-    shadowColor: Colors.black12,
+    shadowColor: Colors.black26,
     systemOverlayStyle: SystemUiOverlayStyle.dark
   ),
   focusColor: AppColors.primary,

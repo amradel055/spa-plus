@@ -1,7 +1,5 @@
-import 'package:easy_hotel/app/modules/food_item/bindings/food_item_binding.dart';
-import 'package:easy_hotel/app/modules/food_item/controllers/food_item_controller.dart';
-import 'package:easy_hotel/app/modules/food_item/views/food_item_view.dart';
 import 'package:get/get.dart';
+
 import '../modules/allServices/bindings/all_services_binding.dart';
 import '../modules/allServices/views/all_services_view.dart';
 import '../modules/cars/cars_category/bindings/cars_category_binding.dart';
@@ -10,6 +8,11 @@ import '../modules/cars/cars_main/bindings/cars_main_binding.dart';
 import '../modules/cars/cars_main/views/cars_main_view.dart';
 import '../modules/cars/cars_order/bindings/cars_order_binding.dart';
 import '../modules/cars/cars_order/views/cars_order_view.dart';
+import '../modules/food_cart/bindings/food_cart_binding.dart';
+import '../modules/food_cart/views/food_cart_view.dart';
+import '../modules/food_item/bindings/food_item_binding.dart';
+import '../modules/food_item/controllers/food_item_controller.dart';
+import '../modules/food_item/views/food_item_view.dart';
 import '../modules/food_section/bindings/food_section_binding.dart';
 import '../modules/food_section/views/food_section_view.dart';
 import '../modules/halls/all_halls/bindings/all_halls_page_binding.dart';
@@ -197,6 +200,11 @@ class AppPages {
       name: _Paths.FOOD_ITEM,
       page: () => const FoodItemView(),
       binding: FoodItemBinding(),
+    ),
+    GetPage(
+      name: _Paths.FOOD_CART,
+      page: () => const FoodCartView(),
+      binding: FoodCartBinding(),
     ),
   ];
 }

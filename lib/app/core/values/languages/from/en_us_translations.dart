@@ -55,4 +55,8 @@ final Map<String, String> enUs = {
   AppStrings.ok: 'Ok',
   AppStrings.cancel: 'Cancel',
   AppStrings.apply: 'Apply',
+  AppStrings.foodCart: 'Food cart',
+  AppStrings.preparing: 'Preparing',
+  AppStrings.delivering: 'Delivering',
+  AppStrings.delivered: 'Delivered',
 };

@@ -71,6 +71,10 @@ abstract class AppStrings {
   static const deliveryTime = "deliveryTime";
   static const sap = "sap";
   static const apply = "apply";
+  static const foodCart = "foodCart";
+  static const preparing = "preparing";
+  static const delivering = "delivering";
+  static const delivered = "delivered";
 
 
 

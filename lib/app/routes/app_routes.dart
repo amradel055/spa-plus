@@ -27,16 +27,9 @@ abstract class Routes {
   static const ALL_HALLS = _Paths.ALL_HALLS;
   static const HALL_DETAILS = _Paths.HALL_DETAILS;
 
-
-
-
-
-
-
-
-
   static const FOOD_SECTION = _Paths.FOOD_SECTION;
   static const FOOD_ITEM = _Paths.FOOD_ITEM;
+  static const FOOD_CART = _Paths.FOOD_CART;
 }
 
 abstract class _Paths {
@@ -66,11 +59,5 @@ abstract class _Paths {
   static const HALLS_SEARCH = '/halls-search';
   static const ALL_HALLS = '/all-halls';
   static const HALL_DETAILS = '/halls-details';
-
-
-
-
-
-
-
+  static const FOOD_CART = '/food-cart';
 }

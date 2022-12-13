@@ -57,5 +57,9 @@ final Map<String, String> arEG = {
   AppStrings.ok: 'حسناً',
   AppStrings.cancel: 'إلغاء',
   AppStrings.apply: 'تطبيق',
+  AppStrings.foodCart: 'سلة الطعام',
+  AppStrings.preparing: 'قيد التحضير',
+  AppStrings.delivering: 'قيد التوصيل',
+  AppStrings.delivered: 'تم التسليم',
 
 };
