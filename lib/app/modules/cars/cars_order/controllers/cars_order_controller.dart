@@ -65,7 +65,8 @@ class CarsOrderController extends GetxController {
       personNumber: selectedPersonsNumber.value,
       fromDestination: selectedTrafficLine.value?.id,
       customerId: UserManager().user!.id!,
-      branchId: UserManager().user!.branchId,
+      //TODO change branchId
+      branchId: 232,
       companyId: AppConstants.companyId
     );
     CarsRepository().saveCarsOrder(request,

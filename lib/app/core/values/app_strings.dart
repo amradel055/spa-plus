@@ -97,6 +97,9 @@ abstract class AppStrings {
   static const preparing = "preparing";
   static const delivering = "delivering";
   static const delivered = "delivered";
+  static const goingAndReturn = "ذهاب و عوده";
+  static const going = "ذهاب ";
+  static const returning = " عوده";
 
 
 
