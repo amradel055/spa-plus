@@ -84,24 +84,10 @@ abstract class AppStrings {
   static const number = "Number";
   static const design = "Design";
   static const servicesHall = "services Hall";
-
-
-
-
-
-
-
-
-
-
-
-
-
   static const description = "description";
   static const carsChoose = "اختر الخدمة التي تريد رؤيتها";
   static const moreInformation = "moreInformation";
   static const relatedItems = "relatedItems";
-  static const reviews = "reviews";
   static const additions = "additions";
   static const close = "close";
   static const deliveryTime = "deliveryTime";

@@ -23,18 +23,18 @@ class ResturantView extends GetView<ResturantController> {
         centerTitle: true,
         actions: [
           Center(
-            child: Badge(
-              label: const TextWidget("2", height: 1.5),
-              alignment: AlignmentDirectional.topEnd,
-              // largeSize: 20,
-              smallSize: 20,
-              child: UnconstrainedBox(
-                child: IconButtonWidget(
-                    onPressed: () => Get.toNamed(Routes.FOOD_CART),
-                    icon: Icons.shopping_cart_outlined
-                ),
-              ),
-            ),
+            // child: Badge(
+            //   label: const TextWidget("2", height: 1.5),
+            //   alignment: AlignmentDirectional.topEnd,
+            //   // largeSize: 20,
+            //   smallSize: 20,
+            //   child: UnconstrainedBox(
+            //     child: IconButtonWidget(
+            //         onPressed: () => Get.toNamed(Routes.FOOD_CART),
+            //         icon: Icons.shopping_cart_outlined
+            //     ),
+            //   ),
+            // ),
           )
         ],
       ),

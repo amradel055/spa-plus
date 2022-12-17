@@ -83,10 +83,10 @@ class HallsView extends GetView<HallsController> {
                           height: size.height*.23,
                           child:
                           ListView.builder(
-                            itemCount: 4,
+                            itemCount: controller.allHalls.length,
                             scrollDirection: Axis.horizontal,
                             itemBuilder: (context, index) {
-                              return const Halls(image: "https://www.arabiaweddings.com/sites/default/files/articles/2020/02/wedding_venues_in_amman.png",name: "test test test test",onTap: null,);
+                              return  Halls(image: "https://www.arabiaweddings.com/sites/default/files/articles/2020/02/wedding_venues_in_amman.png",name:controller.allHalls[index].name!,onTap: null,);
                             },
 
                           )
@@ -99,10 +99,10 @@ class HallsView extends GetView<HallsController> {
                           height: size.height*.23,
                           child:
                           ListView.builder(
-                            itemCount: 4,
+                            itemCount: controller.offersHalls.length,
                             scrollDirection: Axis.horizontal,
                             itemBuilder: (context, index) {
-                              return const Halls(image: "https://www.arabiaweddings.com/sites/default/files/articles/2020/02/wedding_venues_in_amman.png",name: "test test test test",onTap: null,);
+                              return  Halls(image: "https://www.arabiaweddings.com/sites/default/files/articles/2020/02/wedding_venues_in_amman.png",name:controller.offersHalls[index].name!,onTap: null,);
                             },
 
                           )

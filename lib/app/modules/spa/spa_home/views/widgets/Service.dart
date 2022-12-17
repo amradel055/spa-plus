@@ -34,22 +34,6 @@ class SpaServicesWidget extends StatelessWidget {
                           'https://www.wearegurgaon.com/wp-content/uploads/2022/04/Affinity-Salon-Gurgaon.jpg')
                   )
               ),
-    return SizedBox(
-      width: size.width*.15,
-      height: size.height*.1,
-      child: Column(
-        children: [
-          Container(
-            height:  size.height * 0.07,
-            width: size.width * 0.15,
-            decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(10)  ),
-                image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: NetworkImage(
-                        'https://www.wearegurgaon.com/wp-content/uploads/2022/04/Affinity-Salon-Gurgaon.jpg')
-                )
-            ),
 
             ),
              TextWidget(name,maxLines: 1,weight: FontWeight.bold,)
