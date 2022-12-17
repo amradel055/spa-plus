@@ -35,6 +35,7 @@ class SpaResponse {
     this.lang,
     this.lat,
     this.spaItemsDtoList,
+    this.offersDetailsDTOList,
     this.offersDTOList,
     this.address,
     this.reviewDtoList,
@@ -75,6 +76,7 @@ class SpaResponse {
   dynamic lang;
   dynamic lat;
   List<SpaItemModel> ? spaItemsDtoList;
+  List<SpaOfferResponse> ? offersDetailsDTOList;
   List<SpaOfferResponse> ? offersDTOList;
   String? address;
   List<ReviewModel>? reviewDtoList;
@@ -114,6 +116,7 @@ class SpaResponse {
     lang: json["lang"],
     lat: json["lat"],
     spaItemsDtoList: json["spaItemsDTOList"] == null ? null : List<SpaItemModel>.from(json["spaItemsDTOList"].map((x) => SpaItemModel.fromJson(x) )),
+    offersDetailsDTOList: json["offersDetailsDTOList"] == null ? null : List<SpaOfferResponse>.from(json["offersDetailsDTOList"].map((x) => SpaOfferResponse.fromJson(x) )),
     offersDTOList: json["offersDTOList"] == null ? null : List<SpaOfferResponse>.from(json["offersDTOList"].map((x) => SpaOfferResponse.fromJson(x) )),
     address: json["address"] == null ? null : json["address"],
     reviewDtoList: json["reviewDTOList"] == null ? null : List<ReviewModel>.from(json["reviewDTOList"].map((x) =>ReviewModel.fromJson(x))),
@@ -152,6 +155,7 @@ class SpaResponse {
     "lang": lang,
     "lat": lat,
     "spaItemsDTOList": spaItemsDtoList == null ? null : List<SpaItemModel>.from(spaItemsDtoList!.map((x) => x)),
+    "offersDetailsDTOList": offersDetailsDTOList == null ? null : List<SpaOfferResponse>.from(offersDetailsDTOList!.map((x) => x)),
     "offersDTOList": offersDTOList == null ? null : List<SpaOfferResponse>.from(offersDTOList!.map((x) => x)),
     "address": address == null ? null : address,
     "reviewDTOList": reviewDtoList == null ? null : List<ReviewModel>.from(reviewDtoList!.map((x) => x)),
@@ -261,6 +265,7 @@ class ReviewModel {
     this.appId,
     this.invOrganizationId,
     this.reviewDate,
+    this.creationDate,
     this.reviewStars,
     this.reviewText,
     this.customerName
@@ -269,8 +274,9 @@ class ReviewModel {
   int? itemId;
   int? appId;
   int? invOrganizationId;
-  int? reviewStars;
+  double? reviewStars;
   DateTime? reviewDate;
+  DateTime? creationDate;
   String? reviewText;
   String? customerName;
   int? id;
@@ -278,7 +284,8 @@ class ReviewModel {
   factory ReviewModel.fromJson(Map<String, dynamic> json) => ReviewModel(
     id: json["id"] == null ? null : json["id"],
     reviewDate: json["reviewDate"] == null ? null : DateTime.parse(json["reviewDate"]),
-    reviewStars: json["reviewStars"] == null ? null : json["reviewStars"],
+    creationDate: json["creationDate"] == null ? null : DateTime.parse(json["creationDate"]),
+    reviewStars: json["reviewStars"] == null ? null : json["reviewStars"].toDouble(),
     itemId: json["itemId"] == null ? null : json["itemId"],
     appId: json["appId"] == null ? null : json["appId"],
     invOrganizationId: json["invOrganizationId"] == null ? null : json["invOrganizationId"],
@@ -289,6 +296,7 @@ class ReviewModel {
   Map<String, dynamic> toJson() => {
     "id": id == null ? null : id,
     "reviewDate": reviewDate == null ? null : reviewDate!.toIso8601String(),
+    "creationDate": creationDate == null ? null : creationDate!.toIso8601String(),
     "reviewStars": reviewStars == null ? null : reviewStars,
     "itemId": itemId == null ? null : itemId,
     "appId": appId == null ? null : appId,

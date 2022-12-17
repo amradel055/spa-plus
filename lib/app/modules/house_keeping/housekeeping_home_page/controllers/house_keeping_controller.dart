@@ -22,7 +22,7 @@ class HouseKeepingController extends GetxController {
   getHousekeepingGroup() async {
     isLoading(true);
     final request = AllHousekeepingRequest(
-      appId: 4,
+      appId: 5,
 
     );
     HousekeepingRepository().getHousekeepingGroup(request,

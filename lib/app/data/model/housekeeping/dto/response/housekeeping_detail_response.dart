@@ -54,7 +54,7 @@ class HouseKeepingDetailResponse {
   String? name;
   num ?price;
   int ?groupId;
-  RxBool?selected;
+  RxBool?selected=false.obs;
 
   static List<HouseKeepingDetailResponse> fromList(dynamic json) => List.from(json.map((e) => HouseKeepingDetailResponse.fromJson(e)));
 
@@ -81,7 +81,7 @@ class HouseKeepingDetailResponse {
     name: json["name"] == null ? null : json["name"],
     price: json["price"] == null ? null : json["price"],
     groupId: json["groupId"] == null ? null : json["groupId"],
-    selected: json["selected"] == null ? null : json["selected"],
+    selected: false.obs,
 
   );
 

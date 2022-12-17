@@ -67,7 +67,7 @@ class PolmanView extends GetView<PolmanController> {
                       height: size.height*.43,
                       child:Column(
                         children: [
-                          SizedBox(height: size.height*.1,width: size.width*.9,
+                          SizedBox(height: size.height*.2,width: size.width*.9,
                             child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 const TextWidget(AppStrings.time,weight: FontWeight.bold,size: 20,),
@@ -80,7 +80,7 @@ class PolmanView extends GetView<PolmanController> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(top: 170.0),
+                            padding: const EdgeInsets.only(top: 120.0),
                             child: Center(
                               child: GestureDetector(
                                 onTap: (){

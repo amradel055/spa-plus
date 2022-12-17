@@ -10,13 +10,13 @@ import 'package:flutter_expandable_fab/flutter_expandable_fab.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
-import '../controllers/all_halls_page_controller.dart';
+import '../controllers/city_halls_page_controller.dart';
 import 'widgets/halls_search_card.dart';
 
 
 
-class AllHallsPageView extends GetView<AllHallsPageController> {
-  const AllHallsPageView({Key? key}) : super(key: key);
+class CityHallsPageView extends GetView<CityHallsPageController> {
+  const CityHallsPageView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     Size size =MediaQuery.of(context).size;

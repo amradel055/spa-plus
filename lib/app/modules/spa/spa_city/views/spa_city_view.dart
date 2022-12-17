@@ -33,6 +33,7 @@ class SpaCityView extends GetView<SpaCityController> {
           backgroundColor: AppColors.appHallsRedDark,
           foregroundColor: Colors.white,
           title: const TextWidget(AppStrings.spasCity,weight: FontWeight.bold,
+            textColor: Colors.white,
           ),
           centerTitle: true,
         ),
