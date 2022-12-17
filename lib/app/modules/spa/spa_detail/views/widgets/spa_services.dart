@@ -34,8 +34,7 @@ class SpaServices extends GetView<SpaDetailsController> {
             ),
             child:  Row(
               children: [
-                 BarWidgets( title: AppStrings.prices,index:0,),
-                 BarWidgets( title: AppStrings.services,index: 1,),
+                 BarWidgets( title: AppStrings.services,index:0,),
                  BarWidgets( title: AppStrings.packages,index: 2,),
               ],),
           ),

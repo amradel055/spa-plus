@@ -31,7 +31,7 @@ class SpaDetailView extends GetView<SpaDetailsController> {
           elevation: 0,
           backgroundColor: Colors.transparent,
           foregroundColor: Colors.white,
-          title: TextWidget('DETAILS', size: 30.h,),
+          title: TextWidget('DETAILS', size: 30.h,textColor: Colors.white,),
           flexibleSpace: Container(
             decoration: BoxDecoration(
                 gradient: LinearGradient(

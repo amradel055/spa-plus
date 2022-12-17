@@ -7,10 +7,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class SpaReviewWidget extends StatelessWidget {
-  const SpaReviewWidget({Key? key, required this.image, required this.name, required this.route, required this.date}) : super(key: key);
+  const SpaReviewWidget({Key? key, required this.image, required this.name, required this.comment, required this.date}) : super(key: key);
   final String image;
   final String name ;
-  final String route;
+  final String comment;
   final String date;
 
 
@@ -57,7 +57,7 @@ class SpaReviewWidget extends StatelessWidget {
                         ),
                         onRatingUpdate: (rating) {
                         },
-                      ), const TextWidget('comment comment comment'),
+                      ),  TextWidget(comment),
 
                     ],
                   ),

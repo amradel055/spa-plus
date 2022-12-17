@@ -158,7 +158,7 @@ class SpaView extends GetView<SpaController> {
                                     hotel: controller.spaOffer[index].hotelName,
                                     onTap: (){
                                     },
-                                    id:controller.spaOffer[index].id ,
+                                    id:controller.spaOffer[index].offersDetailsDTOList![index].spaId ,
                                   );
                                 },
 

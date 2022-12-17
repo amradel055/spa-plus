@@ -29,7 +29,8 @@ class SpaOfferResponse {
     this.lat,
     this.address,
     this.hotelName,
-    this.cityName
+    this.cityName,
+    this.spaId
 
   });
 
@@ -58,6 +59,7 @@ class SpaOfferResponse {
   bool ? active;
   String ? activeName;
   int ?groupId;
+  int ?spaId;
   String? groupName;
   dynamic image;
   dynamic lang;
@@ -93,6 +95,7 @@ class SpaOfferResponse {
     active: json["active"] == null ? null : json["active"],
     activeName: json["activeName"] == null ? null : json["activeName"],
     groupId: json["groupId"] == null ? null : json["groupId"],
+    spaId: json["spaId"] == null ? null : json["spaId"],
     groupName: json["groupName"] == null ? null : json["groupName"],
     image: json["image"],
     lang: json["lang"],
@@ -127,6 +130,7 @@ class SpaOfferResponse {
     "active": active == null ? null : active,
     "activeName": activeName == null ? null : activeName,
     "groupId": groupId == null ? null : groupId,
+    "spaId": spaId == null ? null : spaId,
     "groupName": groupName == null ? null : groupName,
     "image": image,
     "lang": lang,

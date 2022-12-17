@@ -25,6 +25,7 @@ final Map<String, String> arEG = {
   AppStrings.login: 'تسجيل الدخول',
   AppStrings.hello: 'مرحبا ',
   AppStrings.logout: 'تسجيل الخروج',
+  // AppStrings.search: 'بحث ',
   AppStrings.search: 'ابحث عن الخدمه التي تريدها',
   AppStrings.searchlabel: 'إبحــث عـــن الخدمـــات وإحجزهــــا؟',
   AppStrings.offers: 'العروض',

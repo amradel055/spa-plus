@@ -21,11 +21,11 @@ class HallsSearchCardWidget extends StatelessWidget {
     return GestureDetector(
       onTap:(){
         if(type == 0) {
-          Get.toNamed(Routes.ALL_HALLS, arguments: id);
+          Get.toNamed(Routes.HALLS_SEARCH_FILTER, arguments: id);
         } else if(type == 1) {
-          Get.toNamed(Routes.SPAHOTEL, arguments: id);
+          Get.toNamed(Routes.HALLS_SEARCH_FILTER, arguments: id);
         }else{
-          Get.toNamed(Routes.SPADETAILS, arguments: id);
+          Get.toNamed(Routes.HALL_DETAILS, arguments: id);
         }
       },
       child: Padding(

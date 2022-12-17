@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-class AllHallsPageController extends GetxController {
+class HallSearchFilterPageController extends GetxController {
 
   RxInt selectedType = 0.obs;
   final _allItems = [];

@@ -33,7 +33,7 @@ class SpaHotelView extends GetView<SpaHotelController> {
           elevation: 0,
           backgroundColor: AppColors.appHallsRedDark,
           foregroundColor: Colors.white,
-          title: const TextWidget(AppStrings.spasHotel,weight: FontWeight.bold,
+          title: const TextWidget(AppStrings.spasHotel,weight: FontWeight.bold,textColor: Colors.white,
           ),
           centerTitle: true,
         ),

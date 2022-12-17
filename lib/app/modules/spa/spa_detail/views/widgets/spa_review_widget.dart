@@ -5,6 +5,7 @@ import 'package:easy_hotel/app/modules/spa/spa_detail/views/widgets/spa_review.d
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
+import 'package:intl/intl.dart';
 
 
 class SpaReviewsWidget extends GetView<SpaDetailsController> {
@@ -14,10 +15,10 @@ class SpaReviewsWidget extends GetView<SpaDetailsController> {
     Size size =MediaQuery.of(context).size;
     return    Column(children: [
       Column(children: [
-        const TextWidget('3.00',weight: FontWeight.bold),
+         TextWidget(controller.spa!.reviewDtoList![0].reviewStars!.toString(),weight: FontWeight.bold),
 
         RatingBar.builder(
-          initialRating: 3,
+          initialRating: controller.spa!.reviewDtoList![0].reviewStars!,
           minRating: 1,
           direction: Axis.horizontal,
           ignoreGestures: true,
@@ -31,14 +32,18 @@ class SpaReviewsWidget extends GetView<SpaDetailsController> {
           onRatingUpdate: (rating) {
           },
         ),
-        Row(
-          children: [
-            const TextWidget('تم المراجعه بواسطه ',weight: FontWeight.bold),
-             TextWidget(controller.spa!.reviewDtoList!.length.toString(),weight: FontWeight.bold),
-            const TextWidget('اشخاص',weight: FontWeight.bold),
+        SizedBox(
+          width: size.width,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const TextWidget('تم المراجعه بواسطه ',weight: FontWeight.bold),
+               TextWidget(controller.spa!.reviewDtoList!.length.toString(),weight: FontWeight.bold),
+              const TextWidget('اشخاص',weight: FontWeight.bold),
 
 
-          ],
+            ],
+          ),
         )
 
 
@@ -49,7 +54,7 @@ class SpaReviewsWidget extends GetView<SpaDetailsController> {
           child: Column(
             children: [
               for(int i = 0 ; i < controller.spa!.reviewDtoList!.length ; i++)
-                 SpaReviewWidget(image: 'https://www.wearegurgaon.com/wp-content/uploads/2022/04/Affinity-Salon-Gurgaon.jpg', name: controller.spa!.reviewDtoList![i].customerName!, route: "",date: controller.spa!.reviewDtoList![i].reviewDate!.toString(),)
+                 SpaReviewWidget(image: 'https://www.wearegurgaon.com/wp-content/uploads/2022/04/Affinity-Salon-Gurgaon.jpg', name: controller.spa!.reviewDtoList![i].customerName!, comment: "",date:DateFormat("dd-MM-yyyy").format(controller.spa!.reviewDtoList![i].reviewDate!) ,)
 
 
 

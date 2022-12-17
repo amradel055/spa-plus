@@ -24,7 +24,7 @@ class BarWidgets extends GetView<SpaDetailsController> {
         return Center(
           child: Container(
             height: size.height * .06,
-            width: size.width * .3,
+            width: size.width * .45,
             decoration: BoxDecoration(
                 color: index == controller.serviceIndex.value ? AppColors
                     .appHallsRedDark : AppColors.appHallsRed,

@@ -1,8 +1,9 @@
 
 import 'package:easy_hotel/app/modules/food_section/bindings/food_section_binding.dart';
 import 'package:easy_hotel/app/modules/food_section/views/food_section_view.dart';
-import 'package:easy_hotel/app/modules/halls/all_halls/bindings/all_halls_page_binding.dart';
-import 'package:easy_hotel/app/modules/halls/all_halls/views/all_halls_page_view.dart';
+import 'package:easy_hotel/app/modules/halls/city_halls/bindings/city_halls_page_binding.dart';
+import 'package:easy_hotel/app/modules/halls/city_halls/views/city_halls_page_view.dart';
+
 import 'package:easy_hotel/app/modules/halls/hall_cleander/bindings/hall_calender_page_binding.dart';
 import 'package:easy_hotel/app/modules/halls/hall_cleander/views/hall_calender_page_view.dart';
 import 'package:easy_hotel/app/modules/halls/hall_detail/bindings/hall_details_binding.dart';
@@ -13,6 +14,8 @@ import 'package:easy_hotel/app/modules/halls/halls_homepage/bindings/halls_bindi
 import 'package:easy_hotel/app/modules/halls/halls_homepage/views/halls_view.dart';
 import 'package:easy_hotel/app/modules/halls/halls_search/bindings/halls_search_page_binding.dart';
 import 'package:easy_hotel/app/modules/halls/halls_search/views/halls_search_page_view.dart';
+import 'package:easy_hotel/app/modules/halls/search_filter/bindings/search_filter_page_binding.dart';
+import 'package:easy_hotel/app/modules/halls/search_filter/views/search_filter_page_view.dart';
 import 'package:easy_hotel/app/modules/house_keeping/housekeeping_home_page/bindings/house_keeping_binding.dart';
 import 'package:easy_hotel/app/modules/house_keeping/housekeeping_home_page/views/house_keeping_view.dart';
 import 'package:easy_hotel/app/modules/house_keeping/housekeeping_reservation/bindings/house_keeping_reservation_binding.dart';
@@ -44,29 +47,10 @@ import '../modules/cars/cars_order/bindings/cars_order_binding.dart';
 import '../modules/cars/cars_order/views/cars_order_view.dart';
 import '../modules/food_cart/bindings/food_cart_binding.dart';
 import '../modules/food_cart/views/food_cart_view.dart';
-import '../modules/food_item/bindings/food_item_binding.dart';
-import '../modules/food_item/controllers/food_item_controller.dart';
-import '../modules/food_item/views/food_item_view.dart';
-import '../modules/food_section/bindings/food_section_binding.dart';
-import '../modules/food_section/views/food_section_view.dart';
-import '../modules/halls/all_halls/bindings/all_halls_page_binding.dart';
-import '../modules/halls/all_halls/views/all_halls_page_view.dart';
-import '../modules/halls/hall_detail/bindings/hall_details_binding.dart';
-import '../modules/halls/hall_detail/views/hall_detail_view.dart';
-import '../modules/halls/halls_homepage/bindings/halls_binding.dart';
-import '../modules/halls/halls_homepage/views/halls_view.dart';
-import '../modules/halls/halls_search/bindings/halls_search_page_binding.dart';
-import '../modules/halls/halls_search/views/halls_search_page_view.dart';
-import '../modules/home/bindings/home_binding.dart';
+
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
-import '../modules/home/views/home_view.dart';
-import '../modules/house_keeping/housekeeping_home_page/bindings/house_keeping_binding.dart';
-import '../modules/house_keeping/housekeeping_home_page/views/house_keeping_view.dart';
-import '../modules/house_keeping/housekeeping_reservation/bindings/house_keeping_reservation_binding.dart';
-import '../modules/house_keeping/housekeeping_reservation/views/house_keeping_reservation_view.dart';
-import '../modules/house_keeping/housekeeping_services/bindings/house_keeping_services_binding.dart';
-import '../modules/house_keeping/housekeeping_services/views/house_keeping_services_view.dart';
+
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
 import '../modules/polman/bindings/polman_binding.dart';
@@ -198,9 +182,9 @@ class AppPages {
       binding: HallsSearchPageBinding(),
     ),
     GetPage(
-      name: _Paths.ALL_HALLS,
-      page: () => const AllHallsPageView(),
-      binding: AllHallsPageBinding(),
+      name: _Paths.CITY_HALLS,
+      page: () => const CityHallsPageView(),
+      binding: CityHallsPageBinding(),
     ),
     GetPage(
       name: _Paths.HALL_DETAILS,
@@ -262,6 +246,10 @@ class AppPages {
       name: _Paths.FOOD_CART,
       page: () => const FoodCartView(),
       binding: FoodCartBinding(),
+    ), GetPage(
+      name: _Paths.HALLS_SEARCH_FILTER,
+      page: () => const HallSearchFilterPageView(),
+      binding: HallSearchFilterPageBinding(),
     ),
   ];
 }
