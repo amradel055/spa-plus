@@ -1,4 +1,5 @@
 import 'package:easy_hotel/app/components/text_widget.dart';
+import 'package:easy_hotel/app/data/model/cars/dto/response/cars_response_dto.dart';
 import 'package:easy_hotel/app/modules/cars/cars_category/controllers/cars_category_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -7,7 +8,6 @@ import '../../../../../core/values/app_colors.dart';
 
 class CarsCategoryFilterDialog extends GetView<CarsCategoryController> {
   const CarsCategoryFilterDialog({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
