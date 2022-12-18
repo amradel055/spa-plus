@@ -1,3 +1,5 @@
+import 'package:easy_hotel/app/data/model/cars/dto/response/cars_response_dto.dart';
+import 'package:easy_hotel/app/data/provider/api_provider.dart';
 import 'package:easy_hotel/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -5,8 +7,8 @@ import '../../../../../components/text_widget.dart';
 import '../../../../../core/values/app_colors.dart';
 
 class CarWidget extends StatelessWidget {
-  const CarWidget({Key? key}) : super(key: key);
-
+  const CarWidget({Key? key , required this.car}) : super(key: key);
+  final CarsResponse car ;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -32,7 +34,7 @@ class CarWidget extends StatelessWidget {
                 width: size.width * 0.45,
                 fit: BoxFit.cover,
                 placeholder: const AssetImage("assets/images/placeholder.jpeg"),
-                image: const NetworkImage("url" + "/restaurantItem/itemImage/" + "car.image!" ,) ,
+                image:  NetworkImage( "${ApiProvider.apiUrl}/restaurantItem/itemImage/${car.image}" ) ,
                 imageErrorBuilder: (context, error, StackTrace) {
                   return Image(
                       height: size.height * 0.15,
@@ -43,9 +45,9 @@ class CarWidget extends StatelessWidget {
                 },)
             // : const SizedBox(),
           ),
-          TextWidget("car.name!" ,
+          TextWidget(car.name! ,
             textColor: Colors.red[900]! , maxLines: 1, size: 15, weight: FontWeight.bold,),
-          const TextWidget( "100" "LE/day" ,
+           TextWidget( "${car.pricePerDay}" "LE/day" ,
             textColor:Colors.blue , maxLines: 1, weight: FontWeight.bold,),
           SizedBox(
             width: size.width * 0.45,
@@ -54,7 +56,7 @@ class CarWidget extends StatelessWidget {
               children: [
                 const TextWidget("seats" , textColor: Colors.blue , maxLines: 1,),
                 Icon(Icons.person , color:Colors.blue , size: size.width * 0.05,),
-                const TextWidget('5', textColor : Colors.blue , maxLines: 1,),
+                TextWidget(car.seatsNumber.toString(), textColor : Colors.blue , maxLines: 1,),
                 const TextWidget("+" ,textColor:Colors.blue ),
               ],
             ),
@@ -80,7 +82,7 @@ class CarWidget extends StatelessWidget {
                     width: size.width * 0.19,
                     child: OutlinedButton(
                       onPressed: (){
-                        Get.toNamed(Routes.carsOrder);
+                        Get.toNamed(Routes.carsOrder , arguments: car);
                       },
                       style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.all(Colors.red[900]!)

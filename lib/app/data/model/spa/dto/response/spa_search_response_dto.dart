@@ -12,9 +12,9 @@ class SpaSearchResponse {
 
   List<HotelsearchModel>? branchList;
   List<BranchsearchModel>? citieseList;
-  List<BranchsearchModel> ?roomseList;
-  List<BranchsearchModel> ?holesList;
-  List<SpasearchModel> ?spaList;
+  List<BranchsearchModel>? roomseList;
+  List<BranchsearchModel>? holesList;
+  List<SpasearchModel>? spaList;
   dynamic  name;
 
   factory SpaSearchResponse.fromRawJson(String str) => SpaSearchResponse.fromJson(json.decode(str));

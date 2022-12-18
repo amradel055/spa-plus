@@ -12,18 +12,32 @@ class CarsOrderTimePicker extends GetView<CarsOrderController> {
       controller: time ? controller.timeController.value : controller.dateController.value,
       maxLines: 1,
       readOnly: true,
-      decoration: const InputDecoration(suffixIcon: Icon(Icons.date_range), hintText: "", contentPadding: EdgeInsets.fromLTRB(0, 0, 0, 4)),
+      style: TextStyle(fontSize: 15 , fontWeight: FontWeight.bold),
+      decoration: const InputDecoration(
+          suffixIcon: Icon(Icons.date_range),
+          hintText: "",
+          contentPadding: EdgeInsets.fromLTRB(0, 0, 0, 4),
+      ),
       onTap: () async {
-        await showDatePicker(
+       !time ? await showDatePicker(
           context: context,
           initialDate: DateTime.now(),
           firstDate: DateTime(2022),
           lastDate: DateTime(2030),
         ).then((value) {
           if (value != null) {
-            time ? controller.changeTime(value) : controller.changeDate(value) ;
+            controller.changeDate(value) ;
           }
-        });
+        }):
+           showTimePicker(
+               context: context,
+               initialTime: TimeOfDay.fromDateTime(DateTime.now()),
+           ).then((value){
+               if (value != null) {
+         controller.changeTime(value) ;
+       }}
+           );
+
       },
     );
   }

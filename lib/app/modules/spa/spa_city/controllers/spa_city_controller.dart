@@ -22,7 +22,6 @@ class SpaCityController extends GetxController {
     isLoading(true);
     final request = SpaCityRequest(
        cityId: id,
-
     );
     SpaRepository().getSpaCity(request,
         onSuccess: (data) {
