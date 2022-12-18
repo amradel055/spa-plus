@@ -3,7 +3,7 @@ import 'package:easy_hotel/app/components/text_widget.dart';
 import 'package:easy_hotel/app/core/values/app_assets.dart';
 import 'package:easy_hotel/app/core/values/app_colors.dart';
 import 'package:easy_hotel/app/core/values/app_strings.dart';
-import 'package:easy_hotel/app/modules/halls/search_filter/views/widgets/timer.dart';
+import 'package:easy_hotel/app/modules/halls/search_filter_hotel/views/widgets/timer.dart';
 import 'package:easy_hotel/app/modules/spa/spa_search/views/widgets/category.dart';
 import 'package:easy_hotel/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
@@ -11,11 +11,11 @@ import 'package:flutter_expandable_fab/flutter_expandable_fab.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
-import '../controllers/search_filter_page_controller.dart';
+import '../controllers/search_filter_hotel_page_controller.dart';
 
 
-class HallSearchFilterPageView extends GetView<HallSearchFilterPageController> {
-  const HallSearchFilterPageView({Key? key}) : super(key: key);
+class HallSearchFilterHotelPageView extends GetView<HallSearchFilterHotelPageController> {
+  const HallSearchFilterHotelPageView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
 
@@ -144,9 +144,10 @@ class HallSearchFilterPageView extends GetView<HallSearchFilterPageController> {
                   // context.read<searchHallsScreenProvider>().getSearchAdditionsScreenGroups(1);
                   // Navigator.push(context, MaterialPageRoute(builder: (context) => hallsres()));
 
+                  Get.toNamed(Routes.HOTEL_HALLS,arguments: controller.id);
 
                 },
-                  child: Container(alignment: Alignment.centerRight,
+                  child: Container(alignment: Alignment.center,
 
                     height: size.height*.05,
                     width: size.width*.6,

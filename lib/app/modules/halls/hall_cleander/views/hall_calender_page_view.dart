@@ -3,16 +3,10 @@ import 'package:easy_hotel/app/components/text_widget.dart';
 import 'package:easy_hotel/app/core/values/app_assets.dart';
 import 'package:easy_hotel/app/core/values/app_colors.dart';
 import 'package:easy_hotel/app/core/values/app_strings.dart';
-import 'package:easy_hotel/app/modules/spa/spa_search/views/widgets/category.dart';
-import 'package:easy_hotel/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_expandable_fab/flutter_expandable_fab.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'package:get/get.dart';
 import 'package:table_calendar/table_calendar.dart';
 import '../controllers/hall_calender_page_controller.dart';
-import 'widgets/halls_search_card.dart';
 
 
 class HallCalenderPageView extends GetView<HallCalenderPageController> {
@@ -59,7 +53,7 @@ class HallCalenderPageView extends GetView<HallCalenderPageController> {
             ),
             Row(
               children: [
-                Icon(Icons.thirteen_mp_outlined ,color: Colors.black,),
+                const Icon(Icons.thirteen_mp_outlined ,color: Colors.black,),
                 const TextWidget('١٢ نوفمبر ٢٠٢٢',weight: FontWeight.bold,)
               ],
             ),

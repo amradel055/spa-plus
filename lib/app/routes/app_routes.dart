@@ -26,6 +26,7 @@ abstract class Routes {
   static const HALLS_SEARCH = _Paths.HALLS_SEARCH;
   static const CITY_HALLS = _Paths.CITY_HALLS;
   static const HALL_DETAILS = _Paths.HALL_DETAILS;
+  static const HOTEL_HALLS = _Paths.HOTEL_HALLS;
 
   static const HALL_RESERVATION = _Paths.HALL_RESERVATION;
   static const HALL_CALENDER = _Paths.HALL_CALENDER;
@@ -37,6 +38,7 @@ abstract class Routes {
   static const FOOD_ITEM = _Paths.FOOD_ITEM;
   static const FOOD_CART = _Paths.FOOD_CART;
   static const HALLS_SEARCH_FILTER = _Paths.HALLS_SEARCH_FILTER;
+  static const HALLS_SEARCH_HOTEL_FILTER = _Paths.HALLS_SEARCH_HOTEL_FILTER;
 }
 
 abstract class _Paths {
@@ -74,5 +76,7 @@ abstract class _Paths {
   static const ALL_ROOMS = '/all-rooms';
   static const ROOM_DETAIL = '/room-detail';
   static const HALLS_SEARCH_FILTER = '/halls-search-filter';
+  static const HALLS_SEARCH_HOTEL_FILTER = '/halls-search-hotel-filter';
+  static const HOTEL_HALLS = '/hotel-halls';
 
 }

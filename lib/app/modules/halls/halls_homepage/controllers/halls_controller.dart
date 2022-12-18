@@ -16,6 +16,7 @@ class HallsController extends GetxController {
   void onInit() {
     super.onInit();
     getAllHalls();
+    getOffersHalls();
 
 
   }

@@ -21,8 +21,13 @@ class HouseKeepingServicesView extends GetView<HouseKeepingServicesController> {
         .of(context)
         .size;
     return Scaffold(
-        body: Directionality(textDirection: TextDirection.rtl,
-          child: Stack(children: [
+        body: Obx(() {
+          if (controller.isLoading.value) {
+            return Center(
+              child: Common.getSpin(),
+            );
+          }
+          return Stack(children: [
             Positioned(
               top: 0,
               height: size.height * .4,
@@ -39,11 +44,6 @@ class HouseKeepingServicesView extends GetView<HouseKeepingServicesController> {
                 padding: const EdgeInsets.symmetric(
                     horizontal: 20, vertical: 50),
                 child: Obx(() {
-                  if (controller.isLoading.value) {
-                    return Center(
-                      child: Common.getSpin(),
-                    );
-                  }
                   return Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
@@ -175,8 +175,8 @@ class HouseKeepingServicesView extends GetView<HouseKeepingServicesController> {
                 ),
               ),
             ),
-          ],),
-        )
+          ],);
+        })
     );
   }
 }

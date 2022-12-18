@@ -23,7 +23,7 @@ class HallsSearchCardWidget extends StatelessWidget {
         if(type == 0) {
           Get.toNamed(Routes.HALLS_SEARCH_FILTER, arguments: id);
         } else if(type == 1) {
-          Get.toNamed(Routes.HALLS_SEARCH_FILTER, arguments: id);
+          Get.toNamed(Routes.HALLS_SEARCH_HOTEL_FILTER, arguments: id);
         }else{
           Get.toNamed(Routes.HALL_DETAILS, arguments: id);
         }

@@ -1,8 +1,12 @@
 
 import 'package:easy_hotel/app/data/model/halls/dto/request/all_halls_request_dto.dart';
+import 'package:easy_hotel/app/data/model/halls/dto/request/halls_detail_request_dto.dart';
+import 'package:easy_hotel/app/data/model/halls/dto/request/halls_search_filter_request.dart';
 import 'package:easy_hotel/app/data/model/halls/dto/request/halls_search_request_dto.dart';
 import 'package:easy_hotel/app/data/model/halls/dto/request/offers_halls_request_dto.dart';
+import 'package:easy_hotel/app/data/model/halls/dto/response/hall_detail_response.dart';
 import 'package:easy_hotel/app/data/model/halls/dto/response/halls_response.dart';
+import 'package:easy_hotel/app/data/model/halls/dto/response/halls_search_filter_response.dart';
 import 'package:easy_hotel/app/data/model/halls/dto/response/halls_search_response_dto.dart';
 import 'package:easy_hotel/app/data/model/housekeeping/dto/request/all_housekeeping_request_dto.dart';
 import 'package:easy_hotel/app/data/model/housekeeping/dto/request/housekeeping_detail_request_dto.dart';
@@ -54,8 +58,33 @@ class HallsRepository {
         onComplete: onComplete
     );
   }
+  getSearchFilterHalls(
+      HallSearchFilterRequest hallSearchFilterRequest, {
+        Function()? onComplete,
+        SuccessFunc<List<HallsSearchFilterResponse>> onSuccess,
+        Function(dynamic error)? onError,
+      }) =>
+      ApiProvider().post<List<HallsSearchFilterResponse>>('halls/findHallsByFiltterData',
+        onComplete: onComplete,
+        onSuccess: onSuccess,
+        data: hallSearchFilterRequest.toJson(),
+        onError: onError,
+        convertor: HallsSearchFilterResponse.fromList,
+      );
 
-
-
+  getHallDetail(
+      HallDetailRequest hallDetailRequest, {
+        SuccessFunc<HallsDetailResponse> onSuccess,
+        Function(dynamic error)? onError,  Function()?onComplete,
+      }) {
+    ApiProvider().post<HallsDetailResponse>(
+        'halls/hallDetail',
+        onSuccess: onSuccess,
+        data: hallDetailRequest.toJson(),
+        onError: onError,
+        convertor: HallsDetailResponse.fromJson,
+        onComplete: onComplete
+    );
+  }
 
 }

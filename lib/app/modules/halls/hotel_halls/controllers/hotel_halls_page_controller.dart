@@ -4,9 +4,9 @@ import 'package:easy_hotel/app/data/model/halls/dto/response/halls_search_filter
 import 'package:easy_hotel/app/data/repository/halls/halls_repository.dart';
 import 'package:get/get.dart';
 
-class CityHallsPageController extends GetxController {
+class HotelHallsPageController extends GetxController {
 
-  final hallsCity = <HallsSearchFilterResponse>[].obs;
+  final hallsHotel = <HallsSearchFilterResponse>[].obs;
   final isLoading = false.obs;
   final int id = Get.arguments;
 
@@ -15,26 +15,27 @@ class CityHallsPageController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    getHallsCity();
+    getHallsHotel();
 
 
   }
 
-  getHallsCity() async {
+  getHallsHotel() async {
     isLoading(true);
     final request = HallSearchFilterRequest(
-      hotelId: null,
-      cityId: id,
-      addtionsModel: []
+        hotelId: id,
+        cityId: null,
+        addtionsModel: []
 
     );
     HallsRepository().getSearchFilterHalls(request,
         onSuccess: (data) {
-          hallsCity.assignAll(data.data);
+          hallsHotel.assignAll(data.data);
         },
         onError: (e) => showPopupText( e.toString()),
         onComplete: () => isLoading(false)
     );
   }
+
 
 }

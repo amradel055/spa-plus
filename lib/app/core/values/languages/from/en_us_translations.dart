@@ -42,7 +42,7 @@ final Map<String, String> enUs = {
   AppStrings.hallsService: 'Halls service',
   AppStrings.carsServices: 'Cars service',
   AppStrings.roomsService: 'Rooms service',
-
+  AppStrings.home: 'HOME',
   AppStrings.todayOffers: 'Today offers',
   AppStrings.sale: 'Sale',
   AppStrings.spasHotel: 'Spa Hotel',

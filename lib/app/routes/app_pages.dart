@@ -14,8 +14,12 @@ import 'package:easy_hotel/app/modules/halls/halls_homepage/bindings/halls_bindi
 import 'package:easy_hotel/app/modules/halls/halls_homepage/views/halls_view.dart';
 import 'package:easy_hotel/app/modules/halls/halls_search/bindings/halls_search_page_binding.dart';
 import 'package:easy_hotel/app/modules/halls/halls_search/views/halls_search_page_view.dart';
-import 'package:easy_hotel/app/modules/halls/search_filter/bindings/search_filter_page_binding.dart';
-import 'package:easy_hotel/app/modules/halls/search_filter/views/search_filter_page_view.dart';
+import 'package:easy_hotel/app/modules/halls/hotel_halls/bindings/hotel_halls_page_binding.dart';
+import 'package:easy_hotel/app/modules/halls/hotel_halls/views/hotel_halls_page_view.dart';
+import 'package:easy_hotel/app/modules/halls/search_filter_city/bindings/search_filter_page_binding.dart';
+import 'package:easy_hotel/app/modules/halls/search_filter_city/views/search_filter_page_view.dart';
+import 'package:easy_hotel/app/modules/halls/search_filter_hotel/bindings/search_filter_hotel_page_binding.dart';
+import 'package:easy_hotel/app/modules/halls/search_filter_hotel/views/search_filter_hotel_page_view.dart';
 import 'package:easy_hotel/app/modules/house_keeping/housekeeping_home_page/bindings/house_keeping_binding.dart';
 import 'package:easy_hotel/app/modules/house_keeping/housekeeping_home_page/views/house_keeping_view.dart';
 import 'package:easy_hotel/app/modules/house_keeping/housekeeping_reservation/bindings/house_keeping_reservation_binding.dart';
@@ -36,7 +40,6 @@ import 'package:easy_hotel/app/modules/spa/spa_city/bindings/spa_city_binding.da
 import 'package:easy_hotel/app/modules/spa/spa_city/views/spa_city_view.dart';
 import 'package:easy_hotel/app/modules/spa/spa_home/views/spa_view.dart';
 import 'package:get/get.dart';
-
 import '../modules/allServices/bindings/all_services_binding.dart';
 import '../modules/allServices/views/all_services_view.dart';
 import '../modules/cars/cars_category/bindings/cars_category_binding.dart';
@@ -47,10 +50,8 @@ import '../modules/cars/cars_order/bindings/cars_order_binding.dart';
 import '../modules/cars/cars_order/views/cars_order_view.dart';
 import '../modules/food_cart/bindings/food_cart_binding.dart';
 import '../modules/food_cart/views/food_cart_view.dart';
-
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
-
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
 import '../modules/polman/bindings/polman_binding.dart';
@@ -62,15 +63,12 @@ import '../modules/resturant/views/resturant_view.dart';
 import '../modules/spa/spa_detail/bindings/spa_details_binding.dart';
 import '../modules/spa/spa_detail/views/spa_detail_view.dart';
 import '../modules/spa/spa_home/bindings/spa_binding.dart';
-import '../modules/spa/spa_home/views/spa_view.dart';
 import '../modules/spa/spa_hotel/bindings/spa_hotel_binding.dart';
 import '../modules/spa/spa_hotel/views/spa_hotel_view.dart';
 import '../modules/spa/spa_search/bindings/spa_search_page_binding.dart';
 import '../modules/spa/spa_search/views/spa_search_page_view.dart';
-
 import '../modules/splash/bindings/splash_binding.dart';
 import '../modules/splash/views/splash_view.dart';
-
 part 'app_routes.dart';
 
 class AppPages {
@@ -185,6 +183,10 @@ class AppPages {
       name: _Paths.CITY_HALLS,
       page: () => const CityHallsPageView(),
       binding: CityHallsPageBinding(),
+    ),    GetPage(
+      name: _Paths.HOTEL_HALLS,
+      page: () => const HotelHallsPageView(),
+      binding: HotelHallsPageBinding(),
     ),
     GetPage(
       name: _Paths.HALL_DETAILS,
@@ -250,6 +252,14 @@ class AppPages {
       name: _Paths.HALLS_SEARCH_FILTER,
       page: () => const HallSearchFilterPageView(),
       binding: HallSearchFilterPageBinding(),
+    ),GetPage(
+      name: _Paths.HALLS_SEARCH_FILTER,
+      page: () => const HotelHallsPageView(),
+      binding: HotelHallsPageBinding(),
+    ),GetPage(
+      name: _Paths.HALLS_SEARCH_HOTEL_FILTER,
+      page: () => const HallSearchFilterHotelPageView(),
+      binding: HallSearchFilterHotelPageBinding(),
     ),
   ];
 }

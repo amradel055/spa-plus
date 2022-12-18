@@ -29,7 +29,7 @@ class HouseKeepingView extends GetView<HouseKeepingController> {
           elevation: 0,
           backgroundColor: Colors.transparent,
           foregroundColor: Colors.white,
-          title: TextWidget('HOME', size: 30.h,textColor: Colors.white,),
+          title: TextWidget(AppStrings.home, size: 30.h,textColor: Colors.white,),
           flexibleSpace: Container(
             decoration: BoxDecoration(
                 gradient: LinearGradient(

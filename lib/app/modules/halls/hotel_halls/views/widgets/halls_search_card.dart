@@ -24,17 +24,17 @@ class HallsCardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size =MediaQuery.of(context).size;
     return GestureDetector(
-      onTap:(){Get.toNamed(Routes.HALL_DETAILS,arguments: id);},
+      onTap: (){Get.toNamed(Routes.HALL_DETAILS,arguments: id);},
       child: Padding(
         padding: const EdgeInsets.all(5.0),
         child: Center(
           child: Container(
             width: size.width*.9,
-            height: size.height*.26,
-            decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(
-                    Radius.circular(10)),
-                color: AppColors.appGreyDark),
+          height: size.height*.26,
+          decoration: const BoxDecoration(
+          borderRadius: BorderRadius.all(
+          Radius.circular(10)),
+          color: AppColors.appGreyDark),
 
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -50,7 +50,7 @@ class HallsCardWidget extends StatelessWidget {
                         image: DecorationImage(
                           fit: BoxFit.cover,
                           image: NetworkImage(
-                              image),
+                            image),
                         )
                     ),),
                   PositionedDirectional(
@@ -83,7 +83,7 @@ class HallsCardWidget extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
-                          Expanded(
+                           Expanded(
                               flex: 2,
                               child: TextWidget(
                                 title,
@@ -127,7 +127,7 @@ class HallsCardWidget extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          TextWidget(subtitle,weight: FontWeight.bold,size: 15,
+                           TextWidget(subtitle,weight: FontWeight.bold,size: 15,
                           ),
                           SizedBox(
                             child: Row(

@@ -20,7 +20,7 @@ class HallsSearchResponse {
   factory HallsSearchResponse.fromJson( dynamic json) => HallsSearchResponse(
     branchList: json["branchList"] == null ? null : List<HotelsearchModel>.from(json["branchList"].map((x) => HotelsearchModel.fromJson(x))),
     citieseList: json["citieseList"] == null ? null : List<BranchsearchModel>.from(json["citieseList"].map((x) => BranchsearchModel.fromJson(x))),
-    holesList: json["holesList"] == null ? null : List<HallsSearchModel>.from(json["holesList"].map((x) => BranchsearchModel.fromJson(x))),
+    holesList: json["holesList"] == null ? null : List<HallsSearchModel>.from(json["holesList"].map((x) => HallsSearchModel.fromJson(x))),
     name: json["name"],
   );
 

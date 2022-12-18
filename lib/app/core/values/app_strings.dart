@@ -34,6 +34,7 @@ abstract class AppStrings {
   static const name = "Name";
   static const email = "EMAIL";
   static const register = "REGISTER";
+  static const home = "HOME";
   static const haveAccount = "Do You Have An Account..";
   static const login = "LOGIN";
   static const hello = "Hello ";

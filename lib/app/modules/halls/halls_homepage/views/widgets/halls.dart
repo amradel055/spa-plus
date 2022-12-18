@@ -7,10 +7,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Halls extends StatelessWidget {
-  const Halls({Key? key, required this.image, required this.name, this.onTap}) : super(key: key);
+  const Halls({Key? key, required this.image, required this.name, this.onTap, required this.id}) : super(key: key);
   final String image;
   final String name;
+  final int id;
   final Function()? onTap;
+
 
 
 
@@ -18,7 +20,7 @@ class Halls extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size =MediaQuery.of(context).size;
     return GestureDetector(onTap: (){
-      onTap;
+      Get.toNamed(Routes.HALL_DETAILS,arguments: id);
     },
       child: Container(
         width: size.width * .45,
@@ -49,15 +51,14 @@ class Halls extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  TextWidget(
-                    name,
-                    maxLines: 2,
-                    weight: FontWeight.bold,
+                  Center(
+                    child: TextWidget(
+                      name,
+                      maxLines: 2,
+                      weight: FontWeight.bold,
+                    ),
                   ),
-                  const TextWidget(
-                    AppStrings.readmore,
-                    maxLines: 1,
-                  )
+
                 ],),
             )
 

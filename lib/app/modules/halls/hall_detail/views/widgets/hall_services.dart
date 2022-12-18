@@ -42,7 +42,7 @@ class HallServices extends StatelessWidget {
                 children: [
                   TextWidget(
                     name,
-                    maxLines: 2,
+                    maxLines: 1,
                     weight: FontWeight.bold,
                   ),
                 ],),

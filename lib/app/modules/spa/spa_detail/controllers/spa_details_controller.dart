@@ -11,7 +11,7 @@ class SpaDetailsController extends GetxController {
 
   final int id = Get.arguments;
    RxInt  index = 1.obs;
-  RxInt  serviceIndex = 1.obs;
+  RxInt  serviceIndex = 0.obs;
   RxInt selectedType = 1.obs;
   SpaResponse? spa ;
   final isLoading = false.obs;
