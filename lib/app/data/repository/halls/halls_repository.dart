@@ -1,6 +1,7 @@
 
 import 'package:easy_hotel/app/data/model/halls/dto/request/all_halls_request_dto.dart';
 import 'package:easy_hotel/app/data/model/halls/dto/request/halls_detail_request_dto.dart';
+import 'package:easy_hotel/app/data/model/halls/dto/request/halls_save_request.dart';
 import 'package:easy_hotel/app/data/model/halls/dto/request/halls_search_filter_request.dart';
 import 'package:easy_hotel/app/data/model/halls/dto/request/halls_search_request_dto.dart';
 import 'package:easy_hotel/app/data/model/halls/dto/request/offers_halls_request_dto.dart';
@@ -83,6 +84,20 @@ class HallsRepository {
         data: hallDetailRequest.toJson(),
         onError: onError,
         convertor: HallsDetailResponse.fromJson,
+        onComplete: onComplete
+    );
+  }
+  getHallSave(
+      HallsSaveRequest hallsSaveRequest, {
+        SuccessFunc<void> onSuccess,
+        Function(dynamic error)? onError,  Function()?onComplete,
+      }) {
+    ApiProvider().post<void>(
+        'halls/save',
+        onSuccess: onSuccess,
+        data: hallsSaveRequest.toJson(),
+        onError: onError,
+        convertor: (_){return null;},
         onComplete: onComplete
     );
   }

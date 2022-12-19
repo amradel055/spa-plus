@@ -14,7 +14,6 @@ class HallsSaveRequest {
     this.companyId,
     this.addtionsDTOList,
     this.customerId,
-    this.spaItemDTOList,
     this.currencySerial
   });
 
@@ -25,7 +24,6 @@ class HallsSaveRequest {
   List<AddtionsModel>? addtionsDTOList ;
   int? customerId ;
   int? currencySerial ;
-  List<int>?spaItemDTOList;
 
   factory HallsSaveRequest.fromJson(Map<String, dynamic> json) => HallsSaveRequest(
       hallId: json["hallId"] == null ? null : json["hallId"],

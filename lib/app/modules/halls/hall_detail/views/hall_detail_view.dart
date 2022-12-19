@@ -169,7 +169,7 @@ class HallDetailView extends GetView<HallDetailsController> {
                     SizedBox(width: size.width * .9,
                       child: TextButton(
                         onPressed: () {
-                          Get.toNamed(Routes.HALL_RESERVATION);
+                          Get.toNamed(Routes.HALL_RESERVATION,arguments: controller.hall);
                         },
                         style: ButtonStyle(
                             backgroundColor: MaterialStateProperty.all(AppColors

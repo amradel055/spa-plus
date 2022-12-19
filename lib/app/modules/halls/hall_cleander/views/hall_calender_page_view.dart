@@ -223,9 +223,7 @@ class HallCalenderPageView extends GetView<HallCalenderPageController> {
               ),
             ),
             GestureDetector(onTap: ()  async{
-              // await context.read<savehallsScreenProvider>().save(1, context.read<HallsDetailsScreenProvider>().selectedHobby, 2,2,22, 232, 2, context);
-              // Navigator.push(context, MaterialPageRoute(builder: (context) => reserv()));
-
+              controller.getSpaSave();
             },
               child: Container(
                 height:size.height * 0.05,
