@@ -1,11 +1,21 @@
+import 'package:easy_hotel/app/modules/allServices/controllers/all_services_controller.dart';
+import 'package:easy_hotel/app/modules/allServices/views/all_services_view.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class HomeController extends GetxController {
-  //TODO: Implement HomeController
+import '../../rooms/rooms_homepage/views/rooms_view.dart';
 
-  final count = 0.obs;
+class HomeController extends GetxController {
+
+  final pageIndex = 0.obs;
+  List<Widget> pages = const[
+    RoomsView(),
+    RoomsView(),
+    AllServicesView()
+  ];
   @override
   void onInit() {
+    Get.isRegistered<AllServicesController>() ? Get.find<AllServicesController>() : Get.put(AllServicesController());
     super.onInit();
   }
 
@@ -19,5 +29,5 @@ class HomeController extends GetxController {
     super.onClose();
   }
 
-  void increment() => count.value++;
+  void changeView(int index) => pageIndex.value = index;
 }

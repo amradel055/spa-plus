@@ -35,7 +35,7 @@ class RegisterView extends GetView<RegisterController> {
                 margin: const EdgeInsets.all(25),
                 padding: const EdgeInsets.all(25),
                 child: Form(
-                  key: controller.form,
+                  key: controller.registerForm,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
@@ -45,7 +45,6 @@ class RegisterView extends GetView<RegisterController> {
                         suffixIcon: Icons.pin,
                         textInputAction: TextInputAction.next,
                         onChange: (value) => controller.requestDto.userName = value,
-
                         ltr: true,
                         validator: AppValidator.forceValue,
                       ),

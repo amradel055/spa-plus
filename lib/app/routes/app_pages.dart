@@ -1,6 +1,7 @@
 
 import 'package:easy_hotel/app/modules/food_section/bindings/food_section_binding.dart';
 import 'package:easy_hotel/app/modules/food_section/views/food_section_view.dart';
+import 'package:easy_hotel/app/modules/forget_password/views/forget_password_view.dart';
 import 'package:easy_hotel/app/modules/halls/city_halls/bindings/city_halls_page_binding.dart';
 import 'package:easy_hotel/app/modules/halls/city_halls/views/city_halls_page_view.dart';
 
@@ -50,6 +51,7 @@ import '../modules/cars/cars_order/bindings/cars_order_binding.dart';
 import '../modules/cars/cars_order/views/cars_order_view.dart';
 import '../modules/food_cart/bindings/food_cart_binding.dart';
 import '../modules/food_cart/views/food_cart_view.dart';
+import '../modules/forget_password/bindings/forget_password_binding.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
@@ -103,6 +105,11 @@ class AppPages {
       name: _Paths.REGISTER,
       page: () => const RegisterView(),
       binding: RegisterBinding(),
+    ),
+    GetPage(
+      name: _Paths.FORGETPASSWORD,
+      page: () => const ForgetPasswordView(),
+      binding: ForgetPasswordBinding(),
     ),
     GetPage(
       name: _Paths.ALLSERVICES,

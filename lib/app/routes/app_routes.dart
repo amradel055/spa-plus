@@ -39,6 +39,7 @@ abstract class Routes {
   static const FOOD_CART = _Paths.FOOD_CART;
   static const HALLS_SEARCH_FILTER = _Paths.HALLS_SEARCH_FILTER;
   static const HALLS_SEARCH_HOTEL_FILTER = _Paths.HALLS_SEARCH_HOTEL_FILTER;
+  static const FORGET_PASSWORD = _Paths.FORGETPASSWORD ;
 }
 
 abstract class _Paths {
@@ -47,6 +48,7 @@ abstract class _Paths {
   static const SPLASH = '/splash';
   static const LOGIN = '/login';
   static const REGISTER = '/register';
+  static const FORGETPASSWORD = '/forgetPassword';
   static const ALLSERVICES = '/allservices';
   static const SPA = '/spa';
   static const RESTURANT = '/resturant';

@@ -44,30 +44,33 @@ class LoginView extends GetView<LoginController> {
               margin: const EdgeInsets.all(25),
               padding: const EdgeInsets.all(25),
               child: Form(
-                key: controller.form,
+                key: controller.loginForm,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-
                     TextFieldWidget(
                       controller:controller.userNameController,
                       label: AppStrings.userName,
-                      suffixIcon: Icons.phone,
+                      suffixIcon: Icons.account_circle,
                       onChange: (value) => controller.requestDto.userName = value,
                       ltr: true,
                       validator: AppValidator.forceValue,
                       textInputAction: TextInputAction.next,
                     ),
                     space,
-                    TextFieldWidget(
+                    Obx(() =>TextFieldWidget(
                       controller:controller.passwordController,
                       label: AppStrings.password,
-                      suffixIcon: Icons.password,
+                      obscure: !controller.showPassword.value,
+                      suffixIcon: !controller.showPassword.value ? Icons.visibility : Icons.visibility_off,
                       onChange: (value) => controller.requestDto.password = value,
+                      onSuffixClicked: ()=> controller.changePasswordVisibility(),
                       ltr: true,
                       validator: AppValidator.forceValue,
-
-                    ),
+                    )),
+                    GestureDetector(
+                        onTap: ()=> Get.toNamed(Routes.FORGET_PASSWORD ),
+                        child: const TextWidget(AppStrings.forgetYourPassword,textColor: Colors.red,)),
                     space,
                     ButtonWidget(
                       text: AppStrings.login,

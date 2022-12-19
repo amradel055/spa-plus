@@ -3,6 +3,7 @@ import 'package:easy_hotel/app/data/model/user/dto/response/refresh_token_respon
 import 'package:get/get.dart';
 
 import '../../data/model/auth/login/dto/response/login_response.dart';
+import '../../routes/app_pages.dart';
 import '../values/languages/app_translation.dart';
 import 'app_storage.dart';
 
@@ -27,11 +28,11 @@ class UserManager{
     // AppStorage.write(AppStorage.TOKEN_EXPIRE_TIME_KEY, data.expiresIn);
   }
 
-  logout(){
+  Future logout() async{
     final isDark = AppTheme().isSavedDarkMode();
     var lang = AppStorage.read(AppStorage.LANGUAGE_KEY);
-    AppStorage.removeAll();
-    AppStorage.write(AppStorage.LANGUAGE_KEY, lang);
+    await AppStorage.removeAll();
+    await AppStorage.write(AppStorage.LANGUAGE_KEY, lang);
     AppTranslation().saveLocale(AppTranslation.getLocale());
     AppTheme().changeThemeMode(isDark);
     Get.forceAppUpdate();

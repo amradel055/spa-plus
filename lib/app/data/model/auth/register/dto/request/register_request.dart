@@ -7,7 +7,6 @@ class RegisterRequestDto extends BaseRequest {
     this.password  = "",
     this.name,
     this.userName,
-
   });
 
   String? mobile;

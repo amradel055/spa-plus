@@ -48,18 +48,17 @@ class AllServicesView extends GetView<AllServicesController> {
               itemBuilder: (context) => [
                 PopupMenuItem(
                   value: 1,
+                  onTap: ()async{
+                      await UserManager().logout();
+                      Get.toNamed(Routes.LOGIN);
+                  },
                   child: Row(
                     children: [
-                      GestureDetector(
-                          onTap: (){
-                            UserManager().logout();
-                            Get.toNamed(Routes.LOGIN);
-                          },
-                          child: const Icon(Icons.logout,color: Colors.black,)),
                       SizedBox(
                         width: 10.h,
                       ),
-                      const Text(AppStrings.logout)
+                      const Text(AppStrings.logout),
+                      const Icon(Icons.logout,color: Colors.black,)
                     ],
                   ),
                 ),

@@ -34,8 +34,10 @@ abstract class AppStrings {
   static const name = "Name";
   static const email = "EMAIL";
   static const register = "REGISTER";
+  static const resetPassword = "Reset Password";
   static const home = "HOME";
   static const haveAccount = "Do You Have An Account..";
+  static const forgetYourPassword = "Do You Forget Your Password ?";
   static const login = "LOGIN";
   static const hello = "Hello ";
   static const logout = "Log out";
@@ -101,6 +103,8 @@ abstract class AppStrings {
   static const goingAndReturn = "ذهاب و عوده";
   static const going = "ذهاب ";
   static const returning = " عوده";
+  static const myAccount = "My Account";
+  static const allServices = "All Services";
 
 
 

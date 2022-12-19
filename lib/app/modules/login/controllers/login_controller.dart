@@ -9,21 +9,25 @@ import 'package:get/get.dart';
 class LoginController extends GetxController {
   var userNameController = TextEditingController();
   var passwordController = TextEditingController();
-  final form = GlobalKey<FormState>();
+  final loginForm = GlobalKey<FormState>();
   final isLoading = false.obs;
   final requestDto = LoginRequestDto();
+  final showPassword = false.obs ;
+
 
   Future login() async {
-    if(!form.currentState!.validate()) return;
+    if(!loginForm.currentState!.validate()) return;
     isLoading(true);
     AuthRepository().login(requestDto,
       onSuccess: (data){
         UserManager().login(data.data);
-        Get.offNamed(Routes.ALLSERVICES);
+        Get.offNamed(Routes.HOME);
       },
       onError: (error)=> showPopupText(error.toString()),
       onComplete: () => isLoading(false)
     );
+
   }
 
+  changePasswordVisibility() => showPassword(!showPassword.value);
 }
