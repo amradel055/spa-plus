@@ -77,21 +77,32 @@ class HotelsearchModel {
     this.name,
     this.image,
     this.cityName,
+    this.companyId,
+    this.cityId,
+    this.nameAr,
+    this.nameEn
   });
 
   int ?id;
   String? name;
   String ?image;
   String ?cityName;
-
-
+  int? cityId ;
+  String? nameAr ;
+  String? nameEn ;
+  int? companyId ;
   String toRawJson() => json.encode(toJson());
 
+  static List<HotelsearchModel> fromList(dynamic json) => List.from(json.map((e)=> HotelsearchModel.fromJson(e)));
   factory HotelsearchModel.fromJson(Map<String, dynamic> json) => HotelsearchModel(
     id: json["id"] == null ? null : json["id"],
     name: json["name"] == null ? null : json["name"],
     image: json["image"] == null ? null : json["image"],
     cityName: json["cityName"] == null ? null : json["cityName"],
+    cityId: json["cityId"] == null ? null : json["cityId"],
+    nameAr: json["nameAr"] == null ? null : json["nameAr"],
+    nameEn: json["nameEn"] == null ? null : json["nameEn"],
+    companyId: json["companyId"] == null ? null : json["companyId"],
   );
 
   Map<String, dynamic> toJson() => {
@@ -99,6 +110,10 @@ class HotelsearchModel {
     "name": name == null ? null : name,
     "image": image == null ? null : image,
     "cityName": cityName == null ? null : cityName,
+    "cityId": cityId == null ? null : cityId,
+    "nameAr": nameAr == null ? null : nameAr,
+    "nameEn": nameEn == null ? null : nameEn,
+    "companyId": companyId == null ? null : companyId,
   };
 }
 class SpasearchModel {

@@ -1,4 +1,5 @@
 import 'package:easy_hotel/app/components/button_widget.dart';
+import 'package:easy_hotel/app/core/utils/show_popup_text.dart';
 import 'package:easy_hotel/app/core/values/app_colors.dart';
 import 'package:easy_hotel/app/modules/hotels_search/controller/hotel_search_controller.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +9,7 @@ import 'package:get/get.dart';
 
 import '../../../components/text_field_widget.dart';
 import '../../../components/text_widget.dart';
+import '../../../core/utils/user_manager.dart';
 import '../../../core/values/app_assets.dart';
 import '../../../core/values/app_strings.dart';
 import '../../../routes/app_pages.dart';
@@ -19,7 +21,9 @@ class HotelSearchView extends GetView<HotelSearchController> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    Size size = MediaQuery
+        .of(context)
+        .size;
     return Scaffold(
         extendBodyBehindAppBar: true,
         appBar: AppBar(
@@ -54,17 +58,20 @@ class HotelSearchView extends GetView<HotelSearchController> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(
-                  width: size.width * .8,
-                  child: TextFieldWidget(
-                    enabled: false,
-                    hint: AppStrings.searchHotelForService,
-                    suffixIcon: Icons.search,
-                    ltr: true,
-                    onTap: () {
-                      Get.toNamed(Routes.HOTEL_SEARCH_SEARCH_PAGE);
-                    },
-                  )),
+              Obx(() {
+                return SizedBox(
+                    width: size.width * .8,
+                    child: TextFieldWidget(
+                      enabled: false,
+                      hint: AppStrings.searchHotelForService,
+                      controller: controller.homeSearchController.value,
+                      suffixIcon: Icons.search,
+                      ltr: true,
+                      onTap: () {
+                        Get.toNamed(Routes.HOTEL_SEARCH_SEARCH_PAGE);
+                      },
+                    ));
+              }),
               const SizedBox(
                 height: 30,
               ),
@@ -74,7 +81,13 @@ class HotelSearchView extends GetView<HotelSearchController> {
                   text: AppStrings.enterHotel,
                   fontSize: 17,
                   buttonColor: AppColors.primary,
-                  onPressed: (){},
+                  onPressed: () {
+                    if(UserManager().selectedBranch != null){
+                      Get.toNamed(Routes.ALLSERVICES);
+                    }else{
+                      showPopupText(AppStrings.searchHotelForService);
+                    }
+                  },
                 ),
               )
             ],

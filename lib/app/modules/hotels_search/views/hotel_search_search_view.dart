@@ -30,7 +30,7 @@ class HotelSearchSearchView extends GetView<HotelSearchController> {
         title: Obx(() {
           return TextFieldWidget(
             enabled: true,
-            controller: controller.searchController,
+            controller: controller.searchController.value,
             hint: AppStrings.searchHotelForService,
             suffixIcon: Icons.search,
             focusNode: controller.searchFocusNode.value,
