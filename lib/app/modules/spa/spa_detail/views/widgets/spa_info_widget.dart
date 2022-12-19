@@ -32,7 +32,6 @@ class SpaInfoWidget extends GetView<SpaDetailsController> {
               children: [ SizedBox( width: size.width*.9,
                   child: ReadMoreText(
                     discription,
-
                     trimLines: 2,
                     colorClickableText: Colors.pink,
                     trimMode: TrimMode.Line,

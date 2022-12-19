@@ -11,6 +11,7 @@ import 'package:flutter_expandable_fab/flutter_expandable_fab.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
+import '../../../../core/utils/common.dart';
 import '../controllers/room_search_page_controller.dart';
 import 'widgets/room_search_card.dart';
 
