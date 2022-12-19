@@ -96,4 +96,7 @@ final Map<String, String> enUs = {
   AppStrings.preparing: 'Preparing',
   AppStrings.delivering: 'Delivering',
   AppStrings.delivered: 'Delivered',
+  AppStrings.hotelsServices: 'Hotels Services',
+  AppStrings.searchHotelForService: '"Search Hotel Or City..."',
+  AppStrings.enterHotel: 'Enter Hotel',
 };

@@ -78,6 +78,7 @@ class HotelsearchModel {
 
 
   String toRawJson() => json.encode(toJson());
+  static List<HotelsearchModel> fromList(dynamic json) => List.from(json.map((e) => HotelsearchModel.fromJson(e) ));
 
   factory HotelsearchModel.fromJson(Map<String, dynamic> json) => HotelsearchModel(
     id: json["id"] == null ? null : json["id"],

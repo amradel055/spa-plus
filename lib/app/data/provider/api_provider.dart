@@ -35,6 +35,8 @@ class ApiProvider {
   }
 
   static const String _domainUrl = "http://192.168.1.11:8040";
+  static const String _domainUrl = "http://192.168.1.22:8070/hotelApp";
+  // static const String _domainUrl = "http://192.168.1.11:8040/";
   static const String apiUrl = "$_domainUrl/";
   final InternetConnectionChecker _checker = InternetConnectionChecker();
   late Dio _dio;

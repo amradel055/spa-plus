@@ -27,7 +27,6 @@ abstract class Routes {
   static const CITY_HALLS = _Paths.CITY_HALLS;
   static const HALL_DETAILS = _Paths.HALL_DETAILS;
   static const HOTEL_HALLS = _Paths.HOTEL_HALLS;
-
   static const HALL_RESERVATION = _Paths.HALL_RESERVATION;
   static const HALL_CALENDER = _Paths.HALL_CALENDER;
   static const ROOM_SEARCH = _Paths.ROOM_SEARCH;
@@ -40,6 +39,9 @@ abstract class Routes {
   static const HALLS_SEARCH_FILTER = _Paths.HALLS_SEARCH_FILTER;
   static const HALLS_SEARCH_HOTEL_FILTER = _Paths.HALLS_SEARCH_HOTEL_FILTER;
   static const FORGET_PASSWORD = _Paths.FORGETPASSWORD ;
+  static const HOTEL_SEARCH_FOR_SERVICES = _Paths.HOTEL_SEARCH_FOR_SERVICES ;
+  static const HOTEL_SEARCH_SEARCH_PAGE = _Paths.HOTEL_SEARCH_SEARCH_PAGE ;
+  static const MY_ACCOUNT = _Paths.MY_ACCOUNT ;
 }
 
 abstract class _Paths {
@@ -80,5 +82,8 @@ abstract class _Paths {
   static const HALLS_SEARCH_FILTER = '/halls-search-filter';
   static const HALLS_SEARCH_HOTEL_FILTER = '/halls-search-hotel-filter';
   static const HOTEL_HALLS = '/hotel-halls';
+  static const HOTEL_SEARCH_FOR_SERVICES = '/hotel_search_services';
+  static const HOTEL_SEARCH_SEARCH_PAGE = '/hotel_search_search_page';
+  static const MY_ACCOUNT = '/myAccount';
 
 }

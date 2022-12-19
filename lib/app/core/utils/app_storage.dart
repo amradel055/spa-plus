@@ -17,6 +17,7 @@ abstract class AppStorage {
   static const TOKEN_EXPIRE_TIME_KEY = "TOKEN_EXPIRE_TIME_KEY";
   static const LANGUAGE_KEY = "LANGUAGE_KEY";
   static const CART = "CART";
+  static const SELECTED_BRANCH = "SELECTED_BRANCH";
 
 
   static bool get getNotificationSetting => read<bool>(NOTIFICATION_SETTINGS) ?? true;

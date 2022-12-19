@@ -105,6 +105,9 @@ abstract class AppStrings {
   static const returning = " عوده";
   static const myAccount = "My Account";
   static const allServices = "All Services";
+  static const hotelsServices = "Hotels Services";
+  static const searchHotelForService = "Search Hotel Or City...";
+  static const enterHotel = "Enter";
 
 
 

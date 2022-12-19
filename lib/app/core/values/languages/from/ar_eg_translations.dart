@@ -94,5 +94,8 @@ final Map<String, String> arEG = {
   AppStrings.delivered: 'تم التسليم',
   AppStrings.allServices: 'كل الخدمات',
   AppStrings.myAccount: 'حسابي',
+  AppStrings.hotelsServices: 'خدمات الفنادق',
+  AppStrings.searchHotelForService: 'ابحث عن فندق او مدينة',
+  AppStrings.enterHotel: 'دخول',
 
 };

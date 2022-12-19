@@ -16,13 +16,13 @@ class ForgetPasswordController extends GetxController {
   Future reset() async {
     if(!form.currentState!.validate()) return;
     isLoading(true);
-    AuthRepository().resetPassword(requestDto,
-        onSuccess: (data){
-          showPopupText(data.msg);
-        },
-        onError: (error)=> showPopupText( error.toString()),
-        onComplete: () => isLoading(false)
-    );
+    // AuthRepository().resetPassword(requestDto,
+    //     onSuccess: (data){
+    //       showPopupText(data.msg);
+    //     },
+    //     onError: (error)=> showPopupText( error.toString()),
+    //     onComplete: () => isLoading(false)
+    // );
   }
 
 

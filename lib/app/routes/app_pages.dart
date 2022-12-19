@@ -1,4 +1,3 @@
-
 import 'package:easy_hotel/app/modules/food_section/bindings/food_section_binding.dart';
 import 'package:easy_hotel/app/modules/food_section/views/food_section_view.dart';
 import 'package:easy_hotel/app/modules/forget_password/views/forget_password_view.dart';
@@ -21,12 +20,14 @@ import 'package:easy_hotel/app/modules/halls/search_filter_city/bindings/search_
 import 'package:easy_hotel/app/modules/halls/search_filter_city/views/search_filter_page_view.dart';
 import 'package:easy_hotel/app/modules/halls/search_filter_hotel/bindings/search_filter_hotel_page_binding.dart';
 import 'package:easy_hotel/app/modules/halls/search_filter_hotel/views/search_filter_hotel_page_view.dart';
+import 'package:easy_hotel/app/modules/hotels_search/views/hotel_search_home_view.dart';
 import 'package:easy_hotel/app/modules/house_keeping/housekeeping_home_page/bindings/house_keeping_binding.dart';
 import 'package:easy_hotel/app/modules/house_keeping/housekeeping_home_page/views/house_keeping_view.dart';
 import 'package:easy_hotel/app/modules/house_keeping/housekeeping_reservation/bindings/house_keeping_reservation_binding.dart';
 import 'package:easy_hotel/app/modules/house_keeping/housekeeping_reservation/views/house_keeping_reservation_view.dart';
 import 'package:easy_hotel/app/modules/house_keeping/housekeeping_services/bindings/house_keeping_services_binding.dart';
 import 'package:easy_hotel/app/modules/house_keeping/housekeeping_services/views/house_keeping_services_view.dart';
+import 'package:easy_hotel/app/modules/my_account/views/my_account_view.dart';
 import 'package:easy_hotel/app/modules/rooms/all_rooms/bindings/all_rooms_page_binding.dart';
 import 'package:easy_hotel/app/modules/rooms/all_rooms/views/all_rooms_page_view.dart';
 import 'package:easy_hotel/app/modules/rooms/room_detail/bindings/room_details_binding.dart';
@@ -54,8 +55,11 @@ import '../modules/food_cart/views/food_cart_view.dart';
 import '../modules/forget_password/bindings/forget_password_binding.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/hotels_search/bindings/hotel_search_binding.dart';
+import '../modules/hotels_search/views/hotel_search_search_view.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
+import '../modules/my_account/bindings/my_account_binding.dart';
 import '../modules/polman/bindings/polman_binding.dart';
 import '../modules/polman/views/polman_view.dart';
 import '../modules/register/bindings/register_binding.dart';
@@ -71,6 +75,7 @@ import '../modules/spa/spa_search/bindings/spa_search_page_binding.dart';
 import '../modules/spa/spa_search/views/spa_search_page_view.dart';
 import '../modules/splash/bindings/splash_binding.dart';
 import '../modules/splash/views/splash_view.dart';
+
 part 'app_routes.dart';
 
 class AppPages {
@@ -83,14 +88,16 @@ class AppPages {
       name: _Paths.HOME,
       page: () => const HomeView(),
       binding: HomeBinding(),
-      children: [
-        GetPage(
-          name: _Paths.HOME,
-          page: () => const HomeView(),
-          binding: HomeBinding(),
-        ),
-      ],
+      // children: [
+      //   GetPage(
+      //     name: _Paths.HOME,
+      //     page: () => const HomeView(),
+      //     binding: HomeBinding(),
+      //   ),
+      // ],
     ),
+    GetPage(name: _Paths.HOTEL_SEARCH_FOR_SERVICES, page: () => const HotelSearchView(), binding: HotelSearchBinding()),
+    GetPage(name: _Paths.HOTEL_SEARCH_SEARCH_PAGE, page: () => const HotelSearchSearchView(), binding: HotelSearchBinding()),
     GetPage(
       name: _Paths.SPLASH,
       page: () => const SplashView(),
@@ -190,7 +197,8 @@ class AppPages {
       name: _Paths.CITY_HALLS,
       page: () => const CityHallsPageView(),
       binding: CityHallsPageBinding(),
-    ),    GetPage(
+    ),
+    GetPage(
       name: _Paths.HOTEL_HALLS,
       page: () => const HotelHallsPageView(),
       binding: HotelHallsPageBinding(),
@@ -234,19 +242,23 @@ class AppPages {
       name: _Paths.HALL_CALENDER,
       page: () => const HallCalenderPageView(),
       binding: HallCalenderPageBinding(),
-    ),GetPage(
+    ),
+    GetPage(
       name: _Paths.ROOM_SEARCH,
       page: () => const RoomSearchPageView(),
       binding: RoomSearchPageBinding(),
-    ),GetPage(
+    ),
+    GetPage(
       name: _Paths.ROOM_SEARCH_FILTER,
       page: () => const RoomSearchFilterPageView(),
       binding: RoomSearchFilterPageBinding(),
-    ),GetPage(
+    ),
+    GetPage(
       name: _Paths.ALL_ROOMS,
       page: () => const AllRoomsPageView(),
       binding: AllRoomsPageBinding(),
-    ),GetPage(
+    ),
+    GetPage(
       name: _Paths.ROOM_DETAIL,
       page: () => const RoomDetailView(),
       binding: RoomDetailBinding(),
@@ -255,18 +267,26 @@ class AppPages {
       name: _Paths.FOOD_CART,
       page: () => const FoodCartView(),
       binding: FoodCartBinding(),
-    ), GetPage(
+    ),
+    GetPage(
       name: _Paths.HALLS_SEARCH_FILTER,
       page: () => const HallSearchFilterPageView(),
       binding: HallSearchFilterPageBinding(),
-    ),GetPage(
+    ),
+    GetPage(
       name: _Paths.HALLS_SEARCH_FILTER,
       page: () => const HotelHallsPageView(),
       binding: HotelHallsPageBinding(),
-    ),GetPage(
+    ),
+    GetPage(
       name: _Paths.HALLS_SEARCH_HOTEL_FILTER,
       page: () => const HallSearchFilterHotelPageView(),
       binding: HallSearchFilterHotelPageBinding(),
+    ),
+    GetPage(
+      name: _Paths.MY_ACCOUNT,
+      page: () => const MyAccountView(),
+      binding: MyAccountBinding(),
     ),
   ];
 }
