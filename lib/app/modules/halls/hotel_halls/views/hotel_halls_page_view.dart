@@ -5,6 +5,7 @@ import 'package:easy_hotel/app/core/values/app_assets.dart';
 import 'package:easy_hotel/app/core/values/app_colors.dart';
 import 'package:easy_hotel/app/core/values/app_constants.dart';
 import 'package:easy_hotel/app/core/values/app_strings.dart';
+import 'package:easy_hotel/app/data/model/halls/dto/response/halls_response.dart';
 import 'package:easy_hotel/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_expandable_fab/flutter_expandable_fab.dart';
@@ -102,7 +103,10 @@ class HotelHallsPageView extends GetView<HotelHallsPageController> {
                   "بحث", textColor: Colors.white,
                   size: 15,
                   weight: FontWeight.bold,)),
-                onPressed: () {},
+                onPressed: () {
+                  controller.getHallsHotel();
+                  Get.back();
+                },
               );
               showDialog(
                 context: context,
@@ -110,17 +114,98 @@ class HotelHallsPageView extends GetView<HotelHallsPageController> {
                   return StatefulBuilder(
                       builder: (context, setState) {
                         return AlertDialog(
-                          title: const Center(child: TextWidget("filter")),
+                          title: const Center(child: TextWidget("Filter",weight: FontWeight.bold,)),
                           content: SizedBox(
-                            height: size.height * .4,
+                            height: size.height * .9,
                             width: size.width,
 
                             child: Column(
                               children: [
-                                for(String add in hobbyList)
+                                for(AdditionsGroupModel add in controller.allAdditions)
                                   Column(
                                     children: [
-                                      const TextWidget("add.name!",),
+                                      Text(add.name!),
+                                      SizedBox(width: size.width*.9,
+                                        height:size.height*.1,
+
+                                        child:
+                                        SingleChildScrollView(
+                                          physics: const AlwaysScrollableScrollPhysics(),
+
+                                          child:
+                                          Wrap(children: add.addtionsDtoList!.map((hobby) {
+                                            bool isSelected = false;
+                                            if (controller.selectedAdd.contains(hobby)) {
+                                              isSelected = true;
+                                            }
+                                            return GestureDetector(
+                                              onTap: () {
+                                                if (!controller.selectedAdd.contains(hobby)) {
+                                                  if (controller.selectedAdd.length<add.addtionsDtoList!.length) {
+                                                    controller.selectedAdd.add(hobby);
+                                                    setState(() {});
+                                                    print(controller.selectedAdd);
+                                                  }
+                                                } else {
+                                                  controller.selectedAdd
+                                                      .removeWhere((element) => element == hobby);
+                                                  setState(() {});
+                                                  print(controller.selectedAdd);
+                                                }
+                                              },
+                                              child: Container(
+                                                  margin: EdgeInsets.symmetric(
+                                                      horizontal: 5, vertical: 4),
+                                                  child: Container(
+                                                    padding: EdgeInsets.symmetric(
+                                                        vertical: 5, horizontal: 12),
+                                                    decoration: BoxDecoration(
+                                                        color: Colors.brown[300],
+                                                        borderRadius: BorderRadius.circular(18),
+                                                        border: Border.all(
+                                                            color: isSelected
+                                                                ? Colors.green
+                                                                : Colors.grey,
+                                                            width: 2)),
+                                                    child: Text(
+                                                      hobby.name!,
+                                                      style: TextStyle(
+                                                          color:
+                                                          isSelected ? Colors.red : Colors.white,
+                                                          fontSize: 14),
+                                                    ),
+                                                  )),
+                                            );
+                                          },
+                                          ).toList(),
+                                          ),
+
+                                        ),
+
+
+                                        // GridView.count(crossAxisCount: 3,
+                                        //   crossAxisSpacing: 2,
+                                        //   mainAxisSpacing: 1,
+                                        //   childAspectRatio: size.aspectRatio * 9,
+                                        //
+                                        //   children: [
+                                        //     for(int i = 0 ; i <= 6 ; i++)
+                                        //       GestureDetector(
+                                        //         onTap: (){},
+                                        //         child: Container(height: size.height*.02,
+                                        //             decoration: BoxDecoration(color: Colors.brown[300],
+                                        //                 borderRadius: BorderRadius.all(Radius.circular(20))),
+                                        //
+                                        //
+                                        //             child: Text('قاعة اضافية' ,style: smallTextStyleNormal(size,color: Colors.white),textAlign:TextAlign.center,)),
+                                        //
+                                        //
+                                        //       )
+                                        //
+                                        //
+                                        //   ],
+                                        // ),
+                                      ),
                                     ],
                                   ),
                                 Padding(

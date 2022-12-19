@@ -208,6 +208,7 @@ class AdditionsGroupModel {
   List<AddtionsModel>? addtionsDtoList;
   int ?appId;
 
+  static List<AdditionsGroupModel> fromList(dynamic json) => List.from(json.map((e) => AdditionsGroupModel.fromJson(e)));
 
   factory AdditionsGroupModel.fromRawJson(String str) => AdditionsGroupModel.fromJson(json.decode(str));
 
@@ -261,20 +262,7 @@ class AdditionsGroupModel {
     "appId": appId == null ? null : appId,
   };
 }
-// To parse this JSON data, do
-//
-//     final additionsModel = additionsModelFromJson(jsonString);
 
-
-
-// To parse this JSON data, do
-//
-//     final addtionsModel = addtionsModelFromJson(jsonString);
-
-
-AddtionsModel addtionsModelFromJson(String str) => AddtionsModel.fromJson(json.decode(str));
-
-String addtionsModelToJson(AddtionsModel data) => json.encode(data.toJson());
 
 class AddtionsModel {
   AddtionsModel({

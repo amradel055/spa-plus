@@ -7,7 +7,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AdCard extends StatelessWidget {
-  const AdCard({Key? key}) : super(key: key);
+  const AdCard({Key? key, required this.hotel, required this.image, required this.name}) : super(key: key);
+  final String hotel;
+  final String image;
+  final String name;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +27,7 @@ class AdCard extends StatelessWidget {
           children: [
             Positioned.fill(
                 child: ImageWidget(
-                  path: AppAssets.rooms,
+                  path: image,
                   fit: BoxFit.fill,
                   backgroundColor: Colors.black12,
                 )),
@@ -42,31 +45,30 @@ class AdCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    const Expanded(
+                     Expanded(
                         flex: 2,
                         child: TextWidget(
-                          "test",
+                          name,
                           maxLines: 1,
                           textColor: Colors.white,
                           weight: FontWeight.bold,
                         )),
-                    Expanded(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            TextWidget("4.5",textColor: Colors.white,),
-                            Icon(Icons.star_rounded,color: Colors.white,)
-                          ],
-                        )),
-                    const Expanded(
+                    // Expanded(
+                    //     child: Row(
+                    //       mainAxisAlignment: MainAxisAlignment.center,
+                    //       children: [
+                    //         TextWidget(stars.toString(),textColor: Colors.white,),
+                    //         Icon(Icons.star_rounded,color: Colors.white,)
+                    //       ],
+                    //     )),
+                     Expanded(
                       child: Align(
                         alignment: AlignmentDirectional.bottomEnd,
                         child: TextWidget(
-                          "40-50 ",
+                          hotel,
                           size: 11,
                           textColor: Colors.white,
                           weight: FontWeight.bold,
-                          children: [TextWidget(AppStrings.minutes)],
                         ),
                       ),
                     ),

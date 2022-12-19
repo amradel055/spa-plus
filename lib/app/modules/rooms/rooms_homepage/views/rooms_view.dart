@@ -1,5 +1,6 @@
 import 'package:easy_hotel/app/components/text_field_widget.dart';
 import 'package:easy_hotel/app/components/text_widget.dart';
+import 'package:easy_hotel/app/core/utils/common.dart';
 import 'package:easy_hotel/app/core/values/app_assets.dart';
 import 'package:easy_hotel/app/core/values/app_strings.dart';
 import 'package:easy_hotel/app/modules/rooms/rooms_homepage/views/widgets/discover.dart';
@@ -16,16 +17,20 @@ import 'widgets/advertisment_card.dart';
 
 class RoomsView extends GetView<RoomsController> {
   const RoomsView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    Size size =MediaQuery.of(context).size;
+    Size size = MediaQuery
+        .of(context)
+        .size;
     return Scaffold(
         extendBodyBehindAppBar: true,
         appBar: AppBar(
           elevation: 0,
           backgroundColor: Colors.transparent,
           foregroundColor: Colors.white,
-          title:  TextWidget('HOME',size: 30.h,),
+          title: TextWidget(
+            AppStrings.home, size: 30.h, textColor: Colors.white,),
           flexibleSpace: Container(
             decoration: BoxDecoration(
                 gradient: LinearGradient(
@@ -52,25 +57,33 @@ class RoomsView extends GetView<RoomsController> {
                   image: DecorationImage(
                       image: AssetImage(AppAssets.rooms), fit: BoxFit.cover)),
 
-              padding:  EdgeInsets.fromLTRB(size.width*.1, 175.h,size.width*.1, 0),
-              child:  Column(
+              padding: EdgeInsets.fromLTRB(
+                  size.width * .1, 175.h, size.width * .1, 0),
+              child: Column(
                 children: [
                   Center(
-                      child: TextWidget(AppStrings.searchlabel,textColor: Colors.white,size: 20.h,weight: FontWeight.bold,)),
+                      child: TextWidget(
+                        AppStrings.searchlabel, textColor: Colors.white,
+                        size: 20.h,
+                        weight: FontWeight.bold,)),
                   Row(
                     children: [
                       SizedBox(
-                          width: size.width*.8 ,
+                          width: size.width * .8,
 
                           child:
                           GestureDetector(
-                            onTap:(){Get.toNamed(Routes.SPASEARCHPAGE);},
-                            child:   TextFieldWidget(
+                            onTap: () {
+                              Get.toNamed(Routes.SPASEARCHPAGE);
+                            },
+                            child: TextFieldWidget(
                               enabled: false,
-                              hint : AppStrings.search,
+                              hint: AppStrings.search,
                               suffixIcon: Icons.search,
                               ltr: true,
-                              onTap: (){Get.toNamed(Routes.ROOM_SEARCH);},
+                              onTap: () {
+                                Get.toNamed(Routes.ROOM_SEARCH);
+                              },
 
                             ),
                           )
@@ -79,80 +92,107 @@ class RoomsView extends GetView<RoomsController> {
                       ),
 
                     ],
-                  )],
+                  )
+                ],
               ),
 
 
             ),
-            Column(crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding:  EdgeInsets.fromLTRB(20.h, 0, 20.h, 0),
-                    child: TextWidget(AppStrings.searchlabel,textAlign: TextAlign.left,weight: FontWeight.bold,size: 20.h,),
-                  ),
-                  SizedBox(
-                      height: size.height*.25,
-                      child:
-                      ListView.builder(
-                        itemCount: 4,
-                        scrollDirection: Axis.horizontal,
-                        itemBuilder: (context, index) {
-                          return const RoomCard();
-                        },
+            Obx(() {
+              if(controller.isLoading.value){
+                return Center(
+                  child: Common.getSpin(),
+                );
+              }
+              return Column(crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(20.h, 0, 20.h, 0),
+                      child: TextWidget(
+                        AppStrings.searchlabel, textAlign: TextAlign.left,
+                        weight: FontWeight.bold,
+                        size: 20.h,),
+                    ),
+                    SizedBox(
+                        height: size.height * .25,
+                        child:
+                        ListView.builder(
+                          itemCount: controller.roomsOffer.length,
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (context, index) {
+                            return RoomCard(name: controller.roomsOffer[index]
+                                .name!,
+                              price: controller.roomsOffer[index].numBeds!,
+                              stars: controller.roomsOffer[index]
+                                  .clientsEvaluation!.toInt(),
+                              percentage: controller.roomsOffer[index]
+                                  .numBeds!.toInt(),);
+                          },
 
-                      )
-                  ),
-                  Padding(
-                    padding:  EdgeInsets.fromLTRB(20.h, 0, 20.h, 0),
-                    child: TextWidget(AppStrings.towns,textAlign: TextAlign.left,weight: FontWeight.bold,size: 20.h,),
-                  ),
-                  SizedBox(
-                      height: size.height*.18,
-                      child:
-                      ListView.builder(
-                        itemCount: 5,
-                        scrollDirection: Axis.horizontal,
-                        itemBuilder: (context, index) {
-                          return const TownCard(image: AppAssets.rooms, name: "cairo");
-                        },
+                        )
+                    ),
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(20.h, 0, 20.h, 0),
+                      child: TextWidget(
+                        AppStrings.towns, textAlign: TextAlign.left,
+                        weight: FontWeight.bold,
+                        size: 20.h,),
+                    ),
+                    SizedBox(
+                        height: size.height * .18,
+                        child:
+                        ListView.builder(
+                          itemCount: controller.cities.length,
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (context, index) {
+                            return TownCard(image: controller.cities[index]
+                                .image!, name: controller.cities[index].name!);
+                          },
 
-                      )
-                  ),
-                  Padding(
-                    padding:  EdgeInsets.fromLTRB(20.h, 0, 20.h, 0),
-                    child: TextWidget("الاعلانات",textAlign: TextAlign.left,weight: FontWeight.bold,size: 20.h,),
-                  ),
-                  SizedBox(
-                      height: size.height*.25,
-                      child:
-                      ListView.builder(
-                        itemCount: 5,
-                        scrollDirection: Axis.horizontal,
-                        itemBuilder: (context, index) {
-                          return const AdCard();
-                        },
+                        )
+                    ),
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(20.h, 0, 20.h, 0),
+                      child: TextWidget("الاعلانات", textAlign: TextAlign.left,
+                        weight: FontWeight.bold,
+                        size: 20.h,),
+                    ),
+                    SizedBox(
+                        height: size.height * .25,
+                        child:
+                        ListView.builder(
+                          itemCount: controller.roomsAds.length,
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (context, index) {
+                            return  AdCard(name: controller.roomsAds[index].name!,hotel: controller.roomsAds[index].hotelName.toString(),image: controller.roomsAds[index].imgUrl!,);
+                          },
 
-                      )
-                  ),
-                  Padding(
-                    padding:  EdgeInsets.fromLTRB(20.h, 0, 20.h, 0),
-                    child: TextWidget("اكتشف المزيد",textAlign: TextAlign.left,weight: FontWeight.bold,size: 20.h,),
-                  ),
-                  SizedBox(
-                      height: size.height*.18,
-                      child:
-                      ListView.builder(
-                        itemCount: 5,
-                        scrollDirection: Axis.horizontal,
-                        itemBuilder: (context, index) {
-                          return const DiscoverCard(image: AppAssets.rooms, name: "cairo");
-                        },
+                        )
+                    ),
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(20.h, 0, 20.h, 0),
+                      child: TextWidget(
+                        "اكتشف المزيد", textAlign: TextAlign.left,
+                        weight: FontWeight.bold,
+                        size: 20.h,),
+                    ),
+                    SizedBox(
+                        height: size.height * .18,
+                        child:
+                        ListView.builder(
+                          itemCount: controller.roomsDiscover.length,
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (context, index) {
+                            return  DiscoverCard(
+                                image: controller.roomsDiscover[index].imgUrl!, name: controller.roomsDiscover[index].name!);
+                          },
 
-                      )
-                  ),
+                        )
+                    ),
 
 
-                ])
+                  ]);
+            })
           ],
         )
     );

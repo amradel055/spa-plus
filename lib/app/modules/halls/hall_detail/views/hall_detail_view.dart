@@ -26,18 +26,6 @@ class HallDetailView extends GetView<HallDetailsController> {
           elevation: 0,
           backgroundColor: Colors.transparent,
           foregroundColor: Colors.white,
-          flexibleSpace: Container(
-            decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                    colors: [
-                      Colors.transparent
-                    ],
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter
-                )
-            ),
-          ),
-          centerTitle: true,
         ),
         body: Obx(() {
           if(controller.isLoading.value){
@@ -99,7 +87,7 @@ class HallDetailView extends GetView<HallDetailsController> {
                                     textColor: Colors.white,
                                     weight: FontWeight.bold,)),
                               const TextWidget(
-                                'مراجعات ', weight: FontWeight.bold,)
+                                AppStrings.reviews, weight: FontWeight.bold,)
 
                             ],
                           ),
@@ -117,8 +105,10 @@ class HallDetailView extends GetView<HallDetailsController> {
                       child: Row(children: [
                         const TextWidget('${AppStrings.number}:',
                           weight: FontWeight.bold,),
-                        TextWidget('${controller.hall!.capacity!.toString()}',
-                          weight: FontWeight.bold,),
+                        Center(
+                          child: TextWidget('${controller.hall!.capacity!.toString()}',
+                            weight: FontWeight.bold,),
+                        ),
 
                       ],),
                     ),
@@ -130,10 +120,12 @@ class HallDetailView extends GetView<HallDetailsController> {
                     SizedBox(
                       height: 35,
                       child: Row(children: [
-                        const TextWidget('${AppStrings.design}:',
+                        const TextWidget('${AppStrings.prices}:',
                           weight: FontWeight.bold,),
-                        TextWidget('${controller.hall!.price.toString()}',
-                          weight: FontWeight.bold,),
+                        Center(
+                          child: TextWidget('${controller.hall!.price.toString()}',
+                            weight: FontWeight.bold,),
+                        ),
 
                       ],),
                     ),
@@ -169,7 +161,7 @@ class HallDetailView extends GetView<HallDetailsController> {
                     SizedBox(width: size.width * .9,
                       child: TextButton(
                         onPressed: () {
-                          Get.toNamed(Routes.HALL_RESERVATION);
+                          Get.toNamed(Routes.HALL_RESERVATION,arguments: controller.hall);
                         },
                         style: ButtonStyle(
                             backgroundColor: MaterialStateProperty.all(AppColors

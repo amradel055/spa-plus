@@ -7,7 +7,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class RoomCard extends StatelessWidget {
-  const RoomCard({Key? key}) : super(key: key);
+  const RoomCard({Key? key, required this.stars, required this.price, required this.percentage, required this.name}) : super(key: key);
+  final int stars;
+  final num price;
+  final int percentage;
+  final String name;
+
 
   @override
   Widget build(BuildContext context) {
@@ -35,12 +40,12 @@ class RoomCard extends StatelessWidget {
                 decoration:
                 BoxDecoration(borderRadius: const BorderRadiusDirectional.only(bottomStart: Radius.circular(AppConstants.radius)), color: Colors.red.withOpacity(.8)),
                 padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 2),
-                child: const TextWidget(
+                child:  TextWidget(
                   AppStrings.sale,
                   textDirection: TextDirection.rtl,
                   textColor: Colors.white,
                   weight: FontWeight.bold,
-                  children: [TextWidget(" 15 "), TextWidget("%"), TextWidget(" - "), TextWidget(" 2000 "), TextWidget("LE")],
+                  children: [TextWidget(percentage.toString()), TextWidget("%"), TextWidget(" - "), TextWidget(price.toString()), TextWidget("LE")],
                 ),
               ),
             ),
@@ -58,10 +63,10 @@ class RoomCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    const Expanded(
+                     Expanded(
                         flex: 2,
                         child: TextWidget(
-                          "test",
+                          name,
                           maxLines: 1,
                           textColor: Colors.white,
                           weight: FontWeight.bold,
@@ -70,22 +75,22 @@ class RoomCard extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            TextWidget("4.5",textColor: Colors.white,),
+                            TextWidget(stars.toString(),textColor: Colors.white,),
                             Icon(Icons.star_rounded,color: Colors.white,)
                           ],
                         )),
-                    const Expanded(
-                      child: Align(
-                        alignment: AlignmentDirectional.bottomEnd,
-                        child: TextWidget(
-                          "40-50 ",
-                          size: 11,
-                          textColor: Colors.white,
-                          weight: FontWeight.bold,
-                          children: [TextWidget(AppStrings.minutes)],
-                        ),
-                      ),
-                    ),
+                    // const Expanded(
+                    //   child: Align(
+                    //     alignment: AlignmentDirectional.bottomEnd,
+                    //     child: TextWidget(
+                    //       "40-50 ",
+                    //       size: 11,
+                    //       textColor: Colors.white,
+                    //       weight: FontWeight.bold,
+                    //       children: [TextWidget(AppStrings.minutes)],
+                    //     ),
+                    //   ),
+                    // ),
                   ],
                 ),
               ),

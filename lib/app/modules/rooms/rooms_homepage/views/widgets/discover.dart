@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_hotel/app/components/image_widget.dart';
 import 'package:easy_hotel/app/components/text_widget.dart';
 import 'package:easy_hotel/app/core/values/app_colors.dart';
@@ -40,7 +41,7 @@ class DiscoverCard extends StatelessWidget {
                   ),
                   image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: AssetImage(
+                    image: CachedNetworkImageProvider(
                       image),
                   )
               ),
