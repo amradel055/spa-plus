@@ -18,7 +18,7 @@ class HallCalenderPageController extends GetxController {
       companyId: AppConstants.companyId,
       createdBy: AppConstants.createdBy,
       customerId: UserManager().user!.id,
-      // branchId: spa!.branchId,
+      branchId: UserManager().selectedBranch!.id,
     );
     SpaRepository().getSpaSave(request,
         onSuccess: (data) {

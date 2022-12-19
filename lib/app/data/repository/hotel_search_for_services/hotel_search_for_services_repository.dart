@@ -9,13 +9,13 @@ import '../../provider/api_provider.dart';
 
 class HotelSearchForServicesRepository {
 
-  searchHotelForServices(
+  Future searchHotelForServices(
       SpaSearchRequest spaGroupRequest, {
         Function()? onComplete,
         SuccessFunc<List<HotelsearchModel>> onSuccess,
         Function(dynamic error)? onError,
-      }) =>
-      ApiProvider().post<List<HotelsearchModel>>('branch/hotelListByString',
+      }) async =>
+    await  ApiProvider().post<List<HotelsearchModel>>('branch/hotelListByString',
         onComplete: onComplete,
         onSuccess: onSuccess,
         data: spaGroupRequest.toJson(),

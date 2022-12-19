@@ -33,7 +33,7 @@ class HotelSearchController extends GetxController {
     HotelSearchForServicesRepository().getHotelForServicesByCustomerId(
       request,
       onSuccess: (data)async{
-        if(data.data != null || data.data == []){
+        if(data.data!.id != null){
          await UserManager().saveSelectedBranch(data.data!);
         }
       },
@@ -48,13 +48,13 @@ class HotelSearchController extends GetxController {
     );
   }
 
-  searchHotelForServices(){
+ Future searchHotelForServices() async{
     if(searchController.value.text.tr.isEmpty){
       hotelsList.value = [] ;
       return ;
     }
     final request = SpaSearchRequest(name: searchController.value.text);
-    HotelSearchForServicesRepository().searchHotelForServices(
+  await  HotelSearchForServicesRepository().searchHotelForServices(
         request,
        onSuccess: (data){
          hotelsList.value = [] ;

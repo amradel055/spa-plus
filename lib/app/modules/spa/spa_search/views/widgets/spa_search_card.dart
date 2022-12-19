@@ -9,7 +9,7 @@ class SpaSearchCardWidget extends StatelessWidget {
   const SpaSearchCardWidget({Key? key, required this.type, required this.image, required this.title, required this.subtitle, required this.id, this.onTap}) : super(key: key);
   final int type;
   final int id;
-  final String image;
+  final String? image;
   final String title ;
   final String subtitle ;
   final Function()? onTap;
@@ -34,7 +34,7 @@ class SpaSearchCardWidget extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 5),
           child: Row(
             children: [
-              ImageWidget(path: image, width: size.width*.15,height: size.height*.07),
+              image != null ?  ImageWidget(path: image!, width: size.width*.15,height: size.height*.07) : SizedBox(),
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),

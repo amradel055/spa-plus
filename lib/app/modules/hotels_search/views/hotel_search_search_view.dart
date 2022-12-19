@@ -35,7 +35,9 @@ class HotelSearchSearchView extends GetView<HotelSearchController> {
             suffixIcon: Icons.search,
             focusNode: controller.searchFocusNode.value,
             ltr: true,
-            onChange: (_) => controller.searchHotelForServices(),
+            onChange: (_)async{
+            await  controller.searchHotelForServices();
+            } ,
           );
         }),
         centerTitle: true,

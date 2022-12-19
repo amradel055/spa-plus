@@ -98,7 +98,7 @@ class SpaSearchPageView extends GetView<SpaSearchPageController> {
                       itemBuilder: (context, index) {
                         return SpaSearchCardWidget(
                           type: controller.selectedType.value,
-                          image: controller.selectedType.value==0?controller.items[index].image!:controller.selectedType.value==1?controller.hotels[index].image!:controller.spas[index].name!,
+                          image: controller.selectedType.value==0?controller.items[index].image:controller.selectedType.value==1?controller.hotels[index].image:controller.spas[index].image,
                           title:controller.selectedType.value==0?controller.items[index].name!:controller.selectedType.value==1?controller.hotels[index].name!:controller.spas[index].name!,
                           subtitle: controller.selectedType.value==0?"":controller.selectedType.value==1?controller.hotels[index].cityName!:controller.spas[index].hotelName!,
                           id:controller.selectedType.value==0?controller.items[index].id!:controller.selectedType.value==1?controller.hotels[index].id!:controller.spas[index].id! ,
