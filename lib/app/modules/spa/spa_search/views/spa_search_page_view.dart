@@ -26,10 +26,7 @@ class SpaSearchPageView extends GetView<SpaSearchPageController> {
     final row = Container(
       height: size.height * .002, color: AppColors.appHallsRedDark,
     );
-    List<String> hobbyList = [] ;
-    List<String>? selectedHobby = [];
-    List<String>? selected = [];
-    RangeValues _currentRangeValues = const RangeValues(40, 80);
+
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -71,7 +68,7 @@ class SpaSearchPageView extends GetView<SpaSearchPageController> {
                   },
                   index: controller.selectedType.value,),
                 CategoriesWidgets(title: AppStrings.spas,
-                  image: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/spa-treatment-room-1584039817.jpg",
+                  image: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/spa-treatment-rooms-1584039817.jpg",
                   onTap: () {
                     controller.changeListType(2);
                   },
@@ -93,7 +90,7 @@ class SpaSearchPageView extends GetView<SpaSearchPageController> {
                     height: size.height * .8,
                     child:
                     ListView.builder(
-                      itemCount: controller.items.length,
+                      itemCount: controller.selectedType.value==0?controller.items.length:controller.selectedType.value==1?controller.hotels.length:controller.spas.length,
                       scrollDirection: Axis.vertical,
                       itemBuilder: (context, index) {
                         return SpaSearchCardWidget(

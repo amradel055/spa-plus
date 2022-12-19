@@ -8,9 +8,9 @@ class HouseKeepingServicesController extends GetxController {
   var housekeepingDetail = <HouseKeepingDetailResponse>[].obs;
   final isLoading = false.obs;
   final servicesSelected = <int>[].obs;
-  final int id = Get.arguments;
-  final int branchId = Get.arguments;
-  final int index = Get.arguments;
+  final List args = Get.arguments;
+  // final int branchId = Get.arguments;
+  // final int index = Get.arguments;
 
 
 
@@ -25,7 +25,7 @@ class HouseKeepingServicesController extends GetxController {
   getHousekeepingGroup() async {
     isLoading(true);
     final request = HousekeepingDetailRequest(
-      groupId: id,
+      groupId: args[0],
 
     );
     HousekeepingRepository().getHousekeepingDetail(request,

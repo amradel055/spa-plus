@@ -10,8 +10,9 @@ import 'package:get/get.dart';
 class HouseKeepingReservationController extends GetxController {
   final isLoading = false.obs;
   // final servicesSelected = <int>[].obs;
-  final int id = Get.arguments;
+  // final int id = Get.arguments;
   // final int branchId = Get.arguments;
+  final List res =Get.arguments;
    Rx<DateTime> dateTime =DateTime.now().obs;
   final Rxn<DateTime> dateTo = Rxn();
 
@@ -19,12 +20,12 @@ class HouseKeepingReservationController extends GetxController {
   getHousekeepingSave() async {
     isLoading(true);
     final request = HousekeepingSaveRequest(
-      serviceTypeId:id ,
-      branchId: 232,
+      serviceTypeId:res[0] ,
+      branchId:232,
       createdBy:AppConstants.createdBy,
       companyId: AppConstants.companyId,
       customerId: UserManager().user!.id,
-        salesDetailHouseKeepingDTOList: [2],
+      salesDetailHouseKeepingDTOList: res[2],
       date: dateTo.value,
       time: dateTime.value
     );

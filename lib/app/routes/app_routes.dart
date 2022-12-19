@@ -73,10 +73,10 @@ abstract class _Paths {
   static const FOOD_CART = '/food-cart';
   static const HALL_RESERVATION = '/hall-reservation';
   static const HALL_CALENDER = '/hall-calender';
-  static const ROOM_SEARCH = '/room-search';
-  static const ROOM_SEARCH_FILTER = '/room-search-filter';
+  static const ROOM_SEARCH = '/rooms-search';
+  static const ROOM_SEARCH_FILTER = '/rooms-search-filter';
   static const ALL_ROOMS = '/all-rooms';
-  static const ROOM_DETAIL = '/room-detail';
+  static const ROOM_DETAIL = '/rooms-detail';
   static const HALLS_SEARCH_FILTER = '/halls-search-filter';
   static const HALLS_SEARCH_HOTEL_FILTER = '/halls-search-hotel-filter';
   static const HOTEL_HALLS = '/hotel-halls';

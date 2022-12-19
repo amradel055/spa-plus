@@ -43,8 +43,8 @@ class HouseKeepingServicesView extends GetView<HouseKeepingServicesController> {
                 ),
                 padding: const EdgeInsets.symmetric(
                     horizontal: 20, vertical: 50),
-                child: Obx(() {
-                  return Column(
+                child:
+                   Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Align(
@@ -58,7 +58,7 @@ class HouseKeepingServicesView extends GetView<HouseKeepingServicesController> {
                       ),
                       const Spacer(),
                       TextWidget(
-                        controller.housekeepingDetail[0].name!,
+                        controller.args[1]!,
                         weight: FontWeight.bold,
                         size: 20,
                       ),
@@ -89,8 +89,7 @@ class HouseKeepingServicesView extends GetView<HouseKeepingServicesController> {
                         ],
                       ),
                     ],
-                  );
-                }),
+                  )
               ),
             ),
             Positioned(top: 230,
@@ -153,7 +152,8 @@ class HouseKeepingServicesView extends GetView<HouseKeepingServicesController> {
                           child: GestureDetector(
                             onTap: () {
                               Get.toNamed(Routes.HOUSEKEEPING_RESERVATION,
-                                  arguments: controller.id);
+                                arguments: [controller.args[0],controller.args[1],controller.servicesSelected.value]
+                                   );
                             },
                             child: Container(
                               height: size.height * 0.05,

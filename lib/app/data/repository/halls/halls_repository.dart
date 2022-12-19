@@ -1,4 +1,5 @@
 
+import 'package:easy_hotel/app/data/model/halls/dto/request/all_additions_halls__request_dto.dart';
 import 'package:easy_hotel/app/data/model/halls/dto/request/all_halls_request_dto.dart';
 import 'package:easy_hotel/app/data/model/halls/dto/request/halls_detail_request_dto.dart';
 import 'package:easy_hotel/app/data/model/halls/dto/request/halls_save_request.dart';
@@ -71,6 +72,19 @@ class HallsRepository {
         data: hallSearchFilterRequest.toJson(),
         onError: onError,
         convertor: HallsSearchFilterResponse.fromList,
+      );
+     getAllAdditionsHalls(
+         AllAdditionsHallsRequest allAdditionsHallsRequest, {
+        Function()? onComplete,
+        SuccessFunc<List<AdditionsGroupModel>> onSuccess,
+        Function(dynamic error)? onError,
+      }) =>
+      ApiProvider().post<List<AdditionsGroupModel>>('halls/findAllGroupAdditions',
+        onComplete: onComplete,
+        onSuccess: onSuccess,
+        data: allAdditionsHallsRequest.toJson(),
+        onError: onError,
+        convertor: AdditionsGroupModel.fromList,
       );
 
   getHallDetail(

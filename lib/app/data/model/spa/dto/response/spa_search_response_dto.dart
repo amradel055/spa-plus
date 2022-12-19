@@ -12,7 +12,7 @@ class SpaSearchResponse {
 
   List<HotelsearchModel>? branchList;
   List<BranchsearchModel>? citieseList;
-  List<BranchsearchModel>? roomseList;
+  List<SpasearchModel>? roomseList;
   List<BranchsearchModel>? holesList;
   List<SpasearchModel>? spaList;
   dynamic  name;
@@ -24,7 +24,7 @@ class SpaSearchResponse {
   factory SpaSearchResponse.fromJson( dynamic json) => SpaSearchResponse(
     branchList: json["branchList"] == null ? null : List<HotelsearchModel>.from(json["branchList"].map((x) => HotelsearchModel.fromJson(x))),
     citieseList: json["citieseList"] == null ? null : List<BranchsearchModel>.from(json["citieseList"].map((x) => BranchsearchModel.fromJson(x))),
-    roomseList: json["roomseList"] == null ? null : List<BranchsearchModel>.from(json["roomseList"].map((x) => BranchsearchModel.fromJson(x))),
+    roomseList: json["roomseList"] == null ? null : List<SpasearchModel>.from(json["roomseList"].map((x) => SpasearchModel.fromJson(x))),
     holesList: json["holesList"] == null ? null : List<BranchsearchModel>.from(json["holesList"].map((x) => BranchsearchModel.fromJson(x))),
     spaList: json["spaList"] == null ? null : List<SpasearchModel>.from(json["spaList"].map((x) => SpasearchModel.fromJson(x))),
     name: json["name"],
@@ -33,7 +33,7 @@ class SpaSearchResponse {
   Map<String, dynamic> toJson() => {
     "branchList": branchList == null ? null : List<HotelsearchModel>.from(branchList!.map((x) => x.toJson())),
     "citieseList": citieseList == null ? null : List<BranchsearchModel>.from(citieseList!.map((x) => x.toJson())),
-    "roomseList": roomseList == null ? null : List<BranchsearchModel>.from(roomseList!.map((x) => x.toJson())),
+    "roomseList": roomseList == null ? null : List<SpasearchModel>.from(roomseList!.map((x) => x.toJson())),
     "holesList": holesList == null ? null : List<BranchsearchModel>.from(holesList!.map((x) => x.toJson())),
     "spaList": spaList == null ? null : List<SpasearchModel>.from(spaList!.map((x) => x.toJson())),
     "name": name,
