@@ -70,13 +70,13 @@ class BranchsearchModel {
     "image": image == null ? null : image,
   };
 }
+
 class HotelsearchModel {
   HotelsearchModel({
     this.id,
     this.name,
     this.image,
     this.cityName,
-
   });
 
   int ?id;

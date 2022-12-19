@@ -22,7 +22,8 @@ class RegisterController extends GetxController {
     isLoading(true);
     AuthRepository().register(requestDto,
         onSuccess: (data){
-          Get.offNamed(Routes.LOGIN);
+          UserManager().login(data.data);
+          Get.offNamed(Routes.HOME);
         },
         onError: (error)=> showPopupText(error.toString()),
         onComplete: () => isLoading(false)

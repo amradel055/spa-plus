@@ -10,17 +10,17 @@ class AuthRepository {
 
   register(
     RegisterRequestDto request, {
-    SuccessFunc<void> onSuccess, Function()?onComplete,
+    SuccessFunc<LoginResponse> onSuccess, Function()?onComplete,
     Function(dynamic error)? onError,
     // Function()? onComplete,
   }) {
-    ApiProvider().post<void>(
+    ApiProvider().post<LoginResponse>(
       'auth/registerNew',
       data: request.toJson(),
       onSuccess: onSuccess,
       onComplete: onComplete,
       onError: onError,
-      convertor: (_){return null;},
+      convertor: LoginResponse.fromJson,
         // onComplete: onComplete
 
     );

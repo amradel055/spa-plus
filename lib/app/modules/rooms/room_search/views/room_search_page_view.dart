@@ -22,7 +22,6 @@ class RoomSearchPageView extends GetView<RoomSearchPageController> {
     final row = Container(
       height: size.height*.002,color: AppColors.appHallsRedDark,
     );
-
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -41,7 +40,7 @@ class RoomSearchPageView extends GetView<RoomSearchPageController> {
         children: [
             Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              CategoriesWidgets( title:  AppStrings.towns,image: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/screen-shot-2021-03-02-at-10-26-31-am-1614702485.png?crop=0.668xw:1.00xh;0.293xw,0&resize=640:*",onTap: (){controller.changeListType(0);}, index: controller.selectedType.value,),
+              CategoriesWidgets( title: AppStrings.towns,image: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/screen-shot-2021-03-02-at-10-26-31-am-1614702485.png?crop=0.668xw:1.00xh;0.293xw,0&resize=640:*",onTap: (){controller.changeListType(0);}, index: controller.selectedType.value,),
               CategoriesWidgets( title:AppStrings.hotels,image: "https://images.unsplash.com/photo-1615460549969-36fa19521a4f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzl8fGhvdGVsfGVufDB8fDB8fA%3D%3D&w=1000&q=80",onTap: (){controller.changeListType(1);},index: controller.selectedType.value,),
               CategoriesWidgets( title: AppStrings.spas,image: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/spa-treatment-room-1584039817.jpg",onTap: (){controller.changeListType(2);},index: controller.selectedType.value,),
           ],),

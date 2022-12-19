@@ -68,9 +68,16 @@ class LoginView extends GetView<LoginController> {
                       ltr: true,
                       validator: AppValidator.forceValue,
                     )),
-                    GestureDetector(
-                        onTap: ()=> Get.toNamed(Routes.FORGET_PASSWORD ),
-                        child: const TextWidget(AppStrings.forgetYourPassword,textColor: Colors.red,)),
+                    SizedBox(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          GestureDetector(
+                              onTap: ()=> Get.toNamed(Routes.FORGET_PASSWORD ),
+                              child: const TextWidget(AppStrings.forgetYourPassword,textColor: Colors.red,)),
+                        ],
+                      ),
+                    ),
                     space,
                     ButtonWidget(
                       text: AppStrings.login,
