@@ -15,16 +15,16 @@ class RegisterController extends GetxController {
   final isLoading = false.obs;
   final requestDto = RegisterRequestDto();
 
-  final form = GlobalKey<FormState>();
+  final registerForm = GlobalKey<FormState>();
 
   Future register() async {
-    if(!form.currentState!.validate()) return;
+    if(!registerForm.currentState!.validate()) return;
     isLoading(true);
     AuthRepository().register(requestDto,
         onSuccess: (data){
-          Get.offNamed(Routes.ALLSERVICES);
+          Get.offNamed(Routes.LOGIN);
         },
-        onError: (error)=> showPopupText( error.toString()),
+        onError: (error)=> showPopupText(error.toString()),
         onComplete: () => isLoading(false)
     );
   }

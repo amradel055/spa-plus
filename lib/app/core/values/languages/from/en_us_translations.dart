@@ -18,7 +18,9 @@ final Map<String, String> enUs = {
   AppStrings.phone: 'PHONE',
   AppStrings.email: 'EMAIL',
   AppStrings.password: 'PASSWORD',
-  AppStrings.userName: 'FIRSTNAME',
+  AppStrings.userName: 'USERNAME',
+  AppStrings.forgetYourPassword : "Do You Forget Your Password ?",
+  AppStrings.resetPassword : "Reset Password",
   AppStrings.name: 'LASTNAME',
   AppStrings.register: 'REGISTER',
   AppStrings.haveAccount: 'Do you have an account',
@@ -66,7 +68,8 @@ final Map<String, String> enUs = {
   AppStrings.number: 'Number',
   AppStrings.design: 'Design',
   AppStrings.servicesHall: 'services Hall',
-
+  AppStrings.allServices: 'All Services',
+  AppStrings.myAccount: 'My Account',
 
 
 
