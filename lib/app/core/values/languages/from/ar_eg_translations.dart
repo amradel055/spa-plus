@@ -34,6 +34,7 @@ final Map<String, String> arEG = {
   AppStrings.home: 'الرئيسيه',
   AppStrings.towns: 'المدن',
   AppStrings.hotels: 'الفنادق',
+  AppStrings.rooms: 'الغرف',
   AppStrings.spas: 'الصالونات',
   AppStrings.spasCity: 'الصالونات داخل المدينه',
   AppStrings.spasHotel: 'صالونات الفندق',
