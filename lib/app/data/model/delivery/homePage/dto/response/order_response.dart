@@ -28,24 +28,44 @@ class PolmanOrder {
     this.branchSerial,
     this.igmaOwnerSerial,
     this.userCode,
+    this.spaId,
+    this.spaItemId,
+    this.spaItemName,
+    this.spaItemImage,
+    // this.spaItemsDtoList,
+    this.offerId,
+    this.price,
+    this.discountValue,
+    this.discountType,
+    this.discountRate,
+    this.salePrice,
+    this.name,
+    this.email,
     this.customerId,
-    this.customerName,
-    this.time,
-    this.finishBy,
+    this.phone,
+    this.address,
     this.finishName,
-    this.startDate,
+    this.finishBy,
     this.finishDate,
+    // this.reviewSpaDto,
+    this.dateClose,
+    this.dueDate,
+    this.dueTime,
+    // this.salesDetailSpaItemDtoList,
+    // this.addtionsDtoList,
+    this.startDate,
+    this.remark,
   });
 
-  int ?id;
-  bool ?markEdit;
+  int? id;
+  bool? markEdit;
   dynamic msg;
   dynamic msgType;
   dynamic markDisable;
-  int ?createdBy;
+  int? createdBy;
   String? createdDate;
-  int ?index;
-  dynamic companyId;
+  int? index;
+  int? companyId;
   dynamic createdByName;
   dynamic branchId;
   dynamic deletedBy;
@@ -55,25 +75,46 @@ class PolmanOrder {
   dynamic branchSerial;
   dynamic igmaOwnerSerial;
   dynamic userCode;
-  int ?customerId;
-  String? customerName;
-  dynamic time;
-  dynamic finishBy;
+  int? spaId;
+  int? spaItemId;
+  String? spaItemName;
+  String? spaItemImage;
+  // List<dynamic>? spaItemsDtoList;
+  dynamic offerId;
+  double? price;
+  double? discountValue;
+  int? discountType;
+  double? discountRate;
+  double? salePrice;
+  String? name;
+  String? email;
+  int? customerId;
+  String? phone;
+  String? remark;
+  dynamic address;
   dynamic finishName;
-  dynamic startDate;
-  dynamic finishDate;
+  dynamic finishBy;
+  DateTime? finishDate;
+  // Map<String, bool?>? reviewSpaDto;
+  dynamic dateClose;
+  DateTime? dueDate;
+  DateTime? dueTime;
+  // List<dynamic>? salesDetailSpaItemDtoList;
+  // List<dynamic>? addtionsDtoList;
+  DateTime? startDate;
+
   static List<PolmanOrder> fromList(dynamic json) => List.from(json.map((e) => PolmanOrder.fromJson(e)));
 
 
   factory PolmanOrder.fromJson(Map<String, dynamic> json) => PolmanOrder(
-    id: json["id"] == null ? null : json["id"],
-    markEdit: json["markEdit"] == null ? null : json["markEdit"],
+    id: json["id"],
+    markEdit: json["markEdit"],
     msg: json["msg"],
     msgType: json["msgType"],
     markDisable: json["markDisable"],
-    createdBy: json["createdBy"] == null ? null : json["createdBy"],
-    createdDate: json["createdDate"] == null ? null : json["createdDate"],
-    index: json["index"] == null ? null : json["index"],
+    createdBy: json["createdBy"],
+    createdDate: json["createdDate"],
+    index: json["index"],
     companyId: json["companyId"],
     createdByName: json["createdByName"],
     branchId: json["branchId"],
@@ -84,24 +125,45 @@ class PolmanOrder {
     branchSerial: json["branchSerial"],
     igmaOwnerSerial: json["igmaOwnerSerial"],
     userCode: json["userCode"],
-    customerId: json["customerId"] == null ? null : json["customerId"],
-    customerName: json["customerName"] == null ? null : json["customerName"],
-    time: json["time"],
-    finishBy: json["finishBy"],
+    spaId: json["spaId"],
+    spaItemId: json["spaItemId"],
+    spaItemName: json["spaItemName"],
+    spaItemImage: json["spaItemImage"],
+    // spaItemsDtoList: json["spaItemsDTOList"] == null ? [] : List<dynamic>.from(json["spaItemsDTOList"]!.map((x) => x)),
+    offerId: json["offerId"],
+    price: json["price"].toDouble(),
+    discountValue: json["discountValue"].toDouble(),
+    discountType: json["discountType"],
+    discountRate: json["discountRate"].toDouble(),
+    salePrice: json["salePrice"].toDouble(),
+    name: json["name"],
+    email: json["email"],
+    customerId: json["customerId"],
+    phone: json["phone"],
+    address: json["address"],
+    remark: json["remark"],
     finishName: json["finishName"],
-    startDate: json["startDate"],
-    finishDate: json["finishDate"],
+    finishBy: json["finishBy"],
+    // reviewSpaDto: Map.from(json["reviewSpaDTO"]!).map((k, v) => MapEntry<String, bool?>(k, v)),
+    dateClose: json["dateClose"] == null ? null : DateTime.parse(json["dateClose"]),
+    dueDate: json["dueDate"] == null ? null : DateTime.parse(json["dueDate"]),
+    dueTime: json["dueTime"] == null ? null : DateTime.parse(json["dueTime"]),
+    startDate: json["startDate"] == null ? null : DateTime.parse(json["startDate"]),
+    finishDate: json["finishDate"] == null ? null : DateTime.parse(json["finishDate"]),
+
+    // salesDetailSpaItemDtoList: json["salesDetailSpaItemDTOList"] == null ? [] : List<dynamic>.from(json["salesDetailSpaItemDTOList"]!.map((x) => x)),
+    // addtionsDtoList: json["addtionsDTOList"] == null ? [] : List<dynamic>.from(json["addtionsDTOList"]!.map((x) => x)),
   );
 
   Map<String, dynamic> toJson() => {
-    "id": id == null ? null : id,
-    "markEdit": markEdit == null ? null : markEdit,
+    "id": id,
+    "markEdit": markEdit,
     "msg": msg,
     "msgType": msgType,
     "markDisable": markDisable,
-    "createdBy": createdBy == null ? null : createdBy,
-    "createdDate": createdDate == null ? null : createdDate,
-    "index": index == null ? null : index,
+    "createdBy": createdBy,
+    "createdDate": createdDate,
+    "index": index,
     "companyId": companyId,
     "createdByName": createdByName,
     "branchId": branchId,
@@ -112,12 +174,32 @@ class PolmanOrder {
     "branchSerial": branchSerial,
     "igmaOwnerSerial": igmaOwnerSerial,
     "userCode": userCode,
-    "customerId": customerId == null ? null : customerId,
-    "customerName": customerName == null ? null : customerName,
-    "time": time,
-    "finishBy": finishBy,
+    "remark": remark,
+    "spaId": spaId,
+    "spaItemId": spaItemId,
+    "spaItemName": spaItemName,
+    "spaItemImage": spaItemImage,
+    // "spaItemsDTOList": spaItemsDtoList == null ? [] : List<dynamic>.from(spaItemsDtoList!.map((x) => x)),
+    "offerId": offerId,
+    "price": price,
+    "discountValue": discountValue,
+    "discountType": discountType,
+    "discountRate": discountRate,
+    "salePrice": salePrice,
+    "name": name,
+    "email": email,
+    "customerId": customerId,
+    "phone": phone,
+    "address": address,
     "finishName": finishName,
-    "startDate": startDate,
+    "finishBy": finishBy,
     "finishDate": finishDate,
+    // "reviewSpaDTO": Map.from(reviewSpaDto!).map((k, v) => MapEntry<String, dynamic>(k, v)),
+    "dateClose": dateClose,
+    "dueDate": dueDate!.toIso8601String(),
+    "dueTime": dueTime!.toIso8601String(),
+    // "salesDetailSpaItemDTOList": salesDetailSpaItemDtoList == null ? [] : List<dynamic>.from(salesDetailSpaItemDtoList!.map((x) => x)),
+    // "addtionsDTOList": addtionsDtoList == null ? [] : List<dynamic>.from(addtionsDtoList!.map((x) => x)),
+    "startDate": startDate,
   };
 }

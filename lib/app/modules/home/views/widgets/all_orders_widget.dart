@@ -1,5 +1,6 @@
 import 'package:easy_hotel/app/components/text_widget.dart';
 import 'package:easy_hotel/app/core/themes/app_text_theme.dart';
+import 'package:easy_hotel/app/core/utils/common.dart';
 import 'package:easy_hotel/app/core/values/app_colors.dart';
 import 'package:easy_hotel/app/core/values/app_strings.dart';
 import 'package:easy_hotel/app/modules/home/controllers/home_controller.dart';
@@ -12,8 +13,8 @@ import 'package:get/get.dart';
 import 'package:readmore/readmore.dart';
 
 
-class SpaInfoWidget extends GetView<HomeController> {
-  const SpaInfoWidget( {Key? key})
+class AllOrdersWidget extends GetView<HomeController> {
+  const AllOrdersWidget({Key? key})
       : super(key: key);
 
 
@@ -24,27 +25,47 @@ class SpaInfoWidget extends GetView<HomeController> {
         .size;
 
     return Obx(() {
+      if (controller.isLoading.value) {
+        return Center(
+          child: Common.getSpin(),
+        );
+      }
       return SizedBox(
-          height: size.height,
           width: size.width,
-          child: SingleChildScrollView(
-            physics: const AlwaysScrollableScrollPhysics(),
-            scrollDirection: Axis.vertical,
-            child: Column(
+          child: Obx(() {
+            return Column(
               children: [
-                for(int i = 0; i < controller.activeOrders.length; i ++)
-                  orderContainer(
-                      true,
-                      controller.activeOrders[i].invoiceNumber??0,
-                      controller.activeOrders[i].customerId??0,
-                      controller.activeOrders[i].invoiceNumber??0,
-                      controller.activeOrders[i].customerName ??"",
-                      controller.activeOrders[i].address,
-                      null),
+                for(int i = 0; i < controller.allOrders.length; i ++)
+                  OrderContainer(
+                    false,
+                    controller.allOrders[i].id.toString() ?? "",
+                    controller.allOrders[i].spaItemName??"",
+                    controller.allOrders[i].salePrice!=0.0?controller.allOrders[i].salePrice!.toString():controller.allOrders[i].price!.toString(),
+                    controller.allOrders[i].dueDate??DateTime.now() ,
+                    controller.allOrders[i].name.toString(),
+                    controller.allOrders[i].remark??"لايوجد" ,
+                    controller.allOrders[i].dueTime??DateTime.now(),
+                    controller.allOrders[i].name ?? "",
+                    controller.allOrders[i].phone ?? "لا يوجد",
+                    controller.allOrders[i].customerId.toString(),
+                    i,
+                    controller.allOrders[i].startDate??DateTime.now()
+
+                    ,
+                    controller.allOrders[i].finishDate ??DateTime.now()
+
+                    ,
+
+
+
+
+
+
+                  ),
 
               ],
-            ),
-          )
+            );
+          })
       );
     });
   }
