@@ -117,6 +117,9 @@ abstract class AppStrings {
   static const clientNum = "Client Num:";
   static const timeend = "timeend:";
   static const deliver = "deliver";
+  static const orderStarted = "تم البدء في الطلب ";
+  static const orderFinished = "تم الانتهاء من الطلب ";
+  static const orderDelivered = "تم الانتهاء من الطلب ";
 
 
 
