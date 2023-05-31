@@ -7,6 +7,7 @@ import 'package:firebase_core/firebase_core.dart';
 
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {}
+
 void main() async{
    WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: const FirebaseOptions(
