@@ -12,6 +12,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:readmore/readmore.dart';
 
+import '../../../../components/app_refresh_indecetor.dart';
+
 
 class DeliveredOrdersWidget extends GetView<HomeController> {
   const DeliveredOrdersWidget({Key? key})
@@ -33,40 +35,43 @@ class DeliveredOrdersWidget extends GetView<HomeController> {
 
         return SizedBox(
             width: size.width,
-            child: Obx(() {
-              return Column(
-                children: [
-                  for(int i = 0; i < controller.deliverdOrders.length; i ++)
-                    OrderContainer(
-                      true,
-                      controller.deliverdOrders[i].id.toString() ?? "",
-                      controller.deliverdOrders[i].spaItemName??"",
-                      controller.deliverdOrders[i].salePrice!=0.0?controller.deliverdOrders[i].salePrice!.toString():controller.deliverdOrders[i].price!.toString(),
-                      controller.deliverdOrders[i].dueDate??DateTime.now() ,
-                      controller.deliverdOrders[i].name.toString(),
-                      controller.deliverdOrders[i].remark??"لايوجد" ,
-                      controller.deliverdOrders[i].dueTime??DateTime.now(),
-                      controller.deliverdOrders[i].name ?? "",
-                      controller.deliverdOrders[i].phone ?? "لا يوجد",
-                      controller.deliverdOrders[i].customerId.toString(),
-                      i,
-                      controller.deliverdOrders[i].startDate??DateTime.now()
+            child: AppRefreshIndicator(
+              onRefresh: () async => await controller.getDeliveredOrders(),
+              child: Obx(() {
+                return Column(
+                  children: [
+                    for(int i = 0; i < controller.deliverdOrders.length; i ++)
+                      OrderContainer(
+                        true,
+                        controller.deliverdOrders[i].id.toString() ?? "",
+                        controller.deliverdOrders[i].spaItemName??"",
+                        controller.deliverdOrders[i].salePrice!=0.0?controller.deliverdOrders[i].salePrice!.toString():controller.deliverdOrders[i].price!.toString(),
+                        controller.deliverdOrders[i].dueDate??DateTime.now() ,
+                        controller.deliverdOrders[i].name.toString(),
+                        controller.deliverdOrders[i].remark??"لايوجد" ,
+                        controller.deliverdOrders[i].dueTime??DateTime.now(),
+                        controller.deliverdOrders[i].name ?? "",
+                        controller.deliverdOrders[i].phone ?? "لا يوجد",
+                        controller.deliverdOrders[i].customerId.toString(),
+                        i,
+                        controller.deliverdOrders[i].startDate??DateTime.now()
 
-                      ,
-                      controller.deliverdOrders[i].finishDate ??DateTime.now()
+                        ,
+                        controller.deliverdOrders[i].finishDate ??DateTime.now()
 
-                      ,
-
-
-
-
+                        ,
 
 
-                    ),
 
-                ],
-              );
-            })
+
+
+
+                      ),
+
+                  ],
+                );
+              }),
+            )
         );
 
     });

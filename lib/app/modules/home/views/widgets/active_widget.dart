@@ -12,6 +12,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:readmore/readmore.dart';
 
+import '../../../../components/app_refresh_indecetor.dart';
+
 
 class ActiveOrdersWidget extends GetView<HomeController> {
   const ActiveOrdersWidget({Key? key})
@@ -32,40 +34,43 @@ class ActiveOrdersWidget extends GetView<HomeController> {
       }
       return SizedBox(
           width: size.width,
-          child: Obx(() {
-            return Column(
-              children: [
-                for(int i = 0; i < controller.activeOrders.length; i ++)
-                  OrderContainer(
-                    true,
-                    controller.activeOrders[i].id.toString() ?? "",
-                    controller.activeOrders[i].spaItemName??"",
-                    controller.activeOrders[i].salePrice!=0.0?controller.activeOrders[i].salePrice!.toString():controller.activeOrders[i].price!.toString(),
-                    controller.activeOrders[i].dueDate??DateTime.now() ,
-                    controller.activeOrders[i].name.toString(),
-                    controller.activeOrders[i].remark??"لايوجد" ,
-                     controller.activeOrders[i].dueTime??DateTime.now(),
-                    controller.activeOrders[i].name ?? "",
-                    controller.activeOrders[i].phone ?? "لا يوجد",
-                    controller.activeOrders[i].customerId.toString(),
-                    i,
-                    controller.activeOrders[i].startDate??DateTime.now()
+          child: AppRefreshIndicator(
+            onRefresh: () async => await controller.getActiveOrders(),
+            child: Obx(() {
+              return Column(
+                children: [
+                  for(int i = 0; i < controller.activeOrders.length; i ++)
+                    OrderContainer(
+                      true,
+                      controller.activeOrders[i].id.toString() ?? "",
+                      controller.activeOrders[i].spaItemName??"",
+                      controller.activeOrders[i].salePrice!=0.0?controller.activeOrders[i].salePrice!.toString():controller.activeOrders[i].price!.toString(),
+                      controller.activeOrders[i].dueDate??DateTime.now() ,
+                      controller.activeOrders[i].name.toString(),
+                      controller.activeOrders[i].remark??"لايوجد" ,
+                       controller.activeOrders[i].dueTime??DateTime.now(),
+                      controller.activeOrders[i].name ?? "",
+                      controller.activeOrders[i].phone ?? "لا يوجد",
+                      controller.activeOrders[i].customerId.toString(),
+                      i,
+                      controller.activeOrders[i].startDate??DateTime.now()
 
-                    ,
-                    controller.activeOrders[i].finishDate ??DateTime.now()
+                      ,
+                      controller.activeOrders[i].finishDate ??DateTime.now()
 
-                    ,
-
-
-
-
+                      ,
 
 
-                  ),
 
-              ],
-            );
-          })
+
+
+
+                    ),
+
+                ],
+              );
+            }),
+          )
       );
     });
   }

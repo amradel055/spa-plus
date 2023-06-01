@@ -178,7 +178,6 @@ final FirebaseMessaging firebaseMessaging = FirebaseMessaging.instance;
          onSuccess: (data) {
            getDeliveredOrders();
            UserManager().sendNewOrderNotification("${AppConstants.customer}_$customerId" , AppStrings.orderFinished);
-           showPopupText(AppStrings.orderStarted);
            showPopupText(AppStrings.orderFinished);
          },
          onError: (e) => showPopupText( e.toString()),

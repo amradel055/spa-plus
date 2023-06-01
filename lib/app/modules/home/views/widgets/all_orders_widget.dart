@@ -12,6 +12,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:readmore/readmore.dart';
 
+import '../../../../components/app_refresh_indecetor.dart';
+
 
 class AllOrdersWidget extends GetView<HomeController> {
   const AllOrdersWidget({Key? key})
@@ -32,40 +34,43 @@ class AllOrdersWidget extends GetView<HomeController> {
       }
       return SizedBox(
           width: size.width,
-          child: Obx(() {
-            return Column(
-              children: [
-                for(int i = 0; i < controller.allOrders.length; i ++)
-                  OrderContainer(
-                    false,
-                    controller.allOrders[i].id.toString() ?? "",
-                    controller.allOrders[i].spaItemName??"",
-                    controller.allOrders[i].salePrice!=0.0?controller.allOrders[i].salePrice!.toString():controller.allOrders[i].price!.toString(),
-                    controller.allOrders[i].dueDate??DateTime.now() ,
-                    controller.allOrders[i].name.toString(),
-                    controller.allOrders[i].remark??"لايوجد" ,
-                    controller.allOrders[i].dueTime??DateTime.now(),
-                    controller.allOrders[i].name ?? "",
-                    controller.allOrders[i].phone ?? "لا يوجد",
-                    controller.allOrders[i].customerId.toString(),
-                    i,
-                    controller.allOrders[i].startDate??DateTime.now()
+          child: AppRefreshIndicator(
+            onRefresh: () async => await controller.getAllOrders(),
+            child: Obx(() {
+              return Column(
+                children: [
+                  for(int i = 0; i < controller.allOrders.length; i ++)
+                    OrderContainer(
+                      false,
+                      controller.allOrders[i].id.toString() ?? "",
+                      controller.allOrders[i].spaItemName??"",
+                      controller.allOrders[i].salePrice!=0.0?controller.allOrders[i].salePrice!.toString():controller.allOrders[i].price!.toString(),
+                      controller.allOrders[i].dueDate??DateTime.now() ,
+                      controller.allOrders[i].name.toString(),
+                      controller.allOrders[i].remark??"لايوجد" ,
+                      controller.allOrders[i].dueTime??DateTime.now(),
+                      controller.allOrders[i].name ?? "",
+                      controller.allOrders[i].phone ?? "لا يوجد",
+                      controller.allOrders[i].customerId.toString(),
+                      i,
+                      controller.allOrders[i].startDate??DateTime.now()
 
-                    ,
-                    controller.allOrders[i].finishDate ??DateTime.now()
+                      ,
+                      controller.allOrders[i].finishDate ??DateTime.now()
 
-                    ,
-
-
-
-
+                      ,
 
 
-                  ),
 
-              ],
-            );
-          })
+
+
+
+                    ),
+
+                ],
+              );
+            }),
+          )
       );
     });
   }
