@@ -4,19 +4,8 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64293665-05e3-4cfb-9469-53a3d05807bd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/app/components/app_refresh_indecetor.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+    <list default="true" id="64293665-05e3-4cfb-9469-53a3d05807bd" name="Changes" comment="rfresh">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/core/values/app_constants.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/core/values/app_constants.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/modules/home/controllers/home_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/home/controllers/home_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/modules/home/views/widgets/active_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/home/views/widgets/active_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/modules/home/views/widgets/all_orders_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/home/views/widgets/all_orders_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/modules/home/views/widgets/delayed_order_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/home/views/widgets/delayed_order_widget.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app/modules/home/views/widgets/delivered_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/modules/home/views/widgets/delivered_widget.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,6 +53,14 @@
       <option name="presentableId" value="Default" />
       <updated>1685503796701</updated>
     </task>
+    <task id="LOCAL-00001" summary="rfresh">
+      <created>1685583438102</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1685583438102</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -76,5 +73,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="rfresh" />
+    <option name="LAST_COMMIT_MESSAGE" value="rfresh" />
   </component>
 </project>
