@@ -6,6 +6,7 @@ import 'package:easy_hotel/app/core/values/app_strings.dart';
 import 'package:easy_hotel/app/modules/home/controllers/home_controller.dart';
 import 'package:easy_hotel/app/modules/home/views/widgets/order_container.dart';
 import 'package:easy_hotel/app/routes/app_pages.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -32,42 +33,39 @@ class DelayedOrdersWidget extends GetView<HomeController> {
           child: Common.getSpin(),
         );
       }
-      return AppRefreshIndicator(
-        onRefresh: () async => await controller.getDelyedOrders(),
-        child: Obx(() {
-          return Column(
-            children: [
-              for(int i = 0; i < controller.delayedOrders.length; i ++)
-                OrderContainer(
-                  false,
-                  controller.delayedOrders[i].id.toString() ?? "",
-                  controller.delayedOrders[i].spaItemName??"",
-                  controller.delayedOrders[i].salePrice!=0.0?controller.delayedOrders[i].salePrice!.toString():controller.delayedOrders[i].price!.toString(),
-                  controller.delayedOrders[i].dueDate??DateTime.now() ,
-                  controller.delayedOrders[i].name.toString(),
-                  controller.delayedOrders[i].remark??"لايوجد" ,
-                  controller.delayedOrders[i].dueTime??DateTime.now(),
-                  controller.delayedOrders[i].name ?? "",
-                  controller.delayedOrders[i].phone ?? "لا يوجد",
-                  controller.delayedOrders[i].customerId.toString(),
+      return SizedBox(
+        width: size.width,
+        child: AppRefreshIndicator(
+          onRefresh: () async => await controller.getDelyedOrders(),
+          child: Obx(() {
+            return ListView.builder(
+              itemCount: controller.delayedOrders.length,
+              padding: const EdgeInsets.all(4),
+              dragStartBehavior: DragStartBehavior.start,
+              itemBuilder: (context, i) {
+                final order = controller.delayedOrders[i] ;
+                return OrderContainer(
+                  true,
+                  order.id.toString() ?? "",
+                  order.spaItemName ?? "",
+                  order.salePrice != 0.0
+                      ? order.salePrice!.toString()
+                      : order.price!.toString(),
+                  order.dueDate ?? DateTime.now(),
+                  order.name.toString(),
+                  order.remark ?? "لايوجد",
+                  order.dueTime ?? DateTime.now(),
+                  order.name ?? "",
+                  order.phone ?? "لا يوجد",
+                  order.customerId.toString(),
                   i,
-                  controller.delayedOrders[i].startDate??DateTime.now()
-
-                  ,
-                  controller.delayedOrders[i].finishDate ??DateTime.now()
-
-                  ,
-
-
-
-
-
-
-                ),
-
-            ],
-          );
-        }),
+                  order.startDate ?? DateTime.now(),
+                  order.finishDate ?? DateTime.now(),
+                );
+              },
+            );
+          }),
+        ),
       );
     });
   }

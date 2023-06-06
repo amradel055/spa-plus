@@ -6,6 +6,7 @@ import 'package:easy_hotel/app/core/values/app_strings.dart';
 import 'package:easy_hotel/app/modules/home/controllers/home_controller.dart';
 import 'package:easy_hotel/app/modules/home/views/widgets/order_container.dart';
 import 'package:easy_hotel/app/routes/app_pages.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -33,28 +34,31 @@ class DeliveredOrdersWidget extends GetView<HomeController> {
           child: AppRefreshIndicator(
             onRefresh: () async => await controller.getDeliveredOrders(),
             child: Obx(() {
-              return Column(
-                children: [
-                  for (int i = 0; i < controller.deliverdOrders.length; i++)
-                    OrderContainer(
-                      true,
-                      controller.deliverdOrders[i].id.toString() ?? "",
-                      controller.deliverdOrders[i].spaItemName ?? "",
-                      controller.deliverdOrders[i].salePrice != 0.0
-                          ? controller.deliverdOrders[i].salePrice!.toString()
-                          : controller.deliverdOrders[i].price!.toString(),
-                      controller.deliverdOrders[i].dueDate ?? DateTime.now(),
-                      controller.deliverdOrders[i].name.toString(),
-                      controller.deliverdOrders[i].remark ?? "لايوجد",
-                      controller.deliverdOrders[i].dueTime ?? DateTime.now(),
-                      controller.deliverdOrders[i].name ?? "",
-                      controller.deliverdOrders[i].phone ?? "لا يوجد",
-                      controller.deliverdOrders[i].customerId.toString(),
-                      i,
-                      controller.deliverdOrders[i].startDate ?? DateTime.now(),
-                      controller.deliverdOrders[i].finishDate ?? DateTime.now(),
-                    ),
-                ],
+              return ListView.builder(
+                itemCount: controller.deliverdOrders.length,
+                padding: const EdgeInsets.all(4),
+                dragStartBehavior: DragStartBehavior.start,
+                itemBuilder: (context, i) {
+                  final order = controller.deliverdOrders[i] ;
+                  return OrderContainer(
+                    true,
+                    order.id.toString() ?? "",
+                    order.spaItemName ?? "",
+                    order.salePrice != 0.0
+                        ? order.salePrice!.toString()
+                        : order.price!.toString(),
+                    order.dueDate ?? DateTime.now(),
+                    order.name.toString(),
+                    order.remark ?? "لايوجد",
+                    order.dueTime ?? DateTime.now(),
+                    order.name ?? "",
+                    order.phone ?? "لا يوجد",
+                    order.customerId.toString(),
+                    i,
+                    order.startDate ?? DateTime.now(),
+                    order.finishDate ?? DateTime.now(),
+                  );
+                },
               );
             }),
           ));
