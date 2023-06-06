@@ -52,9 +52,12 @@ class ApiProvider {
       SuccessFunc<T> onSuccess,
       Function(dynamic error)? onError,
       Function(int progress)? onSendProgress,
-      bool ignoreToken) async {
-    (headers ?? {}).forEach((key, value) => _dio.options.headers[key] = value);
-    _dio.options.headers["Authorization"] = token.isEmpty ? "" : "Bearer $token";
+      bool ignoreToken,
+      {bool? isFcmNotification}) async {
+    if (!(isFcmNotification ?? true)) {
+      _dio.options.headers["Authorization"] =
+      token.isEmpty ? "" : "Bearer $token";
+    }
     try {
       if(!(await _checker.hasConnection)){
         throw NetworkException(ErrorCode.noInternetConnection, AppStrings.noInternetConnection);
@@ -99,6 +102,7 @@ class ApiProvider {
     Map<String, dynamic>? queryParameters,
     required ResponseConvertor<T> convertor,
     Function()? onComplete,
+    bool? isFcmNotification,
     SuccessFunc<T> onSuccess,
     Function(dynamic error)? onError,
     Function(int progress)? onSendProgress,
@@ -116,7 +120,9 @@ class ApiProvider {
           onSuccess,
           onError,
           onSendProgress,
-          ignoreToken);
+          ignoreToken,
+        isFcmNotification: isFcmNotification
+      );
 
   Future get<T>(String url, {
     String token = '',

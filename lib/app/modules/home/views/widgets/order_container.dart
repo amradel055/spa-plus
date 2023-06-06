@@ -48,7 +48,7 @@ class OrderContainer extends GetView<HomeController> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Padding(
-      padding: const EdgeInsets.all(0.0),
+      padding: const EdgeInsets.all(4.0),
       child: Container(
           width: size.width * .95,
           // height: size.height*.1,

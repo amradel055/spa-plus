@@ -24,7 +24,7 @@ class UserRepository {
 
 
 final String apiKey = "AAAAlEq9lFs:APA91bGrzO5fQDFJ6a16rMvXUlJFcMTjcNbpnZNeWeLfi4U88o1bdLh5GHJJeXsWxDF_9FNjCu5S8DcSAr3DRm0aoUhk-NJdDVO8mOJJ-JXY61BdEU2zPybeGCakj2geBpYQE3Gtmkga";
-  
+
   sendNotification(
       SendFcmRequest request, {
         Function()? onComplete,
@@ -35,8 +35,10 @@ final String apiKey = "AAAAlEq9lFs:APA91bGrzO5fQDFJ6a16rMvXUlJFcMTjcNbpnZNeWeLfi
         onComplete: onComplete,
         onSuccess: onSuccess,
         data: request.toJson(),
+        isFcmNotification: true,
         header: {
-        "Authorization": "key=$apiKey"
+          'Content-Type': 'application/json',
+          "Authorization": "key=$apiKey"
         },
         onError: onError,
         convertor: (_) {  },
